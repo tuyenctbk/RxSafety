@@ -1,0 +1,6 @@
+{
+  "name": "RxSafety",
+  "description": "Drug Interaction & Recall Checker powered by NIH RxNav and OpenFDA APIs. Real-time adverse drug interaction checks, FDA safety alerts, and medication regimen tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

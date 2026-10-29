@@ -1,0 +1,242 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">Проверка</string>
+    <string name="nav_recalls">Отзывы</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">Инструкции</string>
+    <string name="nav_guide">Справочник</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">Проверка взаимодействия лекарств</string>
+    <string name="checker_subtitle">Проверка тяжелых межлекарственных взаимодействий через NIH RxNav</string>
+    <string name="clear_all">Очистить все</string>
+    <string name="clinical_presets">Клинические наборы высокого риска:</string>
+    <string name="search_drug_placeholder">Введите торговое или MHH наименование (напр., Lipitor, Metformin)...</string>
+    <string name="nih_rxnav_matches">Результаты NIH RxNav:</string>
+    <string name="medications_to_evaluate">Лекарства для оценки (%d):</string>
+    <string name="empty_meds_notice">Выберите минимум 2 препарата выше для анализа возможных взаимодействий.</string>
+    <string name="evaluating_pharmacology">Оценка фармакологии и отзывов FDA...</string>
+    <string name="tab_drug_conflicts">Конфликты лекарств (%d)</string>
+    <string name="tab_dietary">Диета и Алкоголь (%d)</string>
+    <string name="tab_fda_recalls">Отзывы FDA (%d)</string>
+    <string name="no_severe_conflicts_title">Опасных взаимодействий не обнаружено</string>
+    <string name="no_severe_conflicts_subtitle">В клинической базе данных не найдено задокументированных взаимодействий высокого риска между выбранными препаратами.</string>
+    <string name="no_dietary_title">Нет диетических предупреждений</string>
+    <string name="no_dietary_subtitle">Для данного списка не зафиксировано важных предупреждений о грейпфруте, алкоголе, кальции или калии.</string>
+    <string name="no_recalls_match_title">Нет активных отзывов FDA для выбранных препаратов</string>
+    <string name="no_recalls_match_subtitle">Ни один из введенных препаратов в настоящее время не подлежит отзыву в базе OpenFDA.</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">Отзывы препаратов и предупреждения FDA</string>
+    <string name="recalls_subtitle">Отчеты о безопасности в реальном времени напрямую из OpenFDA</string>
+    <string name="fda_classifications_title">Классификация отзывов FDA:</string>
+    <string name="fda_classifications_body">• Класс I: Высокий риск. Дефект может вызвать серьезный вред или смерть.\n• Класс II: Временные или обратимые побочные эффекты.\n• Класс III: Нарушение, маловероятно вызывающее последствия для здоровья.</string>
+    <string name="recall_search_placeholder">Поиск отозванного препарата, фирмы или причины...</string>
+    <string name="filter_my_meds">Фильтр по моим сохраненным лекарствам</string>
+    <string name="filter_my_meds_subtitle">Показывать только отзывы, совпадающие с препаратами в ваших профилях</string>
+    <string name="recent_enforcement_reports">Недавние отчеты FDA (%d):</string>
+    <string name="no_recalls_title">Отзывы не найдены</string>
+    <string name="no_recalls_subtitle">Ни один отчет не соответствует вашим критериям поиска.</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">Ежедневные лекарства (На устройстве)</string>
+    <string name="tab_profiles_doseflow">Профили и DoseFlow</string>
+    <string name="daily_meds_title">Мои ежедневные лекарства</string>
+
+    <string name="daily_meds_subtitle">Сохранено локально в базе данных SQLite на устройстве через Room</string>
+    <string name="add_med">Добавить</string>
+    <string name="local_device_adherence">Прием лекарств на устройстве</string>
+    <string name="adherence_status">Принято %1$d из %2$d сегодня</string>
+    <string name="adherence_footer">Ваш ежедневный график конфиденциально хранится на этом устройстве. Нажимайте галочку после приема каждой таблетки.</string>
+    <string name="check_regimen_safety">Проверить безопасность курса</string>
+    <string name="reset_day">Сбросить день</string>
+    <string name="daily_schedule_title">Ежедневный график (%d преп.):</string>
+    <string name="empty_daily_meds">Ежедневные лекарства еще не добавлены. Нажмите \'Добавить\' выше, чтобы создать график.</string>
+    <string name="profiles_title">Профили пациентов и DoseFlow</string>
+    <string name="profiles_subtitle">Синхронизированная аптечка и автоматический поиск конфликтов</string>
+    <string name="new_profile">Новый профиль</string>
+    <string name="doseflow_synergy">Интеграция с приложением DoseFlow</string>
+    <string name="sync_active">Синхронизация v1 активна</string>
+    <string name="doseflow_banner_desc">Автоматическая двусторонняя синхронизация профилей пациентов и уведомлений с вашим приложением DoseFlow.</string>
+    <string name="export_sync_json">Экспорт JSON</string>
+    <string name="demo_doseflow_sync">Демо DoseFlow Sync</string>
+    <string name="scan_conflicts">Сканировать конфликты</string>
+    <string name="profile_regimen">Назначения профиля (%d):</string>
+    <string name="add_medication">Добавить лекарство</string>
+    <string name="empty_profile_meds">В этом профиле пока нет лекарств. Нажмите \'Добавить лекарство\' или синхронизируйте через DoseFlow.</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">Добавить ежедневное лекарство (На устройстве)</string>
+    <string name="med_name_label">Название препарата (напр., Lisinopril)</string>
+    <string name="dosage_label">Дозировка (напр., 20 мг)</string>
+    <string name="form_label">Форма (Таблетка, Капсула)</string>
+    <string name="time_label">Время (напр., 08:00 AM)</string>
+    <string name="frequency_label">Частота (напр., Один раз в день утром)</string>
+    <string name="instructions_label">Указания (напр., Принимать во время еды)</string>
+    <string name="prescriber_label">Врач / Клиника (Необязательно)</string>
+    <string name="save_to_device">Сохранить на устройство</string>
+    <string name="cancel">Отмена</string>
+    <string name="add_profile_dialog_title">Создать новый профиль пациента</string>
+    <string name="patient_name_label">ФИО пациента</string>
+    <string name="relationship_label">Кем приходится (Я сам, Мама, Папа, Ребенок)</string>
+    <string name="age_label">Возраст</string>
+    <string name="conditions_label">Заболевания (через запятую, напр., Гипертония, ХБП)</string>
+    <string name="allergies_label">Известные аллергии (напр., Пенициллин)</string>
+    <string name="create_profile">Создать профиль</string>
+    <string name="demo_sync_dialog_title">Симуляция синхронизации DoseFlow</string>
+    <string name="demo_sync_dialog_desc">Выберите клинический набор для тестирования автоматической синхронизации из DoseFlow в RxSafety:</string>
+    <string name="close">Закрыть</string>
+    <string name="doseflow_json_title">Данные синхронизации DoseFlow (JSON)</string>
+    <string name="doseflow_json_desc">Стандартный формат обмена DoseFlow для бесшовной синхронизации профилей:</string>
+    <string name="copy_to_clipboard">Скопировать в буфер</string>
+    <string name="add_med_profile_dialog_title">Добавить лекарство в профиль</string>
+    <string name="save_medication">Сохранить лекарство</string>
+    <string name="notes_instructions_label">Заметки врача / Указания (Необязательно)</string>
+    <string name="reminder_notification_text">Пора принять %s.</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">Инспектор инструкций и Black Box FDA</string>
+    <string name="inspector_subtitle">Поиск официальных монографий FDA, предупреждений в черных рамках и показаний</string>
+    <string name="frequently_inspected">Часто проверяемые препараты:</string>
+    <string name="inspector_search_placeholder">Поиск названия препарата...</string>
+    <string name="inspect">Проверить</string>
+    <string name="fda_label">Инструкция FDA</string>
+
+    <string name="fda_boxed_warning">ПРЕДУПРЕЖДЕНИЕ В ЧЕРНОЙ РАМКЕ FDA (BLACK BOX)</string>
+    <string name="warnings_precautions">Предупреждения и меры предосторожности</string>
+    <string name="indications_usage">Показания и клиническое применение</string>
+    <string name="adverse_reactions">Задокументированные побочные эффекты</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">Клинический справочник безопасности</string>
+    <string name="guide_subtitle">Тревожные симптомы, чек-лист фармацевта и протоколы безопасности</string>
+    <string name="poison_control_title">Токсикологический центр США</string>
+    <string name="poison_control_subtitle">24/7 Бесплатная и конфиденциальная медицинская помощь</string>
+    <string name="call_poison_control">Позвонить 1-800-222-1222</string>
+    <string name="red_flags_title">🚨 Критические симптомы опасных реакций:</string>
+    <string name="ss_title">Серотониновый синдром (SS)</string>
+    <string name="ss_drugs">СИОЗС, ИОЗСН, Трамадол, Триптаны, ИМАО</string>
+    <string name="ss_symptoms">Возбуждение, спутанность сознания, тахикардия, озноб, скованность мышц, тремор, высокая температура, судороги.</string>
+    <string name="bleed_title">Тяжелое внутреннее кровотечение</string>
+    <string name="bleed_drugs">Варфарин, ПОАК (Eliquis, Xarelto), Аспирин, НПВП</string>
+
+    <string name="bleed_symptoms">Дегтеобразный стул, кровохарканье, рвота кофейной гущей, сильная слабость, сильная непроходящая головная боль.</string>
+    <string name="angio_title">Тяжелый ангионевротический отек</string>
+    <string name="angio_drugs">Ингибиторы АПФ (Lisinopril, Enalapril), БРА</string>
+    <string name="angio_symptoms">Быстрый отек губ, языка, горла, лица с удушьем. Немедленно вызывайте скорую помощь.</string>
+    <string name="rhabdo_title">Тяжелый рабдомиолиз</string>
+    <string name="rhabdo_drugs">Статины в комбинации с макролидами или азолами</string>
+    <string name="rhabdo_symptoms">Сильная мышечная боль, выраженная слабость и темная моча цвета чая.</string>
+    <string name="pharmacist_questions_title">📋 5 вопросов вашему фармацевту:</string>
+    <string name="pq1_q">Взаимодействует ли это с моими текущими лекарствами?</string>
+    <string name="pq1_tip">Всегда имейте при себе полный список ваших лекарств, включая витамины и БАДы.</string>
+    <string name="pq2_q">Нужно ли избегать определенных продуктов, соков или алкоголя?</string>
+    <string name="pq2_tip">Частые триггеры: грейпфрут, молочные продукты, заменители соли с калием и алкоголь.</string>
+    <string name="pq3_q">Что делать, если я пропустил прием дозы?</string>
+    <string name="pq3_tip">Никогда не принимайте двойную дозу без указания врача или фармацевта.</string>
+    <string name="pq4_q">Каковы ранние признаки побочной реакции?</string>
+
+    <string name="pq4_tip">Понимайте разницу между легкими побочными эффектами и симптомами, требующими срочной помощи.</string>
+    <string name="pq5_q">Требует ли препарат регулярного анализа крови?</string>
+    <string name="pq5_tip">Препараты, такие как Варфарин, Лизиноприл, Дигоксин и Литий, требуют регулярных анализов.</string>
+    <string name="disclaimer_title">Открытые государственные данные и отказ от ответственности</string>
+    <string name="disclaimer_body">RxSafety использует открытые данные Национальной медицинской библиотеки США (NIH RxNav) и FDA (OpenFDA). Приложение носит справочный характер и не заменяет консультацию врача.</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">Клинический риск:</string>
+    <string name="pharmacological_mechanism">Фармакологический механизм:</string>
+    <string name="clinical_management">Клинические рекомендации / Действия:</string>
+    <string name="show_less">Свернуть</string>
+    <string name="tap_for_pharmacology">Нажмите для просмотра фармакологии и рекомендаций</string>
+    <string name="interacts_with">Взаимодействует с: %s</string>
+    <string name="recommendation">Рекомендация: %s</string>
+    <string name="reason_for_recall">Причина отзыва:</string>
+    <string name="firm">Фирма: %s</string>
+    <string name="recall_no">№: %s</string>
+    <string name="emergency_badge">ЭКСТРЕННО</string>
+    <string name="associated_with">Связано с: %s</string>
+    <string name="rx_prefix">Rx: %s</string>
+    <string name="rxcui_prefix">RxCUI: %s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">Поиск Rx</string>
+    <string name="rx_search_title">Поиск лекарств в NIH RxNav</string>
+    <string name="rx_search_subtitle">Поиск кодов RxNorm (RxCUI) и подготовка лекарств к проверке взаимодействий</string>
+    <string name="rx_search_placeholder">Поиск торгового, MHH или формы (напр., Lipitor, Warfarin)...</string>
+    <string name="rx_search_popular_title">Частые клинические запросы:</string>
+    <string name="rx_filter_all">Все концепты</string>
+    <string name="rx_filter_clinical">Клинические препараты (SCD)</string>
+    <string name="rx_filter_branded">Брендовые препараты (SBD)</string>
+
+    <string name="rx_filter_ingredients">Действующие вещества (IN)</string>
+    <string name="rx_filter_brand_names">Торговые марки (BN)</string>
+    <string name="rx_found_count">Найдено %d кодов RxNorm</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">Синоним: %s</string>
+    <string name="rx_score_prefix">Совпадение: %s</string>
+    <string name="rx_stage_button">В лоток проверки</string>
+    <string name="rx_staged_button">В лотке ✓</string>
+    <string name="rx_save_daily_button">Сохранить в ежедневные</string>
+    <string name="rx_inspect_fda_button">Инструкция FDA</string>
+    <string name="rx_tray_title">Готовы к проверке (%d)</string>
+    <string name="rx_tray_hint_single">Выберите минимум 2 препарата для оценки возможного конфликта.</string>
+    <string name="rx_tray_hint_ready">Готово! Нажмите ниже для анализа взаимодействий по базе NIH.</string>
+    <string name="rx_run_check_button">Проверить взаимодействия (%d)</string>
+    <string name="rx_clear_staged">Очистить лоток</string>
+    <string name="rx_searching_label">Запрос к Национальной медицинской библиотеке США...</string>
+    <string name="rx_no_results_title">Концепты RxNav не найдены</string>
+    <string name="rx_no_results_subtitle">Не найдено концептов по запросу \"%1$s\". Попробуйте искать по действующему веществу или проверьте орфографию.</string>
+    <string name="rx_empty_hero_title">Официальный справочник NIH RxNav &amp; RxNorm</string>
+    <string name="rx_empty_hero_desc">RxNorm предоставляет стандартизированные названия и коды (RxCUI) Национальной медицинской библиотеки США (NLM) для надежного анализа взаимодействий.</string>
+    <string name="rx_what_is_rxcui">Что такое RxCUI?</string>
+    <string name="rx_what_is_rxcui_desc">Код RxCUI — это уникальный цифровой идентификатор препарата. Медицинские системы используют его для предотвращения ошибок при назначении лекарств.</string>
+    <string name="toast_rxcui_copied">RxCUI %s скопирован в буфер обмена!</string>
+    <string name="toast_payload_copied">Данные синхронизации DoseFlow скопированы</string>
+    <string name="toast_staged_added">%s добавлен в лоток проверки</string>
+    <string name="toast_staged_removed">%s удален из лотка проверки</string>
+    <string name="toast_saved_to_daily">%s сохранен в ежедневные лекарства</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">Поддержать разработку RxSafety</string>
+    <string name="donation_subtitle">Сохраните проверку лекарств на 100% без рекламы, конфиденциальной и независимой</string>
+    <string name="tab_google_play">Google Play</string>
+    <string name="tab_paypal">PayPal и QR</string>
+    <string name="tab_kofi">Ko-fi</string>
+    <string name="tier_1_title">$1.99 Эспрессо ☕</string>
+    <string name="tier_2_title">$4.99 Кофе и пончик 🍩</string>
+    <string name="tier_3_title">$9.99 Обед разработчику 🍱</string>
+    <string name="tier_4_title">$19.99 Клинический спонсор 🏆</string>
+    <string name="btn_pay_google_play">Поддержать через Google Play (%s)</string>
+    <string name="btn_open_paypal">Открыть ссылку PayPal</string>
+    <string name="btn_copy_paypal_url">Скопировать ссылку PayPal</string>
+    <string name="btn_open_kofi">Поддержать на Ko-fi</string>
+    <string name="active_supporter_badge">Меценат ⭐</string>
+    <string name="active_supporter_thanks">Спасибо за то, что вы активный спонсор!</string>
+    <string name="home_banner_title">Нравится RxSafety?</string>
+    <string name="home_banner_body">Помогите сохранить проверку лекарств на 100% без рекламы и независимой.</string>
+    <string name="home_banner_action">Поддержать</string>
+    <string name="post_op_success_title">Сканирование завершено!</string>
+    <string name="post_op_success_body">Угостите разработчика кофе, если RxSafety помог вам сегодня.</string>
+    <string name="post_op_support_btn">Купить кофе ☕</string>
+    <string name="milestone_toast_10">🎉 Выполнили 10 проверок! Подумайте о поддержке независимой разработки.</string>
+    <string name="milestone_toast_25">🎉 25-я проверка! Спасибо за доверие к RxSafety.</string>
+    <string name="dev_mode_simulate_support">Симуляция поддержки Play (Dev Mode)</string>
+    <string name="toast_donation_successful">Спасибо! Теперь вы активный меценат ⭐</string>
+    <string name="about_support_dev_title">Поддержите независимую разработку</string>
+    <string name="about_support_dev_body">RxSafety на 100% без рекламы, конфиденциален и основан на открытых данных. Добровольные взносы финансируют обновления медицинских баз и поддержку.</string>
+    <string name="splash_subtitle">Клиническая проверка взаимодействий и безопасность</string>
+    <string name="back">Назад</string>
+    <string name="donation_badge_subtitle">100% без рекламы, конфиденциально и офлайн</string>
+    <string name="google_pay_subtitle">Прямая поддержка в 1 касание через Google Pay</string>
+    <string name="select_tier_desc">Выберите уровень поддержки независимой разработки ниже:</string>
+    <string name="paypal_title">Прямой PayPal и сканирование QR-кода</string>
+    <string name="paypal_subtitle">Отсканируйте камерой телефона или приложением PayPal:</string>
+    <string name="enter_usd_amount">Введите сумму в USD ($)</string>
+    <string name="kofi_title">Чаевые Ko-fi для независимых приложений</string>
+    <string name="kofi_desc">Ko-fi — удобная платформа для чаевых независимым разработчикам. Поддержите кофе ($3) для частых обновлений клинических баз!</string>
+    <string name="btn_copy_kofi_url">Скопировать URL Ko-fi</string>
+    <string name="btn_support_options">Варианты поддержки разработки</string>
+    <string name="toast_kofi_copied">Ссылка Ko-fi скопирована в буфер обмена! ✓</string>
+</resources>

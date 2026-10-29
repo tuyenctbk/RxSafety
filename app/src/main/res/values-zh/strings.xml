@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">相互作用</string>
+    <string name="nav_recalls">召回预警</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">说明书</string>
+    <string name="nav_guide">安全指南</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">药物相互作用检查器</string>
+    <string name="checker_subtitle">基于 NIH RxNav 查询严重药物相互作用及禁忌</string>
+    <string name="clear_all">清空列表</string>
+    <string name="clinical_presets">高风险临床预设组合：</string>
+    <string name="search_drug_placeholder">输入商品名或通用名（如 Lipitor, Metformin）...</string>
+    <string name="nih_rxnav_matches">NIH RxNav 匹配结果：</string>
+    <string name="medications_to_evaluate">待评估药物 (%d)：</string>
+    <string name="empty_meds_notice">请在上方选择至少 2 种药物以分析潜在的相互作用。</string>
+    <string name="evaluating_pharmacology">正在评估药理机制及 FDA 召回记录...</string>
+    <string name="tab_drug_conflicts">药物冲突 (%d)</string>
+    <string name="tab_dietary">饮食与酒精 (%d)</string>
+    <string name="tab_fda_recalls">FDA 召回 (%d)</string>
+    <string name="no_severe_conflicts_title">未检测到已知严重药物冲突</string>
+    <string name="no_severe_conflicts_subtitle">在临床数据库中未发现所选药物之间存在已记录的高风险相互作用。</string>
+    <string name="no_dietary_title">无饮食冲突预警</string>
+    <string name="no_dietary_subtitle">未触发与葡萄柚、酒精、钙或钾相关的重大饮食注意警告。</string>
+    <string name="no_recalls_match_title">所选药物无活跃的 FDA 召回记录</string>
+    <string name="no_recalls_match_subtitle">您输入的药物目前在 OpenFDA 中均无匹配的活跃执法召回。</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">FDA 药品召回与安全警报</string>
+    <string name="recalls_subtitle">来自 OpenFDA 的实时药品执法与安全报告</string>
+    <string name="fda_classifications_title">FDA 召回分级说明：</string>
+    <string name="fda_classifications_body">• I 级：最高风险。缺陷可能导致严重健康损害或死亡。\n• II 级：可能导致可逆的或极轻微的不良健康后果。\n• III 级：违反规定但不太可能引起健康损害。</string>
+    <string name="recall_search_placeholder">搜索召回药品、生产企业或原因...</string>
+    <string name="filter_my_meds">按我保存的药物筛选</string>
+    <string name="filter_my_meds_subtitle">仅显示与您个人档案中药品匹配的召回记录</string>
+    <string name="recent_enforcement_reports">近期 FDA 执法报告 (%d)：</string>
+    <string name="no_recalls_title">未找到召回记录</string>
+    <string name="no_recalls_subtitle">没有符合您搜索条件的执法报告。</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">日常用药 (本地设备)</string>
+    <string name="tab_profiles_doseflow">档案与 DoseFlow</string>
+    <string name="daily_meds_title">我的日常用药清单</string>
+
+    <string name="daily_meds_subtitle">通过 Room 安全保存在本机的 SQLite 数据库中</string>
+    <string name="add_med">添加药物</string>
+    <string name="local_device_adherence">本机用药遵医嘱进度</string>
+    <string name="adherence_status">今日已服 %1$d / %2$d</string>
+    <string name="adherence_footer">您的每日用药方案保存在本机中。服药后请点击药物旁边的圆圈复选框。</string>
+    <string name="check_regimen_safety">检查方案安全性</string>
+    <string name="reset_day">重置今日状态</string>
+    <string name="daily_schedule_title">每日用药计划 (%d 种)：</string>
+    <string name="empty_daily_meds">暂未记录日常药物。点击上方的“添加药物”创建您的服药计划。</string>
+    <string name="profiles_title">患者档案与 DoseFlow 同步</string>
+    <string name="profiles_subtitle">多档案药箱管理与自动化冲突筛查</string>
+    <string name="new_profile">新建档案</string>
+    <string name="doseflow_synergy">DoseFlow 协同集成</string>
+    <string name="sync_active">v1 同步已激活</string>
+    <string name="doseflow_banner_desc">实现患者档案与 DoseFlow 应用之间的双向自动同步和实时预警通知。</string>
+    <string name="export_sync_json">导出同步 JSON</string>
+    <string name="demo_doseflow_sync">演示 DoseFlow 同步</string>
+    <string name="scan_conflicts">扫描冲突</string>
+    <string name="profile_regimen">档案用药清单 (%d)：</string>
+    <string name="add_medication">添加药品</string>
+    <string name="empty_profile_meds">此档案中尚无药品。点击“添加药品”或通过 DoseFlow 同步。</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">添加日常用药 (本地设备)</string>
+    <string name="med_name_label">药品名称（如 立普妥/苯磺酸氨氯地平）</string>
+    <string name="dosage_label">剂量规格（如 20 mg）</string>
+    <string name="form_label">剂型（片剂、胶囊）</string>
+    <string name="time_label">服药时间（如 08:00 AM）</string>
+    <string name="frequency_label">服药频率（如 每日一次 早晨服）</string>
+    <string name="instructions_label">用法用量指示（如 随餐服用）</string>
+    <string name="prescriber_label">开药医师 / 医院（选填）</string>
+    <string name="save_to_device">保存至本机</string>
+    <string name="cancel">取消</string>
+    <string name="add_profile_dialog_title">创建新患者档案</string>
+    <string name="patient_name_label">患者姓名</string>
+    <string name="relationship_label">关系（本人、母亲、父亲、子女）</string>
+    <string name="age_label">年龄</string>
+    <string name="conditions_label">既往病史 / 诊断（逗号分隔，如 高血压、慢性肾病）</string>
+    <string name="allergies_label">已知过敏史（如 青霉素）</string>
+    <string name="create_profile">创建档案</string>
+    <string name="demo_sync_dialog_title">模拟 DoseFlow 用药方案同步</string>
+    <string name="demo_sync_dialog_desc">选择临床预设组合以模拟从 DoseFlow 到 RxSafety 的实时自动同步：</string>
+    <string name="close">关闭</string>
+    <string name="doseflow_json_title">DoseFlow 同步数据包 (JSON)</string>
+    <string name="doseflow_json_desc">标准 DoseFlow 数据交换格式，用于患者档案的无缝同步：</string>
+    <string name="copy_to_clipboard">复制到剪贴板</string>
+    <string name="add_med_profile_dialog_title">添加药品至档案</string>
+    <string name="save_medication">保存药品</string>
+    <string name="notes_instructions_label">医嘱备注 / 说明（选填）</string>
+    <string name="reminder_notification_text">该服用的药品：%s。</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">FDA 药品说明书与黑框警告查询</string>
+    <string name="inspector_subtitle">查询 FDA 官方药品单行本、黑框警告及适应症</string>
+    <string name="frequently_inspected">高频查询药品：</string>
+    <string name="inspector_search_placeholder">搜索药品名称...</string>
+    <string name="inspect">查询</string>
+    <string name="fda_label">FDA 官方说明书</string>
+    <string name="fda_boxed_warning">FDA 黑框警告 (BOXED WARNING)</string>
+    <string name="warnings_precautions">警告与注意事项</string>
+    <string name="indications_usage">适应症与临床应用</string>
+    <string name="adverse_reactions">不良反应与副作用</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">临床用药安全指南</string>
+    <string name="guide_subtitle">紧急危险信号、药师核查清单与用药安全规程</string>
+    <string name="poison_control_title">美国毒物控制中心求助</string>
+    <string name="poison_control_subtitle">24/7 免费且保密的专业医疗指导</string>
+    <string name="call_poison_control">拨打 1-800-222-1222</string>
+    <string name="red_flags_title">🚨 严重不良反应紧急危险信号：</string>
+    <string name="ss_title">五羟色胺综合征 (Serotonin Syndrome)</string>
+    <string name="ss_drugs">SSRIs, SNRIs, 曲马多, 普仑类, MAOIs</string>
+    <string name="ss_symptoms">焦躁不安、意识模糊、心率过快、战栗、严重肌肉僵硬、震颤、高热及抽搐。</string>
+    <string name="bleed_title">严重内出血 (Internal Bleeding)</string>
+    <string name="bleed_drugs">华法林, 新型口服抗凝药 (Eliquis, Xarelto), 阿司匹林, NSAIDs</string>
+    <string name="bleed_symptoms">黑便或柏油样便、咯血、咖啡样呕吐物、异常虚弱、持续性剧烈头痛。</string>
+    <string name="angio_title">严重血管性水肿与呼吸道阻塞</string>
+    <string name="angio_drugs">ACE抑制剂 (依那普利、赖诺普利), ARBs</string>
+
+    <string name="angio_symptoms">唇、舌、喉、面部迅速肿胀导致喘鸣及呼吸困难。请立即拨打紧急求救电话。</string>
+    <string name="rhabdo_title">严重横纹肌溶解症 (Rhabdomyolysis)</string>
+    <string name="rhabdo_drugs">他汀类药物与大环内酯类或唑类抗真菌药合用</string>
+    <string name="rhabdo_symptoms">严重弥漫性肌肉疼痛、极度无力以及茶色深色尿液。</string>
+    <string name="pharmacist_questions_title">📋 咨询药师的 5 个关键问题：</string>
+    <string name="pq1_q">这会与我正在服用的处方药或非处方药产生冲突吗？</string>
+    <string name="pq1_tip">请务必随身携带完整的正在使用的药物清单，包括维生素、抗酸药和草药补充剂。</string>
+    <string name="pq2_q">是否有特定食物、果汁或酒精需要避免？</string>
+    <string name="pq2_tip">常见的引发冲突食物包括葡萄柚（西柚）、高钙乳制品、代盐含钾食品及酒精。</string>
+    <string name="pq3_q">如果漏服了一次剂量，我该怎么办？</string>
+    <string name="pq3_tip">切勿在未经医生或药师明确指示的情况下自行加倍剂量。</string>
+    <string name="pq4_q">不良反应的早期预警信号是什么？</string>
+    <string name="pq4_tip">明确区分轻微短暂的副作用与需要紧急就医的危险警示信号。</string>
+    <string name="pq5_q">这种药物是否需要定期进行血液指标监测？</string>
+    <string name="pq5_tip">如华法林(INR)、赖诺普利(血钾/肌酐)、地高辛及锂盐等均需要按计划化验。</string>
+    <string name="disclaimer_title">政府公开数据与医疗免责声明</string>
+    <string name="disclaimer_body">RxSafety 引用来自美国国家医学图书馆 (NIH RxNav) 及美国食品药品监督管理局 (OpenFDA) 的公共数据。本应用仅供临床筛查与科普教育，不能替代专业医疗诊断。</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">临床风险等级：</string>
+    <string name="pharmacological_mechanism">药理作用机制：</string>
+    <string name="clinical_management">临床处置 / 建议操作：</string>
+    <string name="show_less">收起详情</string>
+    <string name="tap_for_pharmacology">点击查看药理学及临床指导</string>
+    <string name="interacts_with">相互作用药品：%s</string>
+    <string name="recommendation">处置建议：%s</string>
+    <string name="reason_for_recall">召回原因：</string>
+    <string name="firm">生产企业：%s</string>
+    <string name="recall_no">编号：%s</string>
+    <string name="emergency_badge">紧急</string>
+    <string name="associated_with">关联药物：%s</string>
+    <string name="rx_prefix">Rx：%s</string>
+    <string name="rxcui_prefix">RxCUI：%s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">Rx 查询</string>
+    <string name="rx_search_title">NIH RxNav 药品编码查询</string>
+    <string name="rx_search_subtitle">查找 RxNorm 标准识别码 (RxCUI) 并将药物加入相互作用检查托盘</string>
+    <string name="rx_search_placeholder">搜索商品名、通用名或剂型（如 Lipitor, Warfarin）...</string>
+    <string name="rx_search_popular_title">临床高频查询：</string>
+    <string name="rx_filter_all">所有概念</string>
+    <string name="rx_filter_clinical">临床药物 (SCD)</string>
+    <string name="rx_filter_branded">品牌药物 (SBD)</string>
+    <string name="rx_filter_ingredients">有效成分 (IN)</string>
+    <string name="rx_filter_brand_names">商品名称 (BN)</string>
+    <string name="rx_found_count">找到 %d 个 RxNorm 概念识别码</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">别名：%s</string>
+    <string name="rx_score_prefix">匹配度：%s</string>
+    <string name="rx_stage_button">加入检查托盘</string>
+    <string name="rx_staged_button">已在托盘 ✓</string>
+    <string name="rx_save_daily_button">保存至日常用药</string>
+    <string name="rx_inspect_fda_button">查看 FDA 说明书</string>
+    <string name="rx_tray_title">已选待检查药物 (%d)</string>
+    <string name="rx_tray_hint_single">请至少选择 2 种药物以评估药物相互作用。</string>
+    <string name="rx_tray_hint_ready">就绪！点击下方按钮基于 NIH 知识库分析相互作用。</string>
+    <string name="rx_run_check_button">立即检查相互作用 (%d)</string>
+    <string name="rx_clear_staged">清空托盘</string>
+    <string name="rx_searching_label">正在查询美国国家医学图书馆 NIH 数据库...</string>
+    <string name="rx_no_results_title">未找到匹配的 RxNav 编码</string>
+    <string name="rx_no_results_subtitle">未找到与“%1$s”匹配的概念。建议使用通用名成分（如用 Atorvastatin 替代 Lipitor）或检查拼写。</string>
+    <string name="rx_empty_hero_title">官方 NIH RxNav 与 RxNorm 权威名录</string>
+    <string name="rx_empty_hero_desc">RxNorm 由美国国家医学图书馆 (NLM) 维护，为药品提供规范化名称与唯一标识符 (RxCUI)。此处查询可获取可靠筛选相互作用所需的准确 RxCUI。</string>
+    <string name="rx_what_is_rxcui">什么是 RxCUI？</string>
+    <string name="rx_what_is_rxcui_desc">RxNorm 概念唯一标识符 (RxCUI) 是分配给每种临床药物的标准数字代码。医疗系统利用 RxCUI 进行交叉比对，防止用药错误与严重不良反应。</string>
+    <string name="toast_rxcui_copied">已将 RxCUI %s 复制到剪贴板！</string>
+    <string name="toast_payload_copied">已将 DoseFlow 同步数据复制到剪贴板</string>
+    <string name="toast_staged_added">已将 %s 加入检查托盘</string>
+    <string name="toast_staged_removed">已将 %s 从检查托盘中移除</string>
+    <string name="toast_saved_to_daily">已将 %s 保存至您的日常用药清单</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">支持 RxSafety 开发</string>
+    <string name="donation_subtitle">保持临床药物冲突筛查 100% 无广告、隐私且独立运行</string>
+    <string name="tab_google_play">Google Play 赞赏</string>
+    <string name="tab_paypal">PayPal 与 扫码</string>
+    <string name="tab_kofi">Ko-fi 咖啡赞赏</string>
+    <string name="tier_1_title">$1.99 浓缩咖啡 ☕</string>
+    <string name="tier_2_title">$4.99 咖啡与甜甜圈 🍩</string>
+    <string name="tier_3_title">$9.99 工作午餐赞助 🍱</string>
+    <string name="tier_4_title">$19.99 临床特别赞助 🏆</string>
+    <string name="btn_pay_google_play">通过 Google Play 赞赏 (%s)</string>
+    <string name="btn_open_paypal">打开 PayPal 链接</string>
+    <string name="btn_copy_paypal_url">复制 PayPal 链接</string>
+    <string name="btn_open_kofi">在 Ko-fi 上赞赏</string>
+    <string name="active_supporter_badge">赞赏支持者 ⭐</string>
+    <string name="active_supporter_thanks">感谢您成为 RxSafety 的赞赏支持者！</string>
+    <string name="home_banner_title">喜欢使用 RxSafety 吗？</string>
+    <string name="home_banner_body">帮助我们保持药物筛查 100% 无广告与独立开发。</string>
+    <string name="home_banner_action">赞赏开发者</string>
+    <string name="post_op_success_title">筛查分析已完成！</string>
+    <string name="post_op_success_body">如果 RxSafety 为您提供了帮助，欢迎请开发者喝杯咖啡。</string>
+    <string name="post_op_support_btn">请喝咖啡 ☕</string>
+    <string name="milestone_toast_10">🎉 已完成第 10 次药物筛查！欢迎支持独立开发。</string>
+    <string name="milestone_toast_25">🎉 已完成第 25 次筛查！感谢您对 RxSafety 的信任。</string>
+    <string name="dev_mode_simulate_support">模拟 Google Play 赞赏 (开发模式)</string>
+    <string name="toast_donation_successful">非常感谢！您现在是 RxSafety 赞赏支持者 ⭐</string>
+    <string name="about_support_dev_title">支持独立应用开发</string>
+    <string name="about_support_dev_body">RxSafety 100% 无广告、保护隐私且基于公开数据构建。自愿赞赏将用于维护医学数据库更新。</string>
+    <string name="splash_subtitle">临床药物相互作用与用药安全智能筛查</string>
+    <string name="back">返回</string>
+    <string name="donation_badge_subtitle">100% 无广告、保护隐私与离线运行</string>
+    <string name="google_pay_subtitle">支持 Google Pay 一键赞赏</string>
+    <string name="select_tier_desc">请在下方选择赞赏档位以支持独立开发：</string>
+    <string name="paypal_title">PayPal 直连与实时二维码扫码</string>
+    <string name="paypal_subtitle">请使用手机相机或 PayPal 应用扫码：</string>
+    <string name="enter_usd_amount">输入美元金额 ($)</string>
+    <string name="kofi_title">Ko-fi 独立应用咖啡赞赏</string>
+    <string name="kofi_desc">Ko-fi 是无手续费的独立开发者赞赏平台。请开发者喝一杯咖啡 ($3)，支持医学数据库持续更新！</string>
+    <string name="btn_copy_kofi_url">复制 Ko-fi 链接</string>
+    <string name="btn_support_options">支持开发选项</string>
+    <string name="toast_kofi_copied">已将 Ko-fi 链接复制到剪贴板！✓</string>
+</resources>

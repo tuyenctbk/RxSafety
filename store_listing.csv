@@ -1,0 +1,122 @@
+language,app_name,short_description,full_description
+en-US,"RxSafety: Medication Checker","Analyze drug interactions, FDA recalls, black box warnings, and dose schedules.","RxSafety is a clinical decision-support and medication safety application designed to help individuals, caregivers, and healthcare professionals evaluate potential drug-to-drug conflicts, monitor live FDA recalls, and inspect official drug monographs.
+
+Key Features:
+1. NIH RxNav Drug Interaction Screening: Evaluate complex multi-drug regimens using public clinical data from the U.S. National Library of Medicine (NIH RxNav/RxNorm). Instantly detect potential severe drug-drug contraindications and pharmacological mechanisms.
+2. Live FDA Enforcement Recalls: Access real-time Class I, Class II, and Class III drug recall notices directly from OpenFDA. Filter notices against your saved medications to protect yourself and your family.
+3. FDA Black Box & Label Inspector: Inspect official FDA drug monographs, boxed warnings, indications, precautions, and documented adverse reactions.
+4. Daily Medication Tracking & Reminders: Manage your personal medication schedule with encrypted local persistence (SQLite via Room). Receive reliable local reminders and track adherence.
+5. Patient Profiles & DoseFlow Sync: Organize multiple family member profiles, document medical conditions and allergies, and seamlessly export or import schedules via DoseFlow interchange format.
+6. Clinical Emergency Red Flag Guide: Access instant safety protocols for emergency adverse reactions (Serotonin Syndrome, Internal Bleeding, Angioedema, Rhabdomyolysis) and direct 24/7 U.S. Poison Control help.
+
+Disclaimer: RxSafety relies on public domain data provided by the NIH and US FDA. This app is for educational and screening purposes and does not replace professional medical advice."
+es-ES,"RxSafety: Verificador Med","Analice interacciones, retiros de la FDA, advertencias de caja negra y horarios.","RxSafety es una aplicación clínica para la seguridad de los medicamentos diseñada para ayudar a evaluar posibles interacciones medicamentosas, monitorear retiros de la FDA en tiempo real y consultar monografías oficiales.
+
+Características principales:
+1. Verificador de interacciones de la NIH RxNav: Evalúe regímenes de múltiples medicamentos utilizando datos clínicos de la Biblioteca Nacional de Medicina de EE. UU.
+2. Retiros activos de la FDA: Acceda a informes de cumplimiento y alertas de retiros Clase I, II y III directamente desde OpenFDA.
+3. Inspector de etiquetas y advertencias en recuadro: Consulte monografías oficiales de la FDA y advertencias críticas de caja negra.
+4. Registro diario y recordatorios: Guarde su horario de medicamentos localmente con privacidad en la base de datos de su dispositivo.
+5. Perfiles de pacientes y DoseFlow Sync: Administre perfiles familiares, alergias y afecciones médicas con sincronización DoseFlow.
+6. Guía de seguridad de emergencia: Identifique señales de alerta de reacciones adversas graves y llamadas directas a control de envenenamiento.
+
+Descargo de responsabilidad: RxSafety utiliza datos del dominio público de la NIH y la FDA de EE. UU. No sustituye el juicio médico profesional."
+fr-FR,"RxSafety: Anti-Interaction Med","Analysez les interactions médicamenteuses, les rappels FDA et les avertissements.","RxSafety est une application clinique d'analyse de la sécurité des médicaments conçue pour vous aider à évaluer les interactions médicamenteuses, suivre les rappels de la FDA et consulter les notices officielles.
+
+Fonctionnalités principales :
+1. Analyse des interactions NIH RxNav : Évaluez les traitements complexes grâce aux données de la Bibliothèque Nationale de Médecine des États-Unis.
+2. Rappels de médicaments FDA en direct : Suivez les alertes de rappel de Classe I, II et III en temps réel via OpenFDA.
+3. Inspecteur de monographies et Black Box FDA : Consultez les avertissements encadrés officiels et les précautions d'emploi.
+4. Suivi quotidien et rappels : Gérez votre traitement personnel stocké en toute confidentialité sur votre appareil via Room.
+5. Profils patients et DoseFlow : Organisez les profils de votre famille, renseignez les allergies et exportez au format DoseFlow.
+6. Guide de sécurité et urgences : Identifiez les signaux d'alarme critiques et contactez le centre antipoison.
+
+Avertissement : RxSafety utilise des données publiques officielles de la NIH et de la FDA. Cette application ne remplace pas un avis médical."
+de-DE,"RxSafety: Medikamenten-Prüfer","Analyse von Wechselwirkungen, FDA-Rückrufen, Warnungen und Einnahmeplänen.","RxSafety ist eine klinische Sicherheitsanwendung zur Überprüfung von Arzneimittelwechselwirkungen, FDA-Rückrufen und offiziellen Fachinformationen.
+
+Hauptmerkmale:
+1. Wechselwirkungsprüfung via NIH RxNav: Analysieren Sie Medikamentenkombinationen auf der Grundlage offizieller Daten der US National Library of Medicine.
+2. Live-FDA-Rückrufe: Erhalten Sie Echtzeit-Sicherheitswarnungen der Klassen I, II und III direkt von OpenFDA.
+3. Black-Box-Warnungen & Fachinfos: Prüfen Sie offizielle FDA-Monographien und kritische Warnhinweise.
+4. Tägliche Einnahme-Verwaltung: Speichern Sie Ihren Medikamentenplan lokal und datengeschützt auf Ihrem Gerät.
+5. Patientenprofile & DoseFlow-Sync: Verwalten Sie Profile für Familienmitglieder mit Unterstützung des DoseFlow-Formats.
+6. Klinischer Notfall-Ratgeber: Erkennen Sie Warnsignale schwerer Nebenwirkungen mit direktem Zugriff auf den Giftnotruf.
+
+Haftungsausschluss: RxSafety nutzt gemeinfreie Daten der NIH und FDA. Die App ersetzt keine ärztliche Beratung."
+zh-CN,"RxSafety 药物相互作用检查","分析药物相互作用、FDA召回预警、黑框警告及每日用药提醒计划。","RxSafety 是一款临床级别的药物安全与相互作用分析应用，旨在帮助患者、家属和医疗人员筛查药物冲突、跟踪 FDA 实时召回以及查询官方药品说明书。
+
+核心功能：
+1. NIH RxNav 相互作用筛查：基于美国国家医学图书馆 (NIH RxNav/RxNorm) 权威数据，深度评估多种药物联合使用的严重禁忌与药理机制。
+2. FDA 实时召回预警：直接对接 OpenFDA，获取 I、II、III 级召回与执法报告，支持按已保存药品自动比对。
+3. 说明书与黑框警告查询：快速调取 FDA 官方药品单行本、黑框警告 (Boxed Warnings)、适应症及不良反应记录。
+4. 日常用药跟踪与提醒：通过 Room 本地加密数据库私密保存服药计划，设置定时服药提醒与遵医嘱打卡。
+5. 多档案管理与 DoseFlow 同步：支持创建多位家庭成员档案，记录过敏史，并通过 DoseFlow 标准格式一键导出与同步。
+6. 紧急不良反应指南：提供五羟色胺综合征、严重内出血、血管性水肿等危急警示信号解析及毒物控制中心求助快捷通道。
+
+免责声明：RxSafety 使用 NIH 及美国 FDA 的公共开放数据。本应用仅供筛查与教育参考，不能替代专业医生诊断。"
+ja-JP,"RxSafety 相互作用チェッカー","薬物相互作用、FDA回収情報、黒框警告、服薬スケジュールを分析・管理。","RxSafety は、薬物相互作用の検証、FDA 回収情報の確認、公式添付文書の照会を支援する臨床医薬品安全アプリです。
+
+主な機能：
+1. NIH RxNav 相互作用チェック：米国国立医学図書館（NIH RxNav/RxNorm）の公式データに基づき、複数のお薬の併用禁忌や薬理作用を即座に分析します。
+2. リアルタイム FDA 回収情報：OpenFDA からクラス I、II、III の回収情報を取得し、保存したお薬と照合して安全を確認できます。
+3. 添付文書 & 黒枠警告インスペクター：FDA の公式添付文書、黒枠警告（Boxed Warning）、適応症、副作用を確認できます。
+4. 毎日のお薬管理 & リマインダー：Room データベースにより端末内に安全にお薬スケジュールを保存し、確実な服薬通知を提供します。
+5. マルチプロファイル & DoseFlow 同步：ご家族のプロファイル、アレルギー、持病を管理し、DoseFlow フォーマットでデータ共有が可能です。
+6. 臨床緊急安全ガイド：セロトニン症候群や内出血などの重大な副作用の危険サインと中毒情報センターのサポート情報を提供。
+
+免責事項：RxSafety は NIH および FDA のパブリックドメインデータを使用しています。本アプリは診断の代わりとなるものではありません。"
+pt-BR,"RxSafety: Verificador de Meds","Análise de interações medicamentosas, alertas da FDA e horários de medicação.","RxSafety é um aplicativo clínico de segurança medicamentosa projetado para avaliar potenciais interações entre remédios, acompanhar alertas da FDA e consultar bulas oficiais.
+
+Principais Recursos:
+1. Verificação de Interações NIH RxNav: Avalie esquemas de múltiplos medicamentos utilizando dados da Biblioteca Nacional de Medicina dos EUA.
+2. Alertas de Recolhimento da FDA: Acesse relatórios de recolhimento de Classe I, II e III diretamente do OpenFDA em tempo real.
+3. Bulas Oficiais e Avisos de Caixa Preta: Inspecione avisos graves de caixa preta e precauções das bulas da FDA.
+4. Controle Diário e Lembretes: Mantenha sua rotina de medicamentos salva com privacidade no banco de dados do seu dispositivo.
+5. Perfis de Pacientes e DoseFlow: Gerencie os remédios de toda a família e exporte dados via formato DoseFlow.
+6. Guia de Emergência e Seguranças: Identifique sinais de alerta de reações adversas e ligue para o centro de intoxicações.
+
+Isenção de Responsabilidade: O RxSafety utiliza dados públicos do NIH e da FDA. Não substitui o diagnóstico médico profissional."
+it-IT,"RxSafety: Controllo Farmaci","Analizza interazioni tra farmaci, ritiri FDA, avvertenze e orari di assunzione.","RxSafety è un'applicazione clinica per la sicurezza dei farmaci ideata per valutare interazioni farmacologiche, monitorare ritiri FDA e consultare foglietti illustrativi ufficiali.
+
+Caratteristiche principali:
+1. Analisi Interazioni NIH RxNav: Valuta combinazioni di più farmaci utilizzando i dati della National Library of Medicine statunitense.
+2. Ritiri Farmaci FDA in Tempo Reale: Accedi ad avvisi di ritiro di Classe I, II e III direttamente da OpenFDA.
+3. Ispezione Foglietti & Black Box FDA: Consulta le avvertenze speciali e le schede tecniche ufficiali.
+4. Diario Giornaliero & Promemoria: Salva la tua terapia in modo sicuro e privato sul dispositivo tramite database locale.
+5. Profili Paziente & DoseFlow Sync: Gestisci i farmaci della famiglia e sincronizza i dati nel formato DoseFlow.
+6. Guida di Sicurezza & Emergenze: Riconosci i segnali d'allarme delle reazioni avverse e contatta il centro antiveleni.
+
+Disclaimer: RxSafety utilizza dati di pubblico dominio di NIH e FDA. Non sostituisce il parere del medico."
+hi-IN,"RxSafety: दवा सुरक्षा जाँच","दवाओं के दुष्प्रभाव, FDA अलर्ट, चेतावनियों और खुराक समय सारणी का विश्लेषण करें।","RxSafety दवा सुरक्षा और दुष्प्रभाव विश्लेषण के लिए एक क्लीनिकल ऐप है, जो आपको दवाओं के आपसी दुष्प्रभावों की जाँच करने, FDA अलर्ट देखने और आधिकारिक दवा पर्ची पढ़ने में मदद करता है।
+
+मुख्य विशेषताएं:
+1. NIH RxNav दुष्प्रभाव जाँच: अमेरिकी नेशनल लाइब्रेरी ऑफ मेडिसिन के आंकड़ों के आधार पर कई दवाओं के आपसी प्रभावों का विश्लेषण करें।
+2. FDA लाइव सुरक्षा अलर्ट: OpenFDA से सीधे श्रेणी I, II और III के अलर्ट देखें और अपनी दवाओं से मिलान करें।
+3. ब्लैक बॉक्स चेतावनी व पर्ची: FDA द्वारा जारी गंभीर चेतावनियों और उपयोग संबंधी दिशानिर्देशों की जाँच करें।
+4. दैनिक खुराक रिकॉर्ड व रिमाइंडर: अपनी दैनिक दवाओं की सूची डिवाइस में सुरक्षित रखें और समय पर रिमाइंडर प्राप्त करें।
+5. मरीज प्रोफ़ाइल व DoseFlow सिंक: परिवार के सदस्यों की प्रोफ़ाइल बनाएं और DoseFlow फ़ॉर्मेट के माध्यम से डेटा ट्रांसफर करें।
+6. आपातकालीन सुरक्षा गाइड: गंभीर दुष्प्रभावों के लक्षण पहचानें और नि:शुल्क विष नियंत्रण केंद्र से संपर्क करें।
+
+अस्वीकरण: RxSafety NIH और FDA के सार्वजनिक आंकड़ों का उपयोग करता है। यह ऐप डॉक्टर की सलाह का विकल्प नहीं है।"
+ar-SA,"RxSafety: فحص سلامة الأدوية","تحليل التفاعلات الدوائية، وسحبات FDA، وتحذيرات الصندوق الأسود، وجداول الجرعات.","RxSafety هو تطبيق سريري لسلامة الأدوية مخصص لمساعدة المرضى ومقدمي الرعاية على تقييم التعارضات الدوائية ومتابعة سحبات FDA ومراجعة النشرات الطبية الرسمية.
+
+الميزات الرئيسية:
+1. فحص التفاعلات عبر NIH RxNav: تقييم تركيبات الأدوية المتعددة باستخدام بيانات المكتبة الوطنية الأمريكية للطب.
+2. سحبات أدوية FDA المباشرة: متابعة تقارير السحب والتنبيهات من الفئة الأولى والثانية والثالثة مباشرة عبر OpenFDA.
+3. فاحص النشرات وتحذيرات الصندوق الأسود: مراجعة النشرات الطبية الرسمية والتحذيرات الصارمة من FDA.
+4. جدول الأدوية اليومي والتنبيهات: حفظ جدول أدويتك المحلي بخصوصية تامة على جهازك عبر قاعدة بيانات Room.
+5. ملفات المرضى ومزامنة DoseFlow: إدارة ملفات أبناء العائلة وتصدير الجداول بصيغة DoseFlow القياسية.
+6. دليل الطوارئ والسلامة السريرية: التعرف على علامات الخطر الحرجة للتفاعلات العكسية والوصول المباشر لمركز السموم.
+
+إخلاء مسؤولية: يرتكز RxSafety على بيانات حكومية مفتوحة من NIH و FDA. لا يغني التطبيق عن الاستشارة الطبية."
+ru-RU,"RxSafety: Проверка лекарств","Анализ взаимодействия лекарств, отзывов FDA, черных рамок и графиков приема.","RxSafety — клиническое приложение для оценки безопасности лекарственных средств, помогающее проверять межлекарственные взаимодействия, отслеживать отзывы FDA и изучать официальные инструкции.
+
+Основные возможности:
+1. Проверка взаимодействий NIH RxNav: Анализ сложных схем лечения на основе данных Национальной медицинской библиотеки США.
+2. Отзывы лекарств FDA в реальном времени: Доступ к отчетам об отзывах Классов I, II и III напрямую из OpenFDA.
+3. Инструкции и предупреждения Black Box: Просмотр официальных монографий FDA и предупреждений в черных рамках.
+4. Ежедневный график и напоминания: Конфиденциальное хранение графика приема лекарств на устройстве через базу данных Room.
+5. Профили пациентов и синхронизация DoseFlow: Управление профилями членов семьи и обмен данными в формате DoseFlow.
+6. Справочник экстренной безопасности: Определение опасных симптомов побочных реакций и связь с токсикологическим центром.
+
+Отказ от ответственности: RxSafety использует открытые государственные данные NIH и FDA. Приложение не заменяет консультацию врача."

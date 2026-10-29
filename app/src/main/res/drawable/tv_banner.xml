@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Background Gradient Box -->
+    <path
+        android:pathData="M0,0h320v180h-320z">
+        <aapt:attr name="android:fillColor" xmlns:aapt="http://schemas.android.com/aapt">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="320"
+                android:endY="180"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#0D9488" />
+                <item android:offset="1.0" android:color="#0B192C" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Medical Shield Logo Symbol -->
+    <path
+        android:fillColor="#CCFBF1"
+        android:pathData="M60,40 C75,40 88,43 92,50 C92,75 80,97 60,110 C40,97 28,75 28,50 C32,43 45,40 60,40 Z" />
+
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M60,45 C72,45 82,48 85,53 C85,73 75,91 60,102 C45,91 35,73 35,53 C38,48 48,45 60,45 Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56,58 L64,58 L64,68 L74,68 L74,76 L64,76 L64,86 L56,86 L56,76 L46,76 L46,68 L56,68 Z" />
+</vector>

@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">जाँच (Checker)</string>
+    <string name="nav_recalls">वापसी अलर्ट</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">दवा पर्ची</string>
+    <string name="nav_guide">सुरक्षा गाइड</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">दवा परस्पर क्रिया जाँचकर्ता</string>
+    <string name="checker_subtitle">NIH RxNav के माध्यम से दवाओं के परस्पर गंभीर दुष्प्रभावों की जाँच करें</string>
+    <string name="clear_all">सभी हटाएं</string>
+    <string name="clinical_presets">उच्च जोखिम वाले क्लीनिकल सेट:</string>
+    <string name="search_drug_placeholder">दवा का ब्रांड या जेनेरिक नाम दर्ज करें (जैसे Lipitor, Metformin)...</string>
+    <string name="nih_rxnav_matches">NIH RxNav परिणाम:</string>
+    <string name="medications_to_evaluate">जाँच के लिए दवाएं (%d):</string>
+    <string name="empty_meds_notice">संभावित दुष्प्रभावों के विश्लेषण के लिए कम से कम 2 दवाएं चुनें।</string>
+    <string name="evaluating_pharmacology">दवा के प्रभाव और FDA अलर्ट की जाँच जारी है...</string>
+    <string name="tab_drug_conflicts">दवा परस्पर विरोध (%d)</string>
+    <string name="tab_dietary">आहार व अल्कोहल (%d)</string>
+    <string name="tab_fda_recalls">FDA वापसी अलर्ट (%d)</string>
+    <string name="no_severe_conflicts_title">कोई गंभीर दवा विरोध नहीं पाया गया</string>
+    <string name="no_severe_conflicts_subtitle">चुनी गई दवाओं के बीच डेटाबेस में कोई गंभीर या हानिकारक प्रभाव नहीं मिला है।</string>
+    <string name="no_dietary_title">कोई आहार संबंधी चेतावनी नहीं</string>
+    <string name="no_dietary_subtitle">इस सूची के लिए चकोतरा, शराब, कैल्शियम या पोटेशियम की कोई बड़ी चेतावनी नहीं है।</string>
+    <string name="no_recalls_match_title">चुनी गई दवाओं के लिए कोई सक्रिय FDA वापसी अलर्ट नहीं</string>
+    <string name="no_recalls_match_subtitle">OpenFDA में आपकी दवाओं से संबंधित कोई वापसी रिपोर्ट मौजूद नहीं है।</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">FDA दवा वापसी एवं सुरक्षा अलर्ट</string>
+    <string name="recalls_subtitle">OpenFDA से सीधे प्राप्त आधिकारिक सुरक्षा रिपोर्ट</string>
+    <string name="fda_classifications_title">FDA वापसी श्रेणियां:</string>
+    <string name="fda_classifications_body">• श्रेणी I: उच्चतम जोखिम। गंभीर क्षति या मृत्यु का खतरा।\n• श्रेणी II: अस्थायी या इलाज योग्य दुष्प्रभाव।\n• श्रेणी III: स्वास्थ्य पर गंभीर असर की संभावना बहुत कम।</string>
+    <string name="recall_search_placeholder">वापस ली गई दवा, कंपनी या कारण खोजें...</string>
+    <string name="filter_my_meds">मेरी सहेजी गई दवाओं से फ़िल्टर करें</string>
+    <string name="filter_my_meds_subtitle">केवल आपकी प्रोफ़ाइल की दवाओं से संबंधित वापसी अलर्ट दिखाएं</string>
+    <string name="recent_enforcement_reports">हाल की FDA रिपोर्टें (%d):</string>
+    <string name="no_recalls_title">कोई वापसी अलर्ट नहीं मिला</string>
+    <string name="no_recalls_subtitle">आपकी खोज से मेल खाती हुई कोई रिपोर्ट नहीं मिली।</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">दैनिक दवाएं (स्थानीय डिवाइस)</string>
+    <string name="tab_profiles_doseflow">प्रोफ़ाइल और DoseFlow</string>
+    <string name="daily_meds_title">मेरी दैनिक दवाएं</string>
+
+    <string name="daily_meds_subtitle">Room तकनीक द्वारा आपके डिवाइस के SQLite डेटाबेस में सुरक्षित सहेजा गया</string>
+    <string name="add_med">दवा जोड़ें</string>
+    <string name="local_device_adherence">दवा लेने की स्थिति</string>
+    <string name="adherence_status">आज %2$d में से %1$d ली गईं</string>
+    <string name="adherence_footer">आपकी दवा का समय आपके डिवाइस में सुरक्षित रहता है। दवा लेने के बाद टिक का निशान लगाएं।</string>
+    <string name="check_regimen_safety">दवा सुरक्षा जाँचें</string>
+    <string name="reset_day">दिन रीसेट करें</string>
+    <string name="daily_schedule_title">दैनिक समय सारणी (%d दवाएं):</string>
+    <string name="empty_daily_meds">अभी कोई दवा नहीं जोड़ी गई है। अपना शेड्यूल बनाने के लिए ऊपर \'दवा जोड़ें\' पर टैप करें।</string>
+    <string name="profiles_title">मरीजों की प्रोफ़ाइल और DoseFlow</string>
+    <string name="profiles_subtitle">सिंक्रोनाइज़ की गई दवा सूची और स्वचालित सुरक्षा जाँच</string>
+    <string name="new_profile">नई प्रोफ़ाइल</string>
+    <string name="doseflow_synergy">DoseFlow ऐप एकीकरण</string>
+    <string name="sync_active">v1 सिंक सक्रिय</string>
+    <string name="doseflow_banner_desc">DoseFlow ऐप के साथ प्रोफ़ाइल और रीयल-टाइम अलर्ट का स्वचालित तालमेल।</string>
+    <string name="export_sync_json">JSON सिंक निर्यात करें</string>
+    <string name="demo_doseflow_sync">DoseFlow सिंक डेमो</string>
+    <string name="scan_conflicts">दुष्प्रभाव स्कैन करें</string>
+    <string name="profile_regimen">प्रोफ़ाइल दवाएं (%d):</string>
+    <string name="add_medication">दवा जोड़ें</string>
+    <string name="empty_profile_meds">इस प्रोफ़ाइल में अभी कोई दवा नहीं है। \'दवा जोड़ें\' पर टैप करें या DoseFlow से सिंक करें।</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">दैनिक दवा जोड़ें (स्थानीय डिवाइस)</string>
+    <string name="med_name_label">दवा का नाम (जैसे Lisinopril)</string>
+    <string name="dosage_label">खुराक / शक्ति (जैसे 20 mg)</string>
+    <string name="form_label">प्रकार (गोली, कैप्सूल)</string>
+    <string name="time_label">समय (जैसे 08:00 AM)</string>
+    <string name="frequency_label">आवृत्ति (जैसे दिन में एक बार सुबह)</string>
+    <string name="instructions_label">निर्देश (जैसे भोजन के साथ लें)</string>
+    <string name="prescriber_label">डॉक्टर / क्लिनिक (वैकल्पिक)</string>
+    <string name="save_to_device">डिवाइस में सहेजें</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="add_profile_dialog_title">नया मरीज प्रोफ़ाइल बनाएं</string>
+    <string name="patient_name_label">मरीज का पूरा नाम</string>
+    <string name="relationship_label">संबंध (स्वयं, माता, पिता, बच्चा)</string>
+    <string name="age_label">उम्र</string>
+    <string name="conditions_label">स्वास्थ्य स्थिति (जैसे उच्च रक्तचाप, किडनी रोग)</string>
+    <string name="allergies_label">ज्ञात एलर्जी (जैसे पेनिसिलिन)</string>
+    <string name="create_profile">प्रोफ़ाइल बनाएं</string>
+    <string name="demo_sync_dialog_title">DoseFlow सिंक का परीक्षण</string>
+    <string name="demo_sync_dialog_desc">DoseFlow से RxSafety में स्वचालित डेटा ट्रांसफर का परीक्षण करने के लिए एक विकल्प चुनें:</string>
+    <string name="close">बंद करें</string>
+    <string name="doseflow_json_title">DoseFlow सिंक डेटा (JSON)</string>
+    <string name="doseflow_json_desc">प्रोफ़ाइल सिंक करने के लिए DoseFlow मानक डेटा फ़ॉर्मेट:</string>
+    <string name="copy_to_clipboard">क्लिपबोर्ड पर कॉपी करें</string>
+    <string name="add_med_profile_dialog_title">प्रोफ़ाइल में दवा जोड़ें</string>
+    <string name="save_medication">दवा सहेजें</string>
+    <string name="notes_instructions_label">डॉक्टर की सलाह / निर्देश (वैकल्पिक)</string>
+    <string name="reminder_notification_text">आपकी %s दवा लेने का समय हो गया है।</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">FDA दवा पर्ची और ब्लैक बॉक्स चेतावनी</string>
+    <string name="inspector_subtitle">FDA द्वारा जारी आधिकारिक दवा पर्ची, गंभीर चेतावनियों और उपयोग की जाँच करें</string>
+    <string name="frequently_inspected">अक्सर खोजी जाने वाली दवाएं:</string>
+    <string name="inspector_search_placeholder">दवा का नाम खोजें...</string>
+    <string name="inspect">जाँचें</string>
+    <string name="fda_label">FDA दवा पर्ची</string>
+    <string name="fda_boxed_warning">FDA ब्लैक बॉक्स चेतावनी (BOXED WARNING)</string>
+    <string name="warnings_precautions">चेतावनियाँ और सावधानियाँ</string>
+    <string name="indications_usage">उपयोग और चिकित्सकीय लाभ</string>
+    <string name="adverse_reactions">दर्ज किए गए दुष्प्रभाव</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">चिकित्सकीय सुरक्षा गाइड</string>
+    <string name="guide_subtitle">आपातकालीन लक्षण, फार्मासिस्ट चेकलिस्ट और सुरक्षा नियम</string>
+    <string name="poison_control_title">अमेरिकी विष नियंत्रण केंद्र सहायता</string>
+    <string name="poison_control_subtitle">24/7 नि:शुल्क और गोपनीय डॉक्टरी सलाह</string>
+    <string name="call_poison_control">1-800-222-1222 पर कॉल करें</string>
+    <string name="red_flags_title">🚨 गंभीर दुष्परिणामों के आपातकालीन लक्षण:</string>
+    <string name="ss_title">सेरोटोनिन सिंड्रोम (Serotonin Syndrome)</string>
+    <string name="ss_drugs">SSRIs, SNRIs, Tramadol, Triptans, MAOIs</string>
+    <string name="ss_symptoms">घबराहट, मानसिक भ्रम, तेज़ दिल की धड़कन, कांपना, मांसपेशियों में अकड़न, तेज़ बुखार और दौरे।</string>
+    <string name="bleed_title">गंभीर आंतरिक रक्तस्राव</string>
+    <string name="bleed_drugs">Warfarin, DOACs (Eliquis, Xarelto), Aspirin, NSAIDs</string>
+    <string name="bleed_symptoms">काला मल, खून की उल्टी या खांसी, अत्यधिक कमजोरी, सिर में गंभीर दर्द।</string>
+    <string name="angio_title">सांस की नली में गंभीर सूजन और रुकावट</string>
+    <string name="angio_drugs">ACE इनहिबिटर (Lisinopril, Enalapril), ARBs</string>
+
+    <string name="angio_symptoms">होंठ, जीभ, गले या चेहरे पर अचानक सूजन जिससे सांस लेने में तकलीफ हो। तुरंत आपातकालीन मदद लें।</string>
+    <string name="rhabdo_title">मांसपेशियों का गंभीर क्षय (Rhabdomyolysis)</string>
+    <string name="rhabdo_drugs">स्टैटिन दवाओं के साथ कुछ एंटीबायोटिक या एंटीफंगल दवाएं</string>
+    <string name="rhabdo_symptoms">मांसपेशियों में अत्यधिक दर्द, अत्यधिक कमजोरी और चाय के रंग का गहरा पेशाब।</string>
+    <string name="pharmacist_questions_title">📋 अपने फार्मासिस्ट से पूछने योग्य 5 प्रश्न:</string>
+    <string name="pq1_q">क्या यह दवा मेरी वर्तमान में चल रही अन्य दवाओं से टकराती है?</string>
+    <string name="pq1_tip">हमेशा अपनी सभी दवाओं, विटामिनों और जड़ी-बूटियों की पूरी सूची साथ रखें।</string>
+    <string name="pq2_q">क्या मुझे चकोतरा, जूस या शराब से परहेज करना चाहिए?</string>
+    <string name="pq2_tip">चकोतरा (Grapefruit), दूध/कैल्शियम उत्पाद, पोटेशियम विकल्प और शराब अक्सर दवाओं को प्रभावित करते हैं।</string>
+    <string name="pq3_q">यदि मेरी कोई खुराक छूट जाए तो मुझे क्या करना चाहिए?</string>
+    <string name="pq3_tip">डॉक्टर या फार्मासिस्ट की सलाह के बिना कभी भी दोगुनी खुराक न लें।</string>
+    <string name="pq4_q">दवा के दुष्प्रभाव के शुरुआती लक्षण क्या हैं?</string>
+    <string name="pq4_tip">सामान्य दुष्प्रभावों और आपातकालीन लक्षणों के बीच अंतर समझें।</string>
+    <string name="pq5_q">क्या इस दवा के साथ नियमित ब्लड टेस्ट की आवश्यकता है?</string>
+    <string name="pq5_tip">Warfarin, Lisinopril, Digoxin आदि दवाओं के साथ नियमित खून की जाँच आवश्यक होती है।</string>
+    <string name="disclaimer_title">सरकारी डेटा एवं चिकित्सा अस्वीकरण</string>
+    <string name="disclaimer_body">RxSafety अमेरिकी नेशनल लाइब्रेरी ऑफ मेडिसिन (NIH RxNav) और FDA (OpenFDA) के डेटा का उपयोग करता है। यह ऐप केवल जानकारी के लिए है और डॉक्टर की सलाह का विकल्प नहीं है।</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">जोखिम स्तर:</string>
+    <string name="pharmacological_mechanism">दवा का कार्य-तंत्र:</string>
+    <string name="clinical_management">चिकित्सकीय प्रबंधन / सुझाव:</string>
+    <string name="show_less">कम दिखाएं</string>
+    <string name="tap_for_pharmacology">दवा प्रभाव और चिकित्सकीय सलाह के लिए टैप करें</string>
+    <string name="interacts_with">इसके साथ दुष्प्रभाव: %s</string>
+    <string name="recommendation">सलाह: %s</string>
+    <string name="reason_for_recall">वापसी का कारण:</string>
+    <string name="firm">कंपनी: %s</string>
+    <string name="recall_no">क्रमांक: %s</string>
+    <string name="emergency_badge">आपातकालीन</string>
+    <string name="associated_with">संबंधित दवा: %s</string>
+    <string name="rx_prefix">Rx: %s</string>
+    <string name="rxcui_prefix">RxCUI: %s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">Rx खोज</string>
+    <string name="rx_search_title">NIH RxNav दवा खोज</string>
+    <string name="rx_search_subtitle">RxNorm कोड (RxCUI) खोजें और दवाओं को दुष्प्रभाव जाँच के लिए तैयार करें</string>
+    <string name="rx_search_placeholder">ब्रांड या जेनेरिक नाम से खोजें (जैसे Lipitor, Warfarin)...</string>
+    <string name="rx_search_popular_title">अक्सर खोजी जाने वाली दवाएं:</string>
+    <string name="rx_filter_all">सभी श्रेणियां</string>
+    <string name="rx_filter_clinical">क्लिनिकल दवाएं (SCD)</string>
+    <string name="rx_filter_branded">ब्रांडेड दवाएं (SBD)</string>
+    <string name="rx_filter_ingredients">मुख्य तत्व (IN)</string>
+    <string name="rx_filter_brand_names">ब्रांड नाम (BN)</string>
+    <string name="rx_found_count">%d RxNorm कोड मिले</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">अन्य नाम: %s</string>
+    <string name="rx_score_prefix">समानता अंक: %s</string>
+    <string name="rx_stage_button">जाँच के लिए जोड़ें</string>
+    <string name="rx_staged_button">जोड़ा गया ✓</string>
+    <string name="rx_save_daily_button">दैनिक दवाओं में सहेजें</string>
+    <string name="rx_inspect_fda_button">FDA पर्ची देखें</string>
+    <string name="rx_tray_title">जाँच के लिए चुनी गईं दवाएं (%d)</string>
+    <string name="rx_tray_hint_single">दुष्प्रभाव जाँच के लिए कम से कम 2 दवाएं चुनें।</string>
+    <string name="rx_tray_hint_ready">तैयार! NIH डेटाबेस द्वारा जाँच करने के लिए नीचे टैप करें।</string>
+    <string name="rx_run_check_button">अभी दुष्प्रभावों की जाँच करें (%d)</string>
+    <string name="rx_clear_staged">सूची खाली करें</string>
+    <string name="rx_searching_label">अमेरिका की नेशनल लाइब्रेरी ऑफ मेडिसिन (NIH) से खोज जारी है...</string>
+    <string name="rx_no_results_title">कोई परिणाम नहीं मिला</string>
+    <string name="rx_no_results_subtitle">\"%1$s\" के लिए कोई कोड नहीं मिला। कृपया जेनेरिक नाम से खोजें या स्पेलिंग जाँचें।</string>
+    <string name="rx_empty_hero_title">आधिकारिक NIH RxNav व RxNorm निर्देशिका</string>
+    <string name="rx_empty_hero_desc">RxNorm कोड दवाओं की सटीक पहचान और उनके आपसी दुष्प्रभावों की सही जाँच के लिए आवश्यक हैं।</string>
+    <string name="rx_what_is_rxcui">RxCUI क्या है?</string>
+    <string name="rx_what_is_rxcui_desc">RxNorm यूनिक कोड (RxCUI) प्रत्येक दवा के लिए एक मानक संख्या है जिसका उपयोग दवा त्रुटियों और दुष्प्रभावों को रोकने के लिए किया जाता है।</string>
+    <string name="toast_rxcui_copied">RxCUI %s क्लिपबोर्ड पर कॉपी हो गया!</string>
+    <string name="toast_payload_copied">DoseFlow सिंक डेटा क्लिपबोर्ड पर कॉपी हो गया</string>
+    <string name="toast_staged_added">%s जाँच सूची में जोड़ा गया</string>
+    <string name="toast_staged_removed">%s जाँच सूची से हटाया गया</string>
+    <string name="toast_saved_to_daily">%s आपकी दैनिक दवा सूची में सहेजा गया</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">RxSafety विकास का समर्थन करें</string>
+    <string name="donation_subtitle">दवाओं के दुष्प्रभावों की जाँच को 100% विज्ञापन-मुक्त, निजी और स्वतंत्र रखें</string>
+    <string name="tab_google_play">Google Play</string>
+    <string name="tab_paypal">PayPal और QR</string>
+    <string name="tab_kofi">Ko-fi टिप जार</string>
+    <string name="tier_1_title">$1.99 एस्प्रेसो ☕</string>
+    <string name="tier_2_title">$4.99 कॉफ़ी और डोनट 🍩</string>
+    <string name="tier_3_title">$9.99 लंच समर्थक 🍱</string>
+    <string name="tier_4_title">$19.99 क्लिनिकल प्रायोजक 🏆</string>
+    <string name="btn_pay_google_play">Google Play से समर्थन करें (%s)</string>
+    <string name="btn_open_paypal">PayPal लिंक खोलें</string>
+    <string name="btn_copy_paypal_url">PayPal लिंक कॉपी करें</string>
+    <string name="btn_open_kofi">Ko-fi पर समर्थन करें</string>
+    <string name="active_supporter_badge">समर्थक ⭐</string>
+    <string name="active_supporter_thanks">सक्रिय समर्थक बनने के लिए धन्यवाद!</string>
+    <string name="home_banner_title">RxSafety पसंद आ रहा है?</string>
+    <string name="home_banner_body">दवाओं की जाँच को 100% विज्ञापन-मुक्त और स्वतंत्र रखने में मदद करें।</string>
+    <string name="home_banner_action">डेवलपर को समर्थन दें</string>
+    <string name="post_op_success_title">स्कैन पूरा हुआ!</string>
+    <string name="post_op_success_body">यदि RxSafety ने आपका समय बचाया तो डेवलपर को कॉफ़ी उपहार में दें।</string>
+    <string name="post_op_support_btn">कॉफ़ी उपहार में दें ☕</string>
+    <string name="milestone_toast_10">🎉 10वीं जाँच पूरी हुई! स्वतंत्र विकास का समर्थन करने पर विचार करें।</string>
+    <string name="milestone_toast_25">🎉 25वीं जाँच! RxSafety पर भरोसा करने के लिए धन्यवाद।</string>
+    <string name="dev_mode_simulate_support">Play सपोर्ट का सिमुलेशन (डेव मोड)</string>
+    <string name="toast_donation_successful">धन्यवाद! अब आप एक सक्रिय समर्थक हैं ⭐</string>
+    <string name="about_support_dev_title">स्वतंत्र विकास का समर्थन करें</string>
+    <string name="about_support_dev_body">RxSafety 100% विज्ञापन-मुक्त, निजी और खुले डेटा पर आधारित है। आपका स्वैच्छिक योगदान चिकित्सा डेटाबेस अपडेट और रखरखाव में मदद करता है।</string>
+    <string name="splash_subtitle">क्लिनिकल दवा परस्पर क्रिया और सुरक्षा जानकारी</string>
+    <string name="back">पीछे</string>
+    <string name="donation_badge_subtitle">100% विज्ञापन-मुक्त, निजी और ऑफ़लाइन</string>
+    <string name="google_pay_subtitle">निजी 1-टैप Google Pay समर्थन</string>
+    <string name="select_tier_desc">स्वतंत्र विकास का समर्थन करने के लिए नीचे एक योगदान राशि चुनें:</string>
+    <string name="paypal_title">सीधा PayPal और लाइव QR कोड स्कैन</string>
+    <string name="paypal_subtitle">अपने फ़ोन कैमरे या PayPal ऐप से स्कैन करें:</string>
+    <string name="enter_usd_amount">USD राशि दर्ज करें ($)</string>
+    <string name="kofi_title">स्वतंत्र ऐप्स के लिए Ko-fi टिप जार</string>
+    <string name="kofi_desc">Ko-fi स्वतंत्र डेवलपर्स को समर्थन देने का एक लोकप्रिय मंच है। निरंतर क्लिनिकल अपडेट के लिए कॉफ़ी ($3) का योगदान दें!</string>
+    <string name="btn_copy_kofi_url">Ko-fi URL कॉपी करें</string>
+    <string name="btn_support_options">विकास समर्थन विकल्प</string>
+    <string name="toast_kofi_copied">Ko-fi लिंक क्लिपबोर्ड पर कॉपी हो गया! ✓</string>
+</resources>

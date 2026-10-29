@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Protective Shield Contour -->
+    <path
+        android:fillColor="#CCFBF1"
+        android:pathData="M54,18 C68,18 80,21 84,27 C84,52 72,74 54,88 C36,74 24,52 24,27 C28,21 40,18 54,18 Z" />
+    
+    <!-- Inner Dark Teal Shield Accent -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M54,23 C65,23 75,25 78,30 C78,50 68,69 54,81 C40,69 30,50 30,30 C33,25 43,23 54,23 Z" />
+
+    <!-- Medical Cross Core -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M49,38 L59,38 L59,49 L70,49 L70,59 L59,59 L59,70 L49,70 L49,59 L38,59 L38,49 L49,49 Z" />
+
+    <!-- Capsule Pill Symbol Accent -->
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M54,43 C58.4,43 62,46.6 62,51 L62,57 C62,61.4 58.4,65 54,65 C49.6,65 46,61.4 46,57 L46,51 C46,46.6 49.6,43 54,43 Z" />
+    
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,43 C58.4,43 62,46.6 62,51 L62,54 L46,54 L46,51 C46,46.6 49.6,43 54,43 Z" />
+</vector>

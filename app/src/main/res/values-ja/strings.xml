@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">相互作用</string>
+    <string name="nav_recalls">回収情報</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">添付文書</string>
+    <string name="nav_guide">安全ガイド</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">相互作用チェッカー</string>
+    <string name="checker_subtitle">NIH RxNav を通じた重大な薬物相互作用の検証</string>
+    <string name="clear_all">すべてクリア</string>
+    <string name="clinical_presets">高リスク臨床プリセット：</string>
+    <string name="search_drug_placeholder">商品名または一般名を入力（例：Lipitor, Metformin）...</string>
+    <string name="nih_rxnav_matches">NIH RxNav 検索結果：</string>
+    <string name="medications_to_evaluate">評価する薬剤 (%d)：</string>
+    <string name="empty_meds_notice">相互作用を分析するには、上記で2つ以上の薬剤を選択してください。</string>
+    <string name="evaluating_pharmacology">薬理作用および FDA 回収情報を評価中...</string>
+    <string name="tab_drug_conflicts">薬物衝突 (%d)</string>
+    <string name="tab_dietary">食事・アルコール (%d)</string>
+    <string name="tab_fda_recalls">FDA 回収 (%d)</string>
+    <string name="no_severe_conflicts_title">重大な薬物衝突は検出されませんでした</string>
+    <string name="no_severe_conflicts_subtitle">臨床データベースにおいて、選択された薬剤間に記録された高リスク相互作用は見つかりませんでした。</string>
+    <string name="no_dietary_title">食事衝突警告なし</string>
+    <string name="no_dietary_subtitle">グレープフルーツ、アルコール、カルシウム、カリウムに関する重大な注意警告は発生していません。</string>
+    <string name="no_recalls_match_title">選択した薬剤に該当するFDA回収情報はありません</string>
+    <string name="no_recalls_match_subtitle">入力された薬剤には現在、OpenFDA で一致する回収情報はありません。</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">FDA 医薬品回収・警報</string>
+    <string name="recalls_subtitle">OpenFDA から直接取得するリアルタイムの安全報告</string>
+    <string name="fda_classifications_title">FDA 回収分類：</string>
+    <string name="fda_classifications_body">• クラスI：最高リスク。重篤な健康被害や死亡を引き起こす恐れ。\n• クラスII：一時的または可逆的な健康被害。\n• クラスIII：健康被害を引き起こす可能性は低い。</string>
+    <string name="recall_search_placeholder">回収薬剤、企業名、理由を検索...</string>
+    <string name="filter_my_meds">保存済みお薬で絞り込み</string>
+    <string name="filter_my_meds_subtitle">プロファイル内の薬剤と一致する回収情報のみを表示</string>
+    <string name="recent_enforcement_reports">最近の FDA 報告 (%d)：</string>
+    <string name="no_recalls_title">回収情報が見つかりません</string>
+    <string name="no_recalls_subtitle">検索条件に一致する報告はありませんでした。</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">毎日のお薬 (ローカル端末)</string>
+    <string name="tab_profiles_doseflow">プロファイル &amp; DoseFlow</string>
+    <string name="daily_meds_title">毎日服用するお薬</string>
+
+    <string name="daily_meds_subtitle">Room 経由で端末内の SQLite データベースに安全に保存</string>
+    <string name="add_med">お薬を追加</string>
+    <string name="local_device_adherence">端末内の服用達成度</string>
+    <string name="adherence_status">本日 %1$d / %2$d 服用済み</string>
+    <string name="adherence_footer">毎日のスケジュールは端末内に安全に保存されます。服薬後にチェックを入れてください。</string>
+    <string name="check_regimen_safety">処方の安全性を確認</string>
+    <string name="reset_day">本日の状態をリセット</string>
+    <string name="daily_schedule_title">本日のスケジュール (%d 種類)：</string>
+    <string name="empty_daily_meds">まだお薬が登録されていません。上の「お薬を追加」をタップしてください。</string>
+    <string name="profiles_title">患者プロファイル &amp; DoseFlow</string>
+    <string name="profiles_subtitle">同期されたお薬箱と自動相互作用スキャン</string>
+    <string name="new_profile">新規プロファイル</string>
+    <string name="doseflow_synergy">DoseFlow アプリ連携</string>
+    <string name="sync_active">v1 同期アクティブ</string>
+    <string name="doseflow_banner_desc">DoseFlow アプリとの間でプロファイルと警告通知をリアルタイム自動同期します。</string>
+    <string name="export_sync_json">同期 JSON エクスポート</string>
+    <string name="demo_doseflow_sync">DoseFlow 同期デモ</string>
+    <string name="scan_conflicts">衝突をスキャン</string>
+    <string name="profile_regimen">プロファイル内のお薬 (%d)：</string>
+    <string name="add_medication">薬剤を追加</string>
+    <string name="empty_profile_meds">このプロファイルにはまだ薬剤がありません。「薬剤を追加」をタップするか DoseFlow で同期してください。</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">毎日のお薬を追加 (ローカル端末)</string>
+    <string name="med_name_label">お薬の名前（例：Lisinopril）</string>
+    <string name="dosage_label">用量（例：20 mg）</string>
+    <string name="form_label">剤形（錠剤、カプセル）</string>
+    <string name="time_label">時間（例：08:00 AM）</string>
+    <string name="frequency_label">頻度（例：1日1回 朝食後）</string>
+    <string name="instructions_label">指示（例：食後に服用）</string>
+    <string name="prescriber_label">処方医 / 病院（任意）</string>
+    <string name="save_to_device">端末に保存</string>
+    <string name="cancel">キャンセル</string>
+    <string name="add_profile_dialog_title">新規プロファイル作成</string>
+    <string name="patient_name_label">患者の氏名</string>
+    <string name="relationship_label">関係（本人、母、父、子供）</string>
+    <string name="age_label">年齢</string>
+    <string name="conditions_label">持病・疾患（カンマ区切り、例：高血圧、CKD）</string>
+    <string name="allergies_label">アレルギー（例：ペニシリン）</string>
+    <string name="create_profile">プロファイル作成</string>
+    <string name="demo_sync_dialog_title">DoseFlow 処方同期のシミュレーション</string>
+    <string name="demo_sync_dialog_desc">臨床プリセットを選択して、DoseFlow から RxSafety へのリアルタイム自動同期をテストします：</string>
+    <string name="close">閉じる</string>
+    <string name="doseflow_json_title">DoseFlow 同期データ (JSON)</string>
+    <string name="doseflow_json_desc">プロファイル同期のための標準 DoseFlow 相互運用フォーマット：</string>
+    <string name="copy_to_clipboard">クリップボードにコピー</string>
+    <string name="add_med_profile_dialog_title">プロファイルに薬剤を追加</string>
+    <string name="save_medication">薬剤を保存</string>
+    <string name="notes_instructions_label">医師のメモ / 指示（任意）</string>
+    <string name="reminder_notification_text">%s を服用する時間です。</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">FDA 添付文書 &amp; 警告インスペクター</string>
+    <string name="inspector_subtitle">公式 FDA 医薬品添付文書、黒枠警告、適応症を照会</string>
+    <string name="frequently_inspected">よく検索される薬剤：</string>
+    <string name="inspector_search_placeholder">薬剤名を検索...</string>
+    <string name="inspect">詳細を見る</string>
+    <string name="fda_label">FDA 添付文書</string>
+    <string name="fda_boxed_warning">FDA 黒枠警告 (BOXED WARNING)</string>
+    <string name="warnings_precautions">警告・使用上の注意</string>
+    <string name="indications_usage">効能・効果・臨床使用</string>
+    <string name="adverse_reactions">報告されている副作用</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">臨床安全ガイド</string>
+    <string name="guide_subtitle">緊急警告サイン、薬剤師チェックリスト、安全プロトコル</string>
+    <string name="poison_control_title">米国中毒情報センター相談</string>
+    <string name="poison_control_subtitle">24時間365日 無料・秘密厳守の医療相談</string>
+    <string name="call_poison_control">1-800-222-1222 に発信</string>
+    <string name="red_flags_title">🚨 重篤な副作用の危険サイン：</string>
+    <string name="ss_title">セロトニン症候群 (SS)</string>
+    <string name="ss_drugs">SSRI, SNRI, トラマドール, トリプタン系, MAO阻害薬</string>
+    <string name="ss_symptoms">不安、混乱、心拍急増、身震い、強い筋肉のこわばり、震え、高熱、発作。</string>
+    <string name="bleed_title">重篤な内出血</string>
+    <string name="bleed_drugs">ワルファリン, DOAC (イグザレルト等), アスピリン, NSAIDs</string>
+    <string name="bleed_symptoms">黒色便、吐血、コーヒー残渣様嘔吐、異常な脱力感、激しい持続性頭痛。</string>
+    <string name="angio_title">重篤な血管性浮腫・気道閉塞</string>
+    <string name="angio_drugs">ACE阻害薬, ARB</string>
+
+    <string name="angio_symptoms">唇、舌、喉、顔の急速な腫れによる喘鳴と呼吸困難。直ちに救急車を呼んでください。</string>
+    <string name="rhabdo_title">重篤な横紋筋融解症</string>
+    <string name="rhabdo_drugs">スタチン系とマクロライド系・アゾール系の併用</string>
+    <string name="rhabdo_symptoms">激しい広範な筋肉痛、著しい脱力感、お茶のような濃い色の尿。</string>
+    <string name="pharmacist_questions_title">📋 薬剤師に確認すべき 5 つの質問：</string>
+    <string name="pq1_q">現在服用中の処方薬や市販薬との相互作用はありますか？</string>
+    <string name="pq1_tip">ビタミン剤やサプリメントを含む、服用中のお薬の一覧を必ずお持ちください。</string>
+    <string name="pq2_q">避けるべき特定の食べ物、ジュース、アルコールはありますか？</string>
+    <string name="pq2_tip">グレープフルーツ、乳製品、カリウム代替塩、アルコールなどが代表的です。</string>
+    <string name="pq3_q">誤って飲み忘れた場合はどうすればよいですか？</string>
+    <string name="pq3_tip">医師や薬剤師の指示なしに、一度に2回分を服用しないでください。</string>
+    <string name="pq4_q">副作用の初期症状にはどのようなものがありますか？</string>
+    <string name="pq4_tip">軽度の副作用と、緊急受診が必要な危険サインの違いを理解しておきましょう。</string>
+    <string name="pq5_q">定期的な血液検査が必要なお薬ですか？</string>
+    <string name="pq5_tip">ワルファリンやリシノプリルなどは定期的な血液検査が必要です。</string>
+    <string name="disclaimer_title">政府オープンデータおよび免責事項</string>
+    <string name="disclaimer_body">RxSafety は米国国立医学図書館 (NIH RxNav) および FDA (OpenFDA) のパブリックドメインデータを参照しています。本アプリはスクリーニング用であり、医師の診断に代わるものではありません。</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">臨床リスク：</string>
+    <string name="pharmacological_mechanism">薬理メカニズム：</string>
+    <string name="clinical_management">臨床管理・対応方法：</string>
+    <string name="show_less">折りたたむ</string>
+    <string name="tap_for_pharmacology">タップして薬理作用・臨床指導を表示</string>
+    <string name="interacts_with">相互作用の相手: %s</string>
+    <string name="recommendation">推奨対応: %s</string>
+    <string name="reason_for_recall">回収理由：</string>
+    <string name="firm">製造販売業者: %s</string>
+    <string name="recall_no">番号: %s</string>
+    <string name="emergency_badge">緊急</string>
+    <string name="associated_with">関連薬剤: %s</string>
+    <string name="rx_prefix">処方名: %s</string>
+    <string name="rxcui_prefix">RxCUI: %s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">Rx 検索</string>
+    <string name="rx_search_title">NIH RxNav 医薬品コード検索</string>
+    <string name="rx_search_subtitle">RxNorm 識別子 (RxCUI) を検索し、相互作用チェック用トレイに準備します</string>
+    <string name="rx_search_placeholder">商品名、一般名、剤形を検索（例：Lipitor, Warfarin）...</string>
+    <string name="rx_search_popular_title">よく検索される臨床キーワード：</string>
+    <string name="rx_filter_all">すべての概念</string>
+    <string name="rx_filter_clinical">臨床用医薬品 (SCD)</string>
+    <string name="rx_filter_branded">ブランド医薬品 (SBD)</string>
+    <string name="rx_filter_ingredients">有効成分 (IN)</string>
+    <string name="rx_filter_brand_names">商品名 (BN)</string>
+    <string name="rx_found_count">%d 件の RxNorm 概念識別子が見つかりました</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">類義語: %s</string>
+    <string name="rx_score_prefix">一致スコア: %s</string>
+    <string name="rx_stage_button">トレイに追加</string>
+    <string name="rx_staged_button">トレイに追加済み ✓</string>
+    <string name="rx_save_daily_button">毎日のお薬に保存</string>
+    <string name="rx_inspect_fda_button">FDA 添付文書</string>
+    <string name="rx_tray_title">チェック準備完了 (%d)</string>
+    <string name="rx_tray_hint_single">相互作用を評価するには、2つ以上の薬剤を選択してください。</string>
+    <string name="rx_tray_hint_ready">準備完了！下をタップして NIH データベースで相互作用を分析します。</string>
+    <string name="rx_run_check_button">相互作用を今すぐチェック (%d)</string>
+    <string name="rx_clear_staged">トレイをクリア</string>
+    <string name="rx_searching_label">米国国立医学図書館 (NIH) データベースを照会中...</string>
+    <string name="rx_no_results_title">RxNav 概念が見つかりません</string>
+    <string name="rx_no_results_subtitle">\"%1$s\" に一致する概念はありませんでした。一般名（例：Lipitor ではなく Atorvastatin）で検索してみてください。</string>
+    <string name="rx_empty_hero_title">公式 NIH RxNav &amp; RxNorm ディレクトリ</string>
+    <string name="rx_empty_hero_desc">RxNorm は、米国国立医学図書館 (NLM) が提供する標準化された識別子 (RxCUI) です。正確な相互作用チェックに必要な RxCUI を検索できます。</string>
+    <string name="rx_what_is_rxcui">RxCUI とは？</string>
+    <string name="rx_what_is_rxcui_desc">RxNorm 概念一意識別子 (RxCUI) は、各臨床用医薬品に割り当てられた標準化コードです。医療システムで薬物相互作用や誤投薬を防止するために使用されます。</string>
+    <string name="toast_rxcui_copied">RxCUI %s をクリップボードにコピーしました！</string>
+    <string name="toast_payload_copied">DoseFlow 同期データをクリップボードにコピーしました</string>
+    <string name="toast_staged_added">%s をチェックトレイに追加しました</string>
+    <string name="toast_staged_removed">%s をチェックトレイから削除しました</string>
+    <string name="toast_saved_to_daily">%s を毎日のお薬に保存しました</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">RxSafety の開発を支援</string>
+    <string name="donation_subtitle">お薬相互作用チェックを 100% 広告なし・プライベート・独立して維持します</string>
+    <string name="tab_google_play">Google Play 支援</string>
+    <string name="tab_paypal">PayPal &amp; QR コード</string>
+    <string name="tab_kofi">Ko-fi チップ箱</string>
+    <string name="tier_1_title">$1.99 エスプレッソ ☕</string>
+    <string name="tier_2_title">$4.99 コーヒー &amp; ドーナツ 🍩</string>
+    <string name="tier_3_title">$9.99 ランチサポーター 🍱</string>
+    <string name="tier_4_title">$19.99 臨床スペシャルスポンサー 🏆</string>
+    <string name="btn_pay_google_play">Google Play で支援 (%s)</string>
+    <string name="btn_open_paypal">PayPal リンクを開く</string>
+    <string name="btn_copy_paypal_url">PayPal リンクをコピー</string>
+    <string name="btn_open_kofi">Ko-fi で支援する</string>
+    <string name="active_supporter_badge">サポーター ⭐</string>
+    <string name="active_supporter_thanks">アクティブサポーターになっていただきありがとうございます！</string>
+    <string name="home_banner_title">RxSafety をお気に入りいただけましたか？</string>
+    <string name="home_banner_body">お薬相互作用チェックを 100% 広告なし・独立して維持するためにご支援をお願いします。</string>
+    <string name="home_banner_action">開発者を支援</string>
+    <string name="post_op_success_title">チェック完了！</string>
+    <string name="post_op_success_body">RxSafety がお役に立ちましたら、開発者にコーヒーを一杯ごちそうしてください。</string>
+    <string name="post_op_support_btn">コーヒーをごちそうする ☕</string>
+    <string name="milestone_toast_10">🎉 10 回目のお薬チェック完了！個人開発へのご支援をご検討ください。</string>
+    <string name="milestone_toast_25">🎉 25 回目のチェック完了！RxSafety をご信頼いただきありがとうございます。</string>
+    <string name="dev_mode_simulate_support">Google Play 支援をシミュレート（開発モード）</string>
+    <string name="toast_donation_successful">ありがとうございます！アクティブサポーターになりました ⭐</string>
+    <string name="about_support_dev_title">個人開発の支援について</string>
+    <string name="about_support_dev_body">RxSafety は 100% 広告なし・完全プライベート・オープンデータで運営されています。皆様のご支援が医学データベースの更新を支えています。</string>
+    <string name="splash_subtitle">臨床薬物相互作用 &amp; 安全性インテリジェンス</string>
+    <string name="back">戻る</string>
+    <string name="donation_badge_subtitle">100% 広告なし・プライベート・オフライン</string>
+    <string name="google_pay_subtitle">Google Pay 1 タップ決済に対応</string>
+    <string name="select_tier_desc">個人開発を支援するコースを以下から選択してください：</string>
+    <string name="paypal_title">PayPal 直接リンク &amp; リアルタイム QR スキャン</string>
+    <string name="paypal_subtitle">スマホカメラまたは PayPal アプリでスキャンしてください：</string>
+    <string name="enter_usd_amount">USD 金額を入力 ($)</string>
+    <string name="kofi_title">インディーアプリ用 Ko-fi チップ箱</string>
+    <string name="kofi_desc">Ko-fi は個人開発者を直接支援できる手数料無料のプラットフォームです。コーヒー1杯 ($3) で臨床データベース更新をサポート！</string>
+    <string name="btn_copy_kofi_url">Ko-fi URL をコピー</string>
+    <string name="btn_support_options">開発支援オプション</string>
+    <string name="toast_kofi_copied">Ko-fi リンクをクリップボードにコピーしました！ ✓</string>
+</resources>

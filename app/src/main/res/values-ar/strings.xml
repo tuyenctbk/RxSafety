@@ -1,0 +1,240 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">المُفحص</string>
+    <string name="nav_recalls">سحبات الأدوية</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">النشرة الطبية</string>
+    <string name="nav_guide">دليل السلامة</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">فاحص التفاعلات الدوائية</string>
+    <string name="checker_subtitle">التحقق من التفاعلات الدوائية الخطيرة عبر NIH RxNav</string>
+    <string name="clear_all">مسح الكل</string>
+    <string name="clinical_presets">مجموعات سريرية عالية الخطورة:</string>
+    <string name="search_drug_placeholder">اكتب اسم الدواء التجاري أو العلمي (مثل Lipitor, Metformin)...</string>
+    <string name="nih_rxnav_matches">نتائج NIH RxNav:</string>
+    <string name="medications_to_evaluate">الأدوية للتقييم (%d):</string>
+    <string name="empty_meds_notice">اختر دواءين على الأقل أعلاه لتحليل التفاعلات المحتملة.</string>
+    <string name="evaluating_pharmacology">جاري تقييم علم الأدوية وسحبات FDA...</string>
+    <string name="tab_drug_conflicts">تعارضات الأدوية (%d)</string>
+    <string name="tab_dietary">الغذاء والكحول (%d)</string>
+    <string name="tab_fda_recalls">سحبات FDA (%d)</string>
+    <string name="no_severe_conflicts_title">لم يتم اكتشاف تعارضات دوائية خطيرة</string>
+    <string name="no_severe_conflicts_subtitle">لم يتم العثور على تفاعلات موثقة عالية الخطورة بين الأدوية المحددة في قاعدة البيانات السريرية.</string>
+    <string name="no_dietary_title">لا توجد تحذيرات غذائية</string>
+    <string name="no_dietary_subtitle">لم يتم تسجيل تحذيرات غذائية رئيسية تتعلق بالجريب فروت أو الكحول أو الكالسيوم أو البوتاسيوم لهذه القائمة.</string>
+    <string name="no_recalls_match_title">لا توجد سحبات نشطة من FDA للأدوية المحددة</string>
+    <string name="no_recalls_match_subtitle">لا يملك أي من الأدوية المدخلة سحبات نشطة مطابقة حاليًا في OpenFDA.</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">سحبات وتنبيهات أدوية FDA</string>
+    <string name="recalls_subtitle">تقارير السلامة المباشرة مباشرة من OpenFDA</string>
+    <string name="fda_classifications_title">تصنيفات سحبات FDA:</string>
+    <string name="fda_classifications_body">• الفئة الأولى: أعلى خطورة. قد يسبب العيب إصابة خطيرة أو الوفاة.\n• الفئة الثانية: آثار جانبية مؤقتة أو قابلة للعلاج.\n• الفئة الثالثة: مخالفة من غير المرجح أن تسبب عواقب صحية.</string>
+    <string name="recall_search_placeholder">ابحث عن دواء مسحوب، شركة أو سبب...</string>
+    <string name="filter_my_meds">التصفية حسب أدويتي المحفوظة</string>
+    <string name="filter_my_meds_subtitle">إظهار السحبات المطابقة للأدوية في ملفاتك الشخصية فقط</string>
+    <string name="recent_enforcement_reports">تقارير FDA الأخيرة (%d):</string>
+    <string name="no_recalls_title">لم يتم العثور على سحبات</string>
+    <string name="no_recalls_subtitle">لم تطابق أي تقارير معايير البحث الخاصة بك.</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">الأدوية اليومية (الجهاز المحلي)</string>
+    <string name="tab_profiles_doseflow">الملفات الشخصية وDoseFlow</string>
+    <string name="daily_meds_title">أدويتي اليومية</string>
+
+    <string name="daily_meds_subtitle">محفوظة محليًا في قاعدة بيانات SQLite على الجهاز عبر Room</string>
+    <string name="add_med">إضافة دواء</string>
+    <string name="local_device_adherence">الالتزام على الجهاز المحلي</string>
+    <string name="adherence_status">تم تناول %1$d من %2$d اليوم</string>
+    <string name="adherence_footer">يتم حفظ جدولك اليومي بخصوصية على هذا الجهاز. اضغط على علامة الصح عند تناول كل حبة.</string>
+    <string name="check_regimen_safety">فحص سلامة الجدول</string>
+    <string name="reset_day">إعادة ضبط اليوم</string>
+    <string name="daily_schedule_title">الجدول اليومي (%d أدوية):</string>
+    <string name="empty_daily_meds">لم يتم تسجيل أدوية يومية بعد. اضغط على \'إضافة دواء\' أعلاه لإنشاء جدولك.</string>
+    <string name="profiles_title">ملفات المرضى الشخصية وDoseFlow</string>
+    <string name="profiles_subtitle">خزانة أدوية متزامنة وفحص آلي للتعارضات</string>
+    <string name="new_profile">ملف جديد</string>
+    <string name="doseflow_synergy">التكامل مع تطبيق DoseFlow</string>
+    <string name="sync_active">المزامنة v1 نشطة</string>
+    <string name="doseflow_banner_desc">مزامنة آلية ثنائية الاتجاه لملفات المرضى وتنبيهات فورية مع تطبيق DoseFlow الخاص بك.</string>
+    <string name="export_sync_json">تصدير JSON المزامنة</string>
+    <string name="demo_doseflow_sync">تجربة مزامنة DoseFlow</string>
+    <string name="scan_conflicts">فحص التعارضات</string>
+    <string name="profile_regimen">جدول الملف الشخصي (%d):</string>
+    <string name="add_medication">إضافة دواء</string>
+    <string name="empty_profile_meds">لا توجد أدوية في هذا الملف الشخصي بعد. اضغط على \'إضافة دواء\' أو قم بالمزامنة عبر DoseFlow.</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">إضافة دواء يومي (الجهاز المحلي)</string>
+    <string name="med_name_label">اسم الدواء (مثل Lisinopril)</string>
+    <string name="dosage_label">الجرعة / التركيز (مثل 20 mg)</string>
+    <string name="form_label">الشكل (قرص، كبسولة)</string>
+    <string name="time_label">الوقت (مثل 08:00 صباحًا)</string>
+    <string name="frequency_label">التكرار (مثل مرة واحدة يوميًا صباحًا)</string>
+    <string name="instructions_label">التعليمات (مثل يؤخذ مع الطعام)</string>
+    <string name="prescriber_label">الطبيب / العيادة (اختياري)</string>
+    <string name="save_to_device">حفظ على الجهاز</string>
+    <string name="cancel">إلغاء</string>
+    <string name="add_profile_dialog_title">إنشاء ملف مريض جديد</string>
+    <string name="patient_name_label">اسم المريض الكامل</string>
+    <string name="relationship_label">الصلة (نفسي، أمي، أبي، طفلي)</string>
+    <string name="age_label">العمر</string>
+    <string name="conditions_label">الحالات الصحية (مفصولة بفواصل، مثل ضغط الدم، مرض الكلى)</string>
+    <string name="allergies_label">الحساسية معروفة (مثل البنسلين)</string>
+    <string name="create_profile">إنشاء الملف</string>
+    <string name="demo_sync_dialog_title">محاكاة مزامنة جدول DoseFlow</string>
+    <string name="demo_sync_dialog_desc">اختر مجموعة سريرية لمحاكاة المزامنة الفورية من DoseFlow إلى RxSafety:</string>
+    <string name="close">إغلاق</string>
+    <string name="doseflow_json_title">بيانات مزامنة DoseFlow (JSON)</string>
+    <string name="doseflow_json_desc">صيغة التبادل القياسية لـ DoseFlow للمزامنة السلسة لملفات المرضى:</string>
+    <string name="copy_to_clipboard">نسخ إلى الحافظة</string>
+    <string name="add_med_profile_dialog_title">إضافة دواء للملف الشخصي</string>
+    <string name="save_medication">حفظ الدواء</string>
+    <string name="notes_instructions_label">ملاحظات الطبيب / التعليمات (اختياري)</string>
+    <string name="reminder_notification_text">حان وقت تناول دواء %s.</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">مفتش النشرات والتحذيرات الصارمة لـ FDA</string>
+    <string name="inspector_subtitle">الاستعلام عن النشرات الرسمية للأدوية من FDA والتحذيرات الصارمة والدواعي</string>
+    <string name="frequently_inspected">الأدوية الأكثر بحثًا:</string>
+    <string name="inspector_search_placeholder">ابحث عن اسم الدواء...</string>
+    <string name="inspect">فحص</string>
+    <string name="fda_label">نشرة FDA</string>
+    <string name="fda_boxed_warning">تحذير الصندوق الأسود لـ FDA</string>
+    <string name="warnings_precautions">التحذيرات والاحتياطات</string>
+    <string name="indications_usage">دواعي الاستعمال والاستخدام السريري</string>
+    <string name="adverse_reactions">الآثار الجانبية الموثقة</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">دليل السلامة السريرية</string>
+    <string name="guide_subtitle">علامات الخطر الطارئة، قائمة فحص الصيدلي، وبروتوكولات السلامة</string>
+    <string name="poison_control_title">مساعدة مركز مكافحة السموم الأمريكي</string>
+    <string name="poison_control_subtitle">استشارة طبية مجانية وسرية على مدار 24/7</string>
+    <string name="call_poison_control">الاتصال بـ 1-800-222-1222</string>
+    <string name="red_flags_title">🚨 علامات الخطر الحرجة للتفاعلات العكسية:</string>
+    <string name="ss_title">متلازمة السيروتونين (SS)</string>
+    <string name="ss_drugs">SSRIs, SNRIs, ترامادول, تريبتان, MAOIs</string>
+    <string name="ss_symptoms">الهياج، التشتت، تسارع ضربات القلب، القشعريرة، تيبس العضلات الشديد، الرعشة، الحمى العالية، والنوبات.</string>
+    <string name="bleed_title">نزيف داخلي حاد</string>
+    <string name="bleed_drugs">وارفارين، مضادات التجلط الحديثة، أسبرين، مسكنات NSAIDs</string>
+    <string name="bleed_symptoms">براز أسود كالقطران، سعال دموي، قيء كتقالي القهوة، ضعف غير عادي، صداع شديد مستمر.</string>
+    <string name="angio_title">وذمة وعائية شديدة وانسداد مجرى الهواء</string>
+    <string name="angio_drugs">مثبطات ACE (ليسينوبريل، إينالابريل)، ARBs</string>
+
+    <string name="angio_symptoms">انتفاخ سريع في الشفتين أو اللسان أو الحلق أو الوجه يتسبب في صرير وضيق تنفس. اتصل بـ 911 فورًا.</string>
+    <string name="rhabdo_title">انحلال الربيدات الشديد</string>
+    <string name="rhabdo_drugs">ستاتينات مع مضادات الحيوية الماكروليد أو مضادات الفطريات</string>
+    <string name="rhabdo_symptoms">ألم عضلات منتشر وشديد، ضعف شديد، وبول داكن بلون الشاي.</string>
+    <string name="pharmacist_questions_title">📋 5 أسئلة لتسألها لصيدليتك:</string>
+    <string name="pq1_q">هل يتفاعل هذا الدواء مع أي من أدوية وصفاتي الحالية أو بدون وصفة؟</string>
+    <string name="pq1_tip">احضر دائمًا قائمة كاملة بأدويتك الحالية بما في ذلك الفيتامينات والمكملات.</string>
+    <string name="pq2_q">هل هناك أطعمة أو عصائر أو كحول محدد يجب تجنبه؟</string>
+    <string name="pq2_tip">تشمل المحفزات الشائعة الجريب فروت، ومنتجات الكالسيوم، وبدائل الملح الغنية بالبوتاسيوم.</string>
+    <string name="pq3_q">ماذا يجب أن أفعل إذا نسيت جرعة بطريق الخطأ؟</string>
+    <string name="pq3_tip">لا تضاعف الجرعة أبدًا بدون تعليمات صريحة من الطبيب أو الصيدلي.</string>
+    <string name="pq4_q">ما هي علامات التحذير المبكرة للتفاعل العكسي؟</string>
+    <string name="pq4_tip">افهم الفرق بين الآثار الجانبية الخفيفة وعلامات الخطر الطارئة التي تتطلب الرعاية الفورية.</string>
+    <string name="pq5_q">هل يتطلب هذا الدواء فحوصات مخبرية دورية؟</string>
+
+    <string name="pq5_tip">تتطلب أدوية مثل الوارفارين والليسينوبريل والليثيوم تحاليل دم منتظمة.</string>
+    <string name="disclaimer_title">البيانات الحكومية المفتوحة وإخلاء المسؤولية الطبي</string>
+    <string name="disclaimer_body">يعتمد RxSafety على بيانات عامة مجانية 100% من المكتبة الوطنية الأمريكية للطب (NIH RxNav) وهيئة الغذاء والدواء (OpenFDA). هذا التطبيق مخصص للأغراض التعليمية ولا يغني عن الاستشارة الطبية.</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">الخطورة السريرية:</string>
+    <string name="pharmacological_mechanism">الآلية الفسيولوجية الدوائية:</string>
+    <string name="clinical_management">الإجراء / التعامل السريري:</string>
+    <string name="show_less">إخفاء التفاصيل</string>
+    <string name="tap_for_pharmacology">اضغط لعرض علم الأدوية والإرشادات السريرية</string>
+    <string name="interacts_with">يتفاعل مع: %s</string>
+    <string name="recommendation">التوصية: %s</string>
+    <string name="reason_for_recall">سبب السحب:</string>
+    <string name="firm">الشركة: %s</string>
+    <string name="recall_no">الرقم: %s</string>
+    <string name="emergency_badge">طوارئ</string>
+    <string name="associated_with">مرتبط بـ: %s</string>
+    <string name="rx_prefix">وصفة: %s</string>
+    <string name="rxcui_prefix">RxCUI: %s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">بحث الأدوية</string>
+    <string name="rx_search_title">البحث عن الأدوية في NIH RxNav</string>
+    <string name="rx_search_subtitle">البحث عن معرفات RxNorm (RxCUI) وتجهيز الأدوية لفحص التفاعلات</string>
+    <string name="rx_search_placeholder">ابحث عن اسم تجاري، عام، أو تركيبة (مثل Lipitor, Warfarin)...</string>
+    <string name="rx_search_popular_title">عمليات البحث السريرية الشائعة:</string>
+    <string name="rx_filter_all">جميع المفاهيم</string>
+    <string name="rx_filter_clinical">أدوية سريرية (SCD)</string>
+    <string name="rx_filter_branded">أدوية تجارية (SBD)</string>
+    <string name="rx_filter_ingredients">المواد الفعالة (IN)</string>
+    <string name="rx_filter_brand_names">الأسماء التجارية (BN)</string>
+    <string name="rx_found_count">تم العثور على %d معرفًا لمفاهيم RxNorm</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">مرادف: %s</string>
+    <string name="rx_score_prefix">درجة التطابق: %s</string>
+    <string name="rx_stage_button">إضافة إلى سلة الفحص</string>
+    <string name="rx_staged_button">في السلة ✓</string>
+    <string name="rx_save_daily_button">حفظ في الأدوية اليومية</string>
+    <string name="rx_inspect_fda_button">نشرة FDA</string>
+    <string name="rx_tray_title">جاهز لفحص التفاعلات (%d)</string>
+    <string name="rx_tray_hint_single">اختر دواءين على الأقل لتقييم التعارضات المحتملة.</string>
+    <string name="rx_tray_hint_ready">جاهز! اضغط أدناه لتحليل التفاعلات الدوائية عبر قاعدة بيانات NIH.</string>
+    <string name="rx_run_check_button">فحص التفاعلات الآن (%d)</string>
+    <string name="rx_clear_staged">تفريغ السلة</string>
+    <string name="rx_searching_label">جاري الاستعلام من المكتبة الوطنية الأمريكية للطب...</string>
+    <string name="rx_no_results_title">لم يتم العثور على مفاهيم في RxNav</string>
+    <string name="rx_no_results_subtitle">لم تطابق أي مفاهيم \"%1$s\". حاول البحث باسم المادة الفعالة أو تحقق من الإملائي.</string>
+    <string name="rx_empty_hero_title">الدليل الرسمي لـ NIH RxNav و RxNorm</string>
+    <string name="rx_empty_hero_desc">يوفر RxNorm أسماء موحدة ومعرفات فريدة (RxCUI) للأدوية الصادرة عن المكتبة الوطنية الأمريكية للطب (NLM) لضمان فحص دقيق للتفاعلات.</string>
+    <string name="rx_what_is_rxcui">ما هو RxCUI؟</string>
+    <string name="rx_what_is_rxcui_desc">رمز RxNorm الموحد (RxCUI) هو رمز عددي قياسي مخصص لكل دواء سريري لمنع الأخطاء الدوائية وتفاعلاتها الخطيرة.</string>
+    <string name="toast_rxcui_copied">تم نسخ RxCUI %s إلى الحافظة!</string>
+    <string name="toast_payload_copied">تم نسخ بيانات مزامنة DoseFlow إلى الحافظة</string>
+    <string name="toast_staged_added">تمت إضافة %s إلى سلة الفحص</string>
+    <string name="toast_staged_removed">تمت إزالة %s من سلة الفحص</string>
+    <string name="toast_saved_to_daily">تم حفظ %s في أدويتك اليومية</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">دعم تطوير RxSafety</string>
+    <string name="donation_subtitle">الحفاظ على فحص التفاعلات الدوائية خاليًا 100% من الإعلانات وخاصًا ومستقلاً</string>
+    <string name="tab_google_play">Google Play</string>
+    <string name="tab_paypal">PayPal و QR</string>
+    <string name="tab_kofi">صندوق Ko-fi</string>
+    <string name="tier_1_title">$1.99 إسبريسو ☕</string>
+    <string name="tier_2_title">$4.99 قهوة ودونات 🍩</string>
+    <string name="tier_3_title">$9.99 داعم الوجبة 🍱</string>
+    <string name="tier_4_title">$19.99 راعٍ سريري 🏆</string>
+    <string name="btn_pay_google_play">الدعم عبر Google Play (%s)</string>
+    <string name="btn_open_paypal">فتح رابط PayPal</string>
+    <string name="btn_copy_paypal_url">نسخ رابط PayPal</string>
+    <string name="btn_open_kofi">الدعم على Ko-fi</string>
+    <string name="active_supporter_badge">داعم ⭐</string>
+    <string name="active_supporter_thanks">شكرًا لكونك داعمًا نشطًا!</string>
+    <string name="home_banner_title">هل تستمتع بـ RxSafety؟</string>
+    <string name="home_banner_body">ساعد في الحفاظ على فحص التفاعلات الدوائية خاليًا 100% من الإعلانات ومستقلاً.</string>
+    <string name="home_banner_action">دعم المطور</string>
+    <string name="post_op_success_title">تم الفحص بنجاح!</string>
+    <string name="post_op_success_body">اشترِ كوب قهوة للمطور إذا ساعدك RxSafety اليوم.</string>
+    <string name="post_op_support_btn">شراء قهوة ☕</string>
+    <string name="milestone_toast_10">🎉 تم إجراء 10 فحوصات للتفاعلات! فكر في دعم التطوير المستقل.</string>
+    <string name="milestone_toast_25">🎉 الفحص رقم 25! شكرًا لثقتك في RxSafety.</string>
+    <string name="dev_mode_simulate_support">محاكاة دعم Play (وضع المطور)</string>
+    <string name="toast_donation_successful">شكرًا لك! أنت الآن داعم نشط ⭐</string>
+    <string name="about_support_dev_title">دعم التطوير المستقل</string>
+    <string name="about_support_dev_body">RxSafety خالي 100% من الإعلانات وخاص ويعتمد على البيانات المفتوحة. يمول دعمك التطوعي تحديثات قواعد البيانات الطبية والصيانة المستمرة.</string>
+    <string name="splash_subtitle">معلومات التفاعلات الدوائية والسلامة السريرية</string>
+    <string name="back">رجوع</string>
+    <string name="donation_badge_subtitle">100% خالي من الإعلانات وخاص ويعمل بدون إنترنت</string>
+    <string name="google_pay_subtitle">دعم مباشر بنقرة واحدة عبر Google Pay</string>
+    <string name="select_tier_desc">اختر فئة المساهمة أدناه لدعم التطوير المستقل:</string>
+    <string name="paypal_title">دفع مباشر عبر PayPal ومسح رمز QR المباشر</string>
+    <string name="paypal_subtitle">امسح بكاميرا هاتفك أو تطبيق PayPal:</string>
+    <string name="enter_usd_amount">أدخل المبلغ بالدولار ($)</string>
+    <string name="kofi_title">صندوق Ko-fi للتطبيقات المستقلة</string>
+    <string name="kofi_desc">Ko-fi منصة معروفة لدعم المطورين المستقلين والمفتوحي المصدر. ادعم بفنجان قهوة ($3) لتمويل التحديثات السريرية المستمرة!</string>
+    <string name="btn_copy_kofi_url">نسخ رابط Ko-fi</string>
+    <string name="btn_support_options">خيارات دعم التطوير</string>
+    <string name="toast_kofi_copied">تم نسخ رابط Ko-fi إلى الحافظة! ✓</string>
+</resources>

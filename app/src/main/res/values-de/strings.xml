@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">RxSafety</string>
+
+    <!-- Navigation -->
+    <string name="nav_checker">Prüfer</string>
+    <string name="nav_recalls">Rückrufe</string>
+    <string name="nav_profiles">DoseFlow</string>
+    <string name="nav_inspector">Inspektor</string>
+    <string name="nav_guide">Ratgeber</string>
+
+    <!-- Checker Screen -->
+    <string name="checker_title">Wechselwirkungsprüfer für Medikamente</string>
+    <string name="checker_subtitle">Überprüfen Sie schwere Wechselwirkungen über NIH RxNav</string>
+    <string name="clear_all">Alles löschen</string>
+    <string name="clinical_presets">Klinische Hochrisiko-Voreinstellungen:</string>
+    <string name="search_drug_placeholder">Marken- oder Generikanamen eingeben (z. B. Lipitor, Metformin)...</string>
+    <string name="nih_rxnav_matches">NIH RxNav Ergebnisse:</string>
+    <string name="medications_to_evaluate">Zu bewertende Medikamente (%d):</string>
+    <string name="empty_meds_notice">Wählen Sie oben mindestens 2 Medikamente aus, um mögliche Wechselwirkungen zu analysieren.</string>
+    <string name="evaluating_pharmacology">Pharmakologie und FDA-Rückrufe werden ausgewertet...</string>
+    <string name="tab_drug_conflicts">Arzneimittelkonflikte (%d)</string>
+    <string name="tab_dietary">Ernährung &amp; Alkohol (%d)</string>
+    <string name="tab_fda_recalls">FDA-Rückrufe (%d)</string>
+    <string name="no_severe_conflicts_title">Keine bekannten schweren Wechselwirkungen erkannt</string>
+    <string name="no_severe_conflicts_subtitle">In der klinischen Datenbank wurden keine dokumentierten Hochrisiko-Wechselwirkungen zwischen den ausgewählten Medikamenten gefunden.</string>
+    <string name="no_dietary_title">Keine Warnungen bzgl. Ernährung</string>
+    <string name="no_dietary_subtitle">Keine wichtigen Warnungen bezüglich Grapefruit, Alkohol, Kalzium oder Kalium ausgelöst.</string>
+    <string name="no_recalls_match_title">Keine aktiven FDA-Rückrufe für die ausgewählten Medikamente</string>
+    <string name="no_recalls_match_subtitle">Keines der eingegebenen Medikamente weist derzeit aktive Rückrufe bei OpenFDA auf.</string>
+
+    <!-- Recalls Screen -->
+    <string name="recalls_title">FDA-Arzneimittelrückrufe &amp; Warnungen</string>
+    <string name="recalls_subtitle">Live-Sicherheitsberichte direkt von OpenFDA</string>
+    <string name="fda_classifications_title">FDA-Rückrufklassen:</string>
+    <string name="fda_classifications_body">• Klasse I: Höchstes Risiko. Mangel kann schwere Verletzungen oder Tod verursachen.\n• Klasse II: Vorübergehende oder medizinisch reversible Nebenwirkungen.\n• Klasse III: Verstoß führt wahrscheinlich nicht zu gesundheitlichen Folgen.</string>
+    <string name="recall_search_placeholder">Zurückgerufenes Medikament, Firma oder Grund suchen...</string>
+    <string name="filter_my_meds">Nach meinen gespeicherten Medikamenten filtern</string>
+    <string name="filter_my_meds_subtitle">Nur Rückrufe anzeigen, die mit Medikamenten in Ihren Profilen übereinstimmen</string>
+    <string name="recent_enforcement_reports">Aktuelle FDA-Berichte (%d):</string>
+    <string name="no_recalls_title">Keine Rückrufe gefunden</string>
+    <string name="no_recalls_subtitle">Keine Berichte entsprachen Ihren Suchkriterien.</string>
+
+    <!-- Profiles & DoseFlow Screen -->
+    <string name="tab_daily_meds">Tägliche Meds (Lokales Gerät)</string>
+    <string name="tab_profiles_doseflow">Profile &amp; DoseFlow</string>
+    <string name="daily_meds_title">Meine täglichen Medikamente</string>
+
+    <string name="daily_meds_subtitle">Lokal auf dem Gerät in der SQLite-Datenbank via Room gespeichert</string>
+    <string name="add_med">Med. hinzufügen</string>
+    <string name="local_device_adherence">Einnahme-Treue auf dem Gerät</string>
+    <string name="adherence_status">%1$d von %2$d heute eingenommen</string>
+    <string name="adherence_footer">Ihr Tagesplan wird privat auf diesem Gerät gespeichert. Tippen Sie auf das Häkchen, wenn Sie eine Tablette eingenommen haben.</string>
+    <string name="check_regimen_safety">Behandlungsplan-Sicherheit prüfen</string>
+    <string name="reset_day">Tag zurücksetzen</string>
+    <string name="daily_schedule_title">Tagesplan (%d Medikamente):</string>
+    <string name="empty_daily_meds">Noch keine täglichen Medikamente erfasst. Tippen Sie oben auf \'Med. hinzufügen\', um Ihren Plan zu erstellen.</string>
+    <string name="profiles_title">Patientenprofile &amp; DoseFlow</string>
+    <string name="profiles_subtitle">Synchronisierter Medikamentenschrank und automatischer Konfliktscan</string>
+    <string name="new_profile">Neues Profil</string>
+    <string name="doseflow_synergy">DoseFlow App-Synergie</string>
+    <string name="sync_active">v1 Synchro aktiv</string>
+    <string name="doseflow_banner_desc">Automatische bidirektionale Synchronisierung von Patientenprofilen und Echtzeit-Benachrichtigungen mit Ihrer DoseFlow-Anwendung.</string>
+    <string name="export_sync_json">Sync-JSON exportieren</string>
+    <string name="demo_doseflow_sync">Demo DoseFlow-Sync</string>
+    <string name="scan_conflicts">Konflikte scannen</string>
+    <string name="profile_regimen">Profil-Plan (%d):</string>
+    <string name="add_medication">Medikament hinzufügen</string>
+    <string name="empty_profile_meds">Noch keine Medikamente in diesem Profil. Tippen Sie auf \'Medikament hinzufügen\' oder synchronisieren Sie via DoseFlow.</string>
+
+    <!-- Dialogs -->
+    <string name="add_daily_med_dialog_title">Tägliches Medikament hinzufügen (Lokales Gerät)</string>
+    <string name="med_name_label">Medikamentenname (z. B. Lisinopril)</string>
+    <string name="dosage_label">Dosierung / Stärke (z. B. 20 mg)</string>
+    <string name="form_label">Form (Tablette, Kapsel)</string>
+    <string name="time_label">Uhrzeit (z. B. 08:00 Uhr)</string>
+    <string name="frequency_label">Häufigkeit (z. B. Einmal täglich morgens)</string>
+    <string name="instructions_label">Anweisungen (z. B. Mit Nahrung einnehmen)</string>
+    <string name="prescriber_label">Arzt / Klinik (Optional)</string>
+    <string name="save_to_device">Auf Gerät speichern</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="add_profile_dialog_title">Neues Patientenprofil erstellen</string>
+    <string name="patient_name_label">Vollständiger Name des Patienten</string>
+    <string name="relationship_label">Beziehung (Selbst, Mutter, Vater, Kind)</string>
+    <string name="age_label">Alter</string>
+    <string name="conditions_label">Erkrankungen (kommagetrennt, z. B. Bluthochdruck, CNE)</string>
+    <string name="allergies_label">Bekannte Allergien (z. B. Penicillin)</string>
+    <string name="create_profile">Profil erstellen</string>
+    <string name="demo_sync_dialog_title">DoseFlow-Synchronisierung simulieren</string>
+    <string name="demo_sync_dialog_desc">Wählen Sie eine Voreinstellung, um die automatische Live-Synchronisierung von DoseFlow nach RxSafety zu simulieren:</string>
+    <string name="close">Schließen</string>
+    <string name="doseflow_json_title">DoseFlow Sync-Nutzlast (JSON)</string>
+    <string name="doseflow_json_desc">Standardmäßiges DoseFlow-Austauschformat für nahtlose Patientenprofil-Synchronisation:</string>
+    <string name="copy_to_clipboard">In Zwischenablage kopieren</string>
+    <string name="add_med_profile_dialog_title">Medikament zum Profil hinzufügen</string>
+    <string name="save_medication">Medikament speichern</string>
+    <string name="notes_instructions_label">Arzthinweise / Anweisungen (Optional)</string>
+    <string name="reminder_notification_text">Es ist Zeit für die Einnahme von %s.</string>
+
+    <!-- Inspector Screen -->
+    <string name="inspector_title">FDA-Etiketten &amp; Black-Box-Inspektor</string>
+    <string name="inspector_subtitle">Abfrage offizieller FDA-Monographien, Black-Box-Warnungen und Indikationen</string>
+    <string name="frequently_inspected">Häufig geprüfte Medikamente:</string>
+    <string name="inspector_search_placeholder">Medikamentennamen suchen...</string>
+    <string name="inspect">Inspezieren</string>
+    <string name="fda_label">FDA-Fachinformation</string>
+    <string name="fda_boxed_warning">FDA BLACK-BOX-WARNUNG</string>
+    <string name="warnings_precautions">Warnhinweise &amp; Vorsichtsmaßnahmen</string>
+    <string name="indications_usage">Indikationen &amp; Klinische Anwendung</string>
+    <string name="adverse_reactions">Dokumentierte Nebenwirkungen</string>
+
+    <!-- Safety Guide Screen -->
+    <string name="guide_title">Klinischer Sicherheitsratgeber</string>
+    <string name="guide_subtitle">Notfall-Warnsignale, Apotheker-Checkliste und Sicherheits-Protokolle</string>
+    <string name="poison_control_title">US-Giftnotruf Hilfe</string>
+    <string name="poison_control_subtitle">24/7 Kostenlose &amp; vertrauliche medizinische Beratung</string>
+    <string name="call_poison_control">1-800-222-1222 anrufen</string>
+    <string name="red_flags_title">🚨 Kritische Nebenwirkungs-Warnsignale:</string>
+    <string name="ss_title">Serotoninsyndrom (SS)</string>
+    <string name="ss_drugs">SSRI, SNRI, Tramadol, Triptane, MAO-Hemmer</string>
+    <string name="ss_symptoms">Unruhe, Verwirrtheit, schneller Herzschlag, Schüttelfrost, schwere Muskelsteifheit, Zittern, hohes Fieber und Krampfanfälle.</string>
+    <string name="bleed_title">Schwere innere Blutungen</string>
+    <string name="bleed_drugs">Warfarin, DOAKs (Eliquis, Xarelto), Aspirin, NSAIDs</string>
+    <string name="bleed_symptoms">Teerstuhl, Bluthusten, kaffeesatzartiges Erbrechen, ungewöhnliche Schwäche, schwere anhaltende Kopfschmerzen.</string>
+    <string name="angio_title">Schweres Angioödem &amp; Atemwegsverschluss</string>
+    <string name="angio_drugs">ACE-Hemmer (Lisinopril, Enalapril), AT1-Antagonisten</string>
+
+    <string name="angio_symptoms">Rasches Anschwellen von Lippen, Zunge, Rachen, Gesicht oder Kehlkopf mit Atemnot. Sofort den Notruf wählen.</string>
+    <string name="rhabdo_title">Schwere Rhabdomyolyse</string>
+    <string name="rhabdo_drugs">Statine kombiniert mit Makroliden oder Azolen</string>
+    <string name="rhabdo_symptoms">Schwere diffuse Muskelschmerzen, ausgeprägte Schwäche und teeartiger dunkler Urin.</string>
+    <string name="pharmacist_questions_title">📋 5 Fragen an Ihren Apotheker:</string>
+    <string name="pq1_q">Gibt es Wechselwirkungen mit meinen aktuellen Medikamenten?</string>
+    <string name="pq1_tip">Bringen Sie stets eine vollständige Liste Ihrer Medikamente, Vitamine und Nahrungsergänzungsmittel mit.</string>
+    <string name="pq2_q">Muss ich bestimmte Lebensmittel, Säfte oder Alkohol meiden?</string>
+    <string name="pq2_tip">Häufige Auslöser sind Grapefruit, Kalzium/Milchprodukte, Kalium-Salzersatz und Alkohol.</string>
+    <string name="pq3_q">Was soll ich tun, wenn ich versehentlich eine Dosis verpasse?</string>
+    <string name="pq3_tip">Nehmen Sie niemals die doppelte Dosis ohne ausdrückliche Anweisung Ihres Arztes oder Apothekers.</string>
+    <string name="pq4_q">Was sind die ersten Warnzeichen einer Nebenwirkung?</string>
+    <string name="pq4_tip">Unterscheiden Sie zwischen leichten Nebenwirkungen und Notfall-Warnsignalen.</string>
+    <string name="pq5_q">Erfordert dieses Medikament regelmäßige Laboruntersuchungen?</string>
+    <string name="pq5_tip">Medikamente wie Warfarin, Lisinopril, Digoxin und Lithium erfordern regelmäßige Blutuntersuchungen.</string>
+    <string name="disclaimer_title">Behördliche Daten &amp; Medizinischer Haftungsausschluss</string>
+    <string name="disclaimer_body">RxSafety verwendet gemeinfreie Daten der US National Library of Medicine (NIH RxNav) und der FDA (OpenFDA). Diese App dient Bildungszwecken und ersetzt keinen Arztbesuch.</string>
+
+    <!-- Components & Cards -->
+    <string name="clinical_risk">Klinisches Risiko:</string>
+    <string name="pharmacological_mechanism">Pharmakologischer Mechanismus:</string>
+    <string name="clinical_management">Klinisches Management / Maßnahme:</string>
+    <string name="show_less">Weniger anzeigen</string>
+    <string name="tap_for_pharmacology">Tippen für Pharmakologie &amp; Hinweise</string>
+    <string name="interacts_with">Wechselwirkung mit: %s</string>
+    <string name="recommendation">Empfehlung: %s</string>
+    <string name="reason_for_recall">Rückrufgrund:</string>
+    <string name="firm">Firma: %s</string>
+    <string name="recall_no">Nr.: %s</string>
+    <string name="emergency_badge">NOTFALL</string>
+    <string name="associated_with">Assoziiert mit: %s</string>
+    <string name="rx_prefix">Rx: %s</string>
+    <string name="rxcui_prefix">RxCUI: %s</string>
+
+    <!-- RxNav Dedicated Search Screen -->
+    <string name="nav_rx_search">Rx-Suche</string>
+    <string name="rx_search_title">NIH RxNav Arzneimittelsuche</string>
+    <string name="rx_search_subtitle">RxNorm-ID (RxCUI) nachschlagen und Medikamente für die Prüfung vorbereiten</string>
+    <string name="rx_search_placeholder">Marken, Generika oder Darreichungsformen suchen (z. B. Lipitor, Warfarin)...</string>
+    <string name="rx_search_popular_title">Häufige klinische Abfragen:</string>
+    <string name="rx_filter_all">Alle Konzepte</string>
+    <string name="rx_filter_clinical">Klinische Arzneien (SCD)</string>
+    <string name="rx_filter_branded">Markenpräparate (SBD)</string>
+    <string name="rx_filter_ingredients">Wirkstoffe (IN)</string>
+    <string name="rx_filter_brand_names">Markennamen (BN)</string>
+    <string name="rx_found_count">%d RxNorm-Konzepte gefunden</string>
+    <string name="rx_cui_badge">RxCUI: %s</string>
+    <string name="rx_synonym_prefix">Synonym: %s</string>
+    <string name="rx_score_prefix">Trefferwert: %s</string>
+    <string name="rx_stage_button">Vormerken</string>
+    <string name="rx_staged_button">Vorgemerkt ✓</string>
+    <string name="rx_save_daily_button">Zu Tages-Meds speichern</string>
+    <string name="rx_inspect_fda_button">FDA-Monographie</string>
+    <string name="rx_tray_title">Vorgemerkt für Prüfung (%d)</string>
+    <string name="rx_tray_hint_single">Wählen Sie mindestens 2 Medikamente aus, um Wechselwirkungen zu prüfen.</string>
+    <string name="rx_tray_hint_ready">Bereit! Tippen Sie unten, um Wechselwirkungen via NIH-Datenbank zu analysieren.</string>
+    <string name="rx_run_check_button">Wechselwirkungen jetzt prüfen (%d)</string>
+    <string name="rx_clear_staged">Auswahl leeren</string>
+    <string name="rx_searching_label">Abfrage der US National Library of Medicine...</string>
+    <string name="rx_no_results_title">Keine RxNav-Konzepte gefunden</string>
+    <string name="rx_no_results_subtitle">Keine Ergebnisse für \"%1$s\". Suchen Sie nach dem Wirkstoff oder überprüfen Sie die Schreibweise.</string>
+    <string name="rx_empty_hero_title">Offizielles NIH RxNav &amp; RxNorm Verzeichnis</string>
+    <string name="rx_empty_hero_desc">RxNorm bietet standardisierte Namen und eindeutige Identifikatoren (RxCUI) für Arzneimittel. Die Suche liefert exakte RxCUIs für zuverlässige Interaktionsprüfungen.</string>
+    <string name="rx_what_is_rxcui">Was ist eine RxCUI?</string>
+    <string name="rx_what_is_rxcui_desc">Eine RxNorm-Konzeptnummer (RxCUI) ist ein standardisierter Code für jedes klinische Medikament. Gesundheitssysteme nutzen RxCUIs zur Verhinderung von Medikationsfehlern.</string>
+    <string name="toast_rxcui_copied">RxCUI %s in die Zwischenablage kopiert!</string>
+    <string name="toast_payload_copied">DoseFlow Sync-Daten in Zwischenablage kopiert</string>
+    <string name="toast_staged_added">%s zur Prüfung vorgemerkt</string>
+    <string name="toast_staged_removed">%s aus der Prüfung entfernt</string>
+    <string name="toast_saved_to_daily">%s zu täglichen Medikamenten hinzugefügt</string>
+
+    <!-- Donation Methods & UX Strategy -->
+    <string name="donation_title">RxSafety-Entwicklung unterstützen</string>
+    <string name="donation_subtitle">Halten Sie die Arzneimittelprüfung 100% werbefrei, privat &amp; unabhängig</string>
+    <string name="tab_google_play">Google Play</string>
+    <string name="tab_paypal">PayPal &amp; QR</string>
+    <string name="tab_kofi">Ko-fi Kaffeekasse</string>
+    <string name="tier_1_title">1,99 $ Espresso ☕</string>
+    <string name="tier_2_title">4,99 $ Kaffee &amp; Donut 🍩</string>
+    <string name="tier_3_title">9,99 $ Mittagessen-Unterstützer 🍱</string>
+    <string name="tier_4_title">19,99 $ Klinischer Sponsor 🏆</string>
+    <string name="btn_pay_google_play">Über Google Play unterstützen (%s)</string>
+    <string name="btn_open_paypal">PayPal-Link öffnen</string>
+    <string name="btn_copy_paypal_url">PayPal-Link kopieren</string>
+    <string name="btn_open_kofi">Auf Ko-fi unterstützen</string>
+    <string name="active_supporter_badge">Unterstützer ⭐</string>
+    <string name="active_supporter_thanks">Vielen Dank, dass Sie ein aktiver Unterstützer sind!</string>
+    <string name="home_banner_title">Gefällt Ihnen RxSafety?</string>
+    <string name="home_banner_body">Helfen Sie mit, die Prüfungen 100% werbefrei &amp; unabhängig zu halten.</string>
+    <string name="home_banner_action">Unterstützen</string>
+    <string name="post_op_success_title">Prüfung abgeschlossen!</string>
+    <string name="post_op_success_body">Spendieren Sie dem Entwickler einen Kaffee, wenn RxSafety geholfen hat.</string>
+    <string name="post_op_support_btn">Kaffee ausgeben ☕</string>
+    <string name="milestone_toast_10">🎉 10. Wechselwirkungsprüfung abgeschlossen! Bitte unterstützen Sie die unabhängige Entwicklung.</string>
+    <string name="milestone_toast_25">🎉 25. Prüfung! Danke für Ihr Vertrauen in RxSafety.</string>
+    <string name="dev_mode_simulate_support">Google Play Unterstützung simulieren (Dev-Modus)</string>
+    <string name="toast_donation_successful">Vielen Dank! Sie sind jetzt ein aktiver Unterstützer ⭐</string>
+    <string name="about_support_dev_title">Unabhängige Entwicklung unterstützen</string>
+    <string name="about_support_dev_body">RxSafety ist 100% werbefrei, privat und basiert auf Open Data. Freiwillige Unterstützung finanziert medizinische Updates.</string>
+    <string name="splash_subtitle">Klinische Wechselwirkungs- &amp; Sicherheitsanalyse</string>
+    <string name="back">Zurück</string>
+    <string name="donation_badge_subtitle">100% Werbefrei, Privat &amp; Offline</string>
+    <string name="google_pay_subtitle">Natives Google Pay mit 1-Klick-Unterstützung</string>
+    <string name="select_tier_desc">Wählen Sie unten eine Stufe aus, um die unabhängige Entwicklung zu unterstützen:</string>
+    <string name="paypal_title">Direktes PayPal &amp; Live-QR-Code-Scan</string>
+    <string name="paypal_subtitle">Scannen Sie mit Ihrer Smartphone-Kamera oder der PayPal-App:</string>
+    <string name="enter_usd_amount">USD-Betrag eingeben ($)</string>
+    <string name="kofi_title">Ko-fi Kaffeekasse für Indie-Apps</string>
+    <string name="kofi_desc">Ko-fi ist eine gebührenfreie Plattform für unabhängige Entwickler-Spenden. Spendieren Sie einen Kaffee (3 $), um Updates zu unterstützen!</string>
+    <string name="btn_copy_kofi_url">Ko-fi-URL kopieren</string>
+    <string name="btn_support_options">Entwicklungs-Unterstützungs-Optionen</string>
+    <string name="toast_kofi_copied">Ko-fi-Link in die Zwischenablage kopiert! ✓</string>
+</resources>
