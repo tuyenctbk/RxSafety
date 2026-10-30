@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">Adicionar medicamento ao perfil</string>
     <string name="save_medication">Salvar medicamento</string>
     <string name="notes_instructions_label">Notas do médico / Instruções (Opcional)</string>
-    <string name="reminder_notification_text">É hora de tomar seu %s.</string>
+    <string name="reminder_notification_title">Hora de tomar seu medicamento</string>
+    <string name="reminder_notification_text">Está na hora de tomar seu %s.</string>
+    <string name="reminder_notification_multiple">Você tem %d medicamentos agendados pendentes hoje</string>
+    <string name="notification_channel_name">Lembretes de Medicamentos</string>
+    <string name="notification_channel_desc">Lembretes diários para tomar os medicamentos agendados</string>
+    <string name="milestone_generic">🎉 Conquista alcançada! Obrigado por confiar no RxSafety.</string>
+    <string name="profile_details_format">%1$s • Idade %2$d • %3$s</string>
+    <string name="conditions_prefix">Condições: %s</string>
+    <string name="allergies_prefix">⚠️ Alergias conhecidas: %s</string>
+    <string name="conflicts_count_bullet">• %d Conflitos de Medicamentos</string>
+    <string name="dietary_count_bullet">• %d Avisos Alimentares</string>
+    <string name="recalls_count_bullet">• %d Recalls</string>
+    <string name="generic_prefix">Genérico: %s</string>
+    <string name="status_prefix">Status: %s</string>
+    <string name="source_prefix">Fonte: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">Inspetor de Bulas e Black Box da FDA</string>
@@ -237,4 +251,17 @@
     <string name="btn_copy_kofi_url">Copiar URL do Ko-fi</string>
     <string name="btn_support_options">Opções de Apoio ao Desenvolvimento</string>
     <string name="toast_kofi_copied">Link do Ko-fi copiado para a área de transferência! ✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">Leitor de Código de Barras e QR Code de Medicamentos</string>
+    <string name="scanner_subtitle">Aponte a câmera para o código UPC, NDC ou QR no frasco</string>
+    <string name="scan_bottle_btn">Escanear frasco de remédio</string>
+    <string name="camera_permission_required">Permissão de câmera é necessária para escanear códigos de barras.</string>
+    <string name="grant_camera_permission">Conceder permissão de câmera</string>
+    <string name="scanned_code_label">Código escaneado / NDC: %s</string>
+    <string name="scanned_med_title">Medicamento identificado</string>
+    <string name="add_scanned_to_daily">Salvar na lista diária</string>
+    <string name="add_scanned_to_checker">Adicionar para checagem de interações</string>
+    <string name="sample_barcodes_title">Simular escaneamento de frasco:</string>
+    <string name="scan_again">Escanear outro frasco</string>
+    <string name="torch_toggle">Lanterna</string>
 </resources>

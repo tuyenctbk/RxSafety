@@ -44,9 +44,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.data.model.DrugInteractionItem
 import com.example.data.model.DrugRecall
 import com.example.data.model.FoodInteractionItem
@@ -248,7 +250,7 @@ fun InteractionCard(
             ) {
                 Column(modifier = Modifier.padding(10.dp)) {
                     Text(
-                        text = "Clinical Risk:",
+                        text = stringResource(R.string.clinical_risk),
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.Bold,
                         color = if (interaction.severity == SeverityLevel.CRITICAL)
@@ -267,7 +269,7 @@ fun InteractionCard(
             AnimatedVisibility(visible = isExpanded) {
                 Column(modifier = Modifier.padding(top = 12.dp)) {
                     Text(
-                        text = "Pharmacological Mechanism:",
+                        text = stringResource(R.string.pharmacological_mechanism),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         color = TealPrimary
@@ -281,7 +283,7 @@ fun InteractionCard(
 
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Clinical Management / Action:",
+                        text = stringResource(R.string.clinical_management),
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         color = TealPrimary
@@ -295,7 +297,7 @@ fun InteractionCard(
 
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Source: ${interaction.source}",
+                        text = stringResource(R.string.source_prefix, interaction.source),
                         style = MaterialTheme.typography.labelSmall,
                         color = Slate600,
                         fontSize = 10.sp
@@ -310,7 +312,7 @@ fun InteractionCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = if (isExpanded) "Show Less" else "Tap for Pharmacology & Clinical Guidance",
+                    text = if (isExpanded) stringResource(R.string.show_less) else stringResource(R.string.tap_for_pharmacology),
                     fontSize = 12.sp,
                     color = TealPrimary,
                     fontWeight = FontWeight.SemiBold
@@ -366,7 +368,7 @@ fun FoodInteractionCard(
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = "Interacts with: ${item.drugName}",
+                            text = stringResource(R.string.interacts_with, item.drugName),
                             style = MaterialTheme.typography.bodySmall,
                             color = TealPrimary,
                             fontWeight = FontWeight.Medium
@@ -390,7 +392,7 @@ fun FoodInteractionCard(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = "Recommendation: ${item.recommendation}",
+                    text = stringResource(R.string.recommendation, item.recommendation),
                     style = MaterialTheme.typography.bodySmall,
                     modifier = Modifier.padding(8.dp),
                     color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -436,7 +438,7 @@ fun RecallCard(
                 }
 
                 Text(
-                    text = "Status: ${recall.status}",
+                    text = stringResource(R.string.status_prefix, recall.status),
                     fontSize = 12.sp,
                     color = if (recall.status.contains("Ongoing", ignoreCase = true))
                         SeverityCriticalRed else Slate600,
@@ -453,7 +455,7 @@ fun RecallCard(
 
             Spacer(modifier = Modifier.height(6.dp))
             Text(
-                text = "Reason for Recall:",
+                text = stringResource(R.string.reason_for_recall),
                 style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.Bold,
                 color = SeverityCriticalRed
@@ -470,12 +472,12 @@ fun RecallCard(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "Firm: ${recall.recallingFirm}",
+                    text = stringResource(R.string.firm, recall.recallingFirm),
                     style = MaterialTheme.typography.labelSmall,
                     color = Slate600
                 )
                 Text(
-                    text = "No: ${recall.recallNumber}",
+                    text = stringResource(R.string.recall_no, recall.recallNumber),
                     style = MaterialTheme.typography.labelSmall,
                     color = Slate600
                 )

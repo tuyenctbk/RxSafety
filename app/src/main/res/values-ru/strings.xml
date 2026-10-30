@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">Добавить лекарство в профиль</string>
     <string name="save_medication">Сохранить лекарство</string>
     <string name="notes_instructions_label">Заметки врача / Указания (Необязательно)</string>
-    <string name="reminder_notification_text">Пора принять %s.</string>
+    <string name="reminder_notification_title">Время принять лекарство</string>
+    <string name="reminder_notification_text">Пришло время принять %s.</string>
+    <string name="reminder_notification_multiple">У вас запланирован прием %d лекарств на сегодня</string>
+    <string name="notification_channel_name">Напоминания о приеме лекарств</string>
+    <string name="notification_channel_desc">Ежедневные напоминания о приеме запланированных лекарств</string>
+    <string name="milestone_generic">🎉 Достигнут рубеж! Спасибо за доверие к RxSafety.</string>
+    <string name="profile_details_format">%1$s • Возраст %2$d • %3$s</string>
+    <string name="conditions_prefix">Заболевания: %s</string>
+    <string name="allergies_prefix">⚠️ Известные аллергии: %s</string>
+    <string name="conflicts_count_bullet">• %d лекарственных взаимодействий</string>
+    <string name="dietary_count_bullet">• %d пищевых предупреждений</string>
+    <string name="recalls_count_bullet">• %d отзывов препаратов</string>
+    <string name="generic_prefix">Действующее вещество: %s</string>
+    <string name="status_prefix">Статус: %s</string>
+    <string name="source_prefix">Источник: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">Инспектор инструкций и Black Box FDA</string>
@@ -239,4 +253,17 @@
     <string name="btn_copy_kofi_url">Скопировать URL Ko-fi</string>
     <string name="btn_support_options">Варианты поддержки разработки</string>
     <string name="toast_kofi_copied">Ссылка Ko-fi скопирована в буфер обмена! ✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">Сканер штрихкодов и QR-кодов лекарств</string>
+    <string name="scanner_subtitle">Наведите камеру на код UPC, NDC или QR на упаковке</string>
+    <string name="scan_bottle_btn">Сканировать упаковку</string>
+    <string name="camera_permission_required">Для сканирования штрихкодов требуется доступ к камере.</string>
+    <string name="grant_camera_permission">Предоставить доступ к камере</string>
+    <string name="scanned_code_label">Сканированный код / NDC: %s</string>
+    <string name="scanned_med_title">Распознано сканированное лекарство</string>
+    <string name="add_scanned_to_daily">Сохранить в ежедневный список</string>
+    <string name="add_scanned_to_checker">Добавить для проверки взаимодействий</string>
+    <string name="sample_barcodes_title">Симулировать сканирование упаковки:</string>
+    <string name="scan_again">Сканировать другую упаковку</string>
+    <string name="torch_toggle">Фонарик</string>
 </resources>

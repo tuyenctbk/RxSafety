@@ -8,6 +8,7 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.data.model.DailyMedicationEntity
 import com.example.data.model.MedicationEntity
+import com.example.data.model.MedicationRegimenEntity
 import com.example.data.model.PatientProfileEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,15 +18,17 @@ import kotlinx.coroutines.launch
     entities = [
         PatientProfileEntity::class,
         MedicationEntity::class,
-        DailyMedicationEntity::class
+        DailyMedicationEntity::class,
+        MedicationRegimenEntity::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class RxSafetyDatabase : RoomDatabase() {
     abstract fun rxSafetyDao(): RxSafetyDao
     abstract fun dailyMedicationDao(): DailyMedicationDao
+    abstract fun medicationRegimenDao(): MedicationRegimenDao
 
     companion object {
         @Volatile
@@ -53,13 +56,18 @@ abstract class RxSafetyDatabase : RoomDatabase() {
                     INSTANCE?.let { database ->
                         populateInitialData(
                             dao = database.rxSafetyDao(),
-                            dailyDao = database.dailyMedicationDao()
+                            dailyDao = database.dailyMedicationDao(),
+                            regimenDao = database.medicationRegimenDao()
                         )
                     }
                 }
             }
 
-            private suspend fun populateInitialData(dao: RxSafetyDao, dailyDao: DailyMedicationDao) {
+            private suspend fun populateInitialData(
+                dao: RxSafetyDao,
+                dailyDao: DailyMedicationDao,
+                regimenDao: MedicationRegimenDao
+            ) {
                 // Seed Eleanor (Mom)
                 val momId = dao.insertProfile(
                     PatientProfileEntity(
@@ -185,6 +193,34 @@ abstract class RxSafetyDatabase : RoomDatabase() {
                             isTakenToday = false,
                             lastTakenTimestamp = null,
                             notes = "Report unexplained muscle pain or tenderness."
+                        )
+                    )
+                )
+
+                // Seed initial structured clinical regimens
+                regimenDao.insertRegimens(
+                    listOf(
+                        MedicationRegimenEntity(
+                            name = "Cardiovascular & Lipid Control",
+                            patientName = "Myself",
+                            description = "Standard primary cardiovascular prevention and glycemic control regimen.",
+                            medicationNames = listOf("Lisinopril", "Metformin", "Atorvastatin"),
+                            targetConditions = listOf("Hypertension", "Hyperlipidemia", "Type 2 Diabetes"),
+                            scheduleSummary = "Twice Daily (Morning & Evening)",
+                            isActive = true,
+                            prescriber = "Dr. Sarah Jenkins",
+                            notes = "Monitor blood pressure weekly and periodic HbA1c."
+                        ),
+                        MedicationRegimenEntity(
+                            name = "Anticoagulation & Blood Pressure Regimen",
+                            patientName = "Eleanor Vance",
+                            description = "Atrial fibrillation thromboembolism prophylaxis with antihypertensive coverage.",
+                            medicationNames = listOf("Warfarin", "Lisinopril", "Aspirin"),
+                            targetConditions = listOf("Atrial Fibrillation", "Hypertension"),
+                            scheduleSummary = "Daily (Evening INR dose)",
+                            isActive = true,
+                            prescriber = "Memorial Heart Center",
+                            notes = "Requires monthly INR lab monitoring; watch for bleeding signs."
                         )
                     )
                 )

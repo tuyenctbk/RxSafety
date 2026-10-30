@@ -37,6 +37,7 @@ import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Medication
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.RadioButtonUnchecked
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Security
@@ -152,7 +153,7 @@ fun ProfilesScreen(
                             onClick = { activeTab = 0 },
                             text = {
                                 Text(
-                                    "Daily Meds (Local Device)",
+                                    stringResource(R.string.tab_daily_meds),
                                     fontWeight = if (activeTab == 0) FontWeight.Bold else FontWeight.Normal,
                                     fontSize = 12.sp
                                 )
@@ -164,7 +165,7 @@ fun ProfilesScreen(
                             onClick = { activeTab = 1 },
                             text = {
                                 Text(
-                                    "Profiles & DoseFlow",
+                                    stringResource(R.string.tab_profiles_doseflow),
                                     fontWeight = if (activeTab == 1) FontWeight.Bold else FontWeight.Normal,
                                     fontSize = 12.sp
                                 )
@@ -193,27 +194,40 @@ fun ProfilesScreen(
                         ) {
                             Column {
                                 Text(
-                                    text = "My Daily Medications",
+                                    text = stringResource(R.string.daily_meds_title),
                                     style = MaterialTheme.typography.headlineSmall,
                                     fontWeight = FontWeight.Bold
                                 )
                                 Text(
-                                    text = "Stored locally on device in SQLite database via Room",
+                                    text = stringResource(R.string.daily_meds_subtitle),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = Slate600
                                 )
                             }
 
-                            Button(
-                                onClick = { showAddDailyMedDialog = true },
-                                colors = ButtonDefaults.buttonColors(containerColor = TealPrimary),
-                                shape = RoundedCornerShape(8.dp),
-                                contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
-                                modifier = Modifier.testTag("add_daily_med_button")
-                            ) {
-                                Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Text(stringResource(R.string.add_med), fontSize = 12.sp)
+                            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                                OutlinedButton(
+                                    onClick = { viewModel.openScannerDialog() },
+                                    shape = RoundedCornerShape(8.dp),
+                                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                                    modifier = Modifier.testTag("scan_bottle_daily_meds_button")
+                                ) {
+                                    Icon(Icons.Default.QrCodeScanner, contentDescription = null, modifier = Modifier.size(16.dp), tint = TealPrimary)
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text(stringResource(R.string.scan_bottle_btn), fontSize = 12.sp, color = TealPrimary)
+                                }
+
+                                Button(
+                                    onClick = { showAddDailyMedDialog = true },
+                                    colors = ButtonDefaults.buttonColors(containerColor = TealPrimary),
+                                    shape = RoundedCornerShape(8.dp),
+                                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                                    modifier = Modifier.testTag("add_daily_med_button")
+                                ) {
+                                    Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text(stringResource(R.string.add_med), fontSize = 12.sp)
+                                }
                             }
                         }
 
@@ -447,7 +461,7 @@ fun ProfilesScreen(
                                         )
                                         Spacer(modifier = Modifier.width(8.dp))
                                         Text(
-                                            text = "DoseFlow App Synergy",
+                                            text = stringResource(R.string.doseflow_synergy),
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Bold,
                                             color = TealPrimary
@@ -459,7 +473,7 @@ fun ProfilesScreen(
                                         shape = RoundedCornerShape(4.dp)
                                     ) {
                                         Text(
-                                            text = "v1 Sync Active",
+                                            text = stringResource(R.string.sync_active),
                                             color = TealPrimary,
                                             fontSize = 10.sp,
                                             fontWeight = FontWeight.Bold,
@@ -470,7 +484,7 @@ fun ProfilesScreen(
 
                                 Spacer(modifier = Modifier.height(6.dp))
                                 Text(
-                                    text = "Automated bi-directional syncing of patient profiles and real-time alert notifications with your DoseFlow application.",
+                                    text = stringResource(R.string.doseflow_banner_desc),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = Slate600
                                 )
@@ -532,7 +546,7 @@ fun ProfilesScreen(
                                                 fontWeight = FontWeight.Bold
                                             )
                                             Text(
-                                                text = "${profile.relationship} • Age ${profile.age} • ${profile.gender}",
+                                                text = stringResource(R.string.profile_details_format, profile.relationship, profile.age, profile.gender),
                                                 style = MaterialTheme.typography.bodySmall,
                                                 color = Slate600
                                             )
@@ -562,7 +576,7 @@ fun ProfilesScreen(
                                     if (profile.conditions.isNotEmpty()) {
                                         Spacer(modifier = Modifier.height(10.dp))
                                         Text(
-                                            text = "Conditions: ${profile.conditions.joinToString(", ")}",
+                                            text = stringResource(R.string.conditions_prefix, profile.conditions.joinToString(", ")),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = Slate700,
                                             fontWeight = FontWeight.Medium
@@ -572,7 +586,7 @@ fun ProfilesScreen(
                                     if (profile.allergies.isNotEmpty()) {
                                         Spacer(modifier = Modifier.height(4.dp))
                                         Text(
-                                            text = "⚠️ Known Allergies: ${profile.allergies.joinToString(", ")}",
+                                            text = stringResource(R.string.allergies_prefix, profile.allergies.joinToString(", ")),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = SeverityCriticalRed,
                                             fontWeight = FontWeight.SemiBold

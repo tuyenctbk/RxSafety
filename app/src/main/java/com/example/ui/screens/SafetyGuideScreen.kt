@@ -78,12 +78,12 @@ fun SafetyGuideScreen(
                 Column(modifier = Modifier.widthIn(max = 640.dp)) {
                     // Header
                     Text(
-                        text = "Clinical Safety Guide",
+                        text = stringResource(R.string.guide_title),
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Emergency red flags, pharmacist checklist, and drug safety protocols",
+                        text = stringResource(R.string.guide_subtitle),
                         style = MaterialTheme.typography.bodySmall,
                         color = Slate600
                     )
@@ -119,13 +119,13 @@ fun SafetyGuideScreen(
                                     Spacer(modifier = Modifier.width(10.dp))
                                     Column {
                                         Text(
-                                            text = "US Poison Control Help",
+                                            text = stringResource(R.string.poison_control_title),
                                             style = MaterialTheme.typography.titleMedium,
                                             fontWeight = FontWeight.Bold,
                                             color = OnSeverityCriticalContainer
                                         )
                                         Text(
-                                            text = "24/7 Free & Confidential Medical Guidance",
+                                            text = stringResource(R.string.poison_control_subtitle),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = Slate700
                                         )
@@ -160,37 +160,37 @@ fun SafetyGuideScreen(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     RedFlagCard(
-                        syndrome = "Serotonin Syndrome (SS)",
-                        drugs = "SSRIs, SNRIs, Tramadol, Triptans, MAOIs",
-                        symptoms = "Agitation, confusion, rapid heart rate, shivering, severe muscle stiffness, tremors, high fever, and seizure."
+                        syndrome = stringResource(R.string.ss_title),
+                        drugs = stringResource(R.string.ss_drugs),
+                        symptoms = stringResource(R.string.ss_symptoms)
                     )
                     Spacer(modifier = Modifier.height(8.dp))
 
                     RedFlagCard(
-                        syndrome = "Severe Internal Bleeding",
-                        drugs = "Warfarin, DOACs (Eliquis, Xarelto), Aspirin, NSAIDs",
-                        symptoms = "Black tarry stools, coughing up blood, vomiting coffee-ground emesis, unusual weakness, severe persistent headache."
+                        syndrome = stringResource(R.string.bleed_title),
+                        drugs = stringResource(R.string.bleed_drugs),
+                        symptoms = stringResource(R.string.bleed_symptoms)
                     )
                     Spacer(modifier = Modifier.height(8.dp))
 
                     RedFlagCard(
-                        syndrome = "Severe Angioedema & Airway Closure",
-                        drugs = "ACE Inhibitors (Lisinopril, Enalapril), ARBs",
-                        symptoms = "Rapid swelling of lips, tongue, throat, face, or larynx causing stridor and shortness of breath. Call 911 immediately."
+                        syndrome = stringResource(R.string.angio_title),
+                        drugs = stringResource(R.string.angio_drugs),
+                        symptoms = stringResource(R.string.angio_symptoms)
                     )
                     Spacer(modifier = Modifier.height(8.dp))
 
                     RedFlagCard(
-                        syndrome = "Severe Rhabdomyolysis",
-                        drugs = "Statins combined with Macrolides or Azoles",
-                        symptoms = "Severe diffuse muscle pain, profound weakness, and dark tea-colored urine indicating myoglobinuria."
+                        syndrome = stringResource(R.string.rhabdo_title),
+                        drugs = stringResource(R.string.rhabdo_drugs),
+                        symptoms = stringResource(R.string.rhabdo_symptoms)
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
 
                     // 5 Pharmacist Questions
                     Text(
-                        text = "📋 5 Questions to Ask Your Pharmacist:",
+                        text = stringResource(R.string.pharmacist_questions_title),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
@@ -198,36 +198,36 @@ fun SafetyGuideScreen(
 
                     PharmacistQuestionItem(
                         number = "1",
-                        question = "Does this interact with any of my current prescription or OTC medications?",
-                        tip = "Always bring a complete list of your current medicines, including vitamins, antacids, and herbal supplements."
+                        question = stringResource(R.string.pq1_q),
+                        tip = stringResource(R.string.pq1_tip)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
 
                     PharmacistQuestionItem(
                         number = "2",
-                        question = "Are there specific foods, juices, or alcohol I need to avoid?",
-                        tip = "Common triggers include grapefruit, calcium/dairy products, potassium salt substitutes, and alcohol."
+                        question = stringResource(R.string.pq2_q),
+                        tip = stringResource(R.string.pq2_tip)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
 
                     PharmacistQuestionItem(
                         number = "3",
-                        question = "What should I do if I accidentally miss a dose?",
-                        tip = "Never double up on doses without explicit instructions from your pharmacist or prescriber."
+                        question = stringResource(R.string.pq3_q),
+                        tip = stringResource(R.string.pq3_tip)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
 
                     PharmacistQuestionItem(
                         number = "4",
-                        question = "What are the early warning signs of an adverse reaction?",
-                        tip = "Understand the difference between mild temporary side effects and urgent red flags requiring emergency care."
+                        question = stringResource(R.string.pq4_q),
+                        tip = stringResource(R.string.pq4_tip)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
 
                     PharmacistQuestionItem(
                         number = "5",
-                        question = "Does this medication require periodic laboratory monitoring?",
-                        tip = "Drugs like Warfarin (INR), Lisinopril (Potassium/Creatinine), Digoxin, and Lithium need scheduled blood tests."
+                        question = stringResource(R.string.pq5_q),
+                        tip = stringResource(R.string.pq5_tip)
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
@@ -285,7 +285,7 @@ fun SafetyGuideScreen(
                                 Icon(Icons.Default.Info, contentDescription = null, tint = Slate600, modifier = Modifier.size(18.dp))
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Text(
-                                    text = "Government Open Data & Medical Disclaimer",
+                                    text = stringResource(R.string.disclaimer_title),
                                     style = MaterialTheme.typography.labelSmall,
                                     fontWeight = FontWeight.Bold,
                                     color = Slate600
@@ -293,7 +293,7 @@ fun SafetyGuideScreen(
                             }
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
-                                text = "RxSafety references 100% free public domain data from the US National Library of Medicine (NIH RxNav) and the US Food and Drug Administration (OpenFDA). This application is intended for educational and clinical screening purposes and does not substitute for professional medical judgment. Always consult a licensed physician or pharmacist regarding medication regimen changes.",
+                                text = stringResource(R.string.disclaimer_body),
                                 style = MaterialTheme.typography.bodySmall,
                                 fontSize = 11.sp,
                                 color = Slate600
@@ -335,7 +335,7 @@ fun RedFlagCard(
                     shape = RoundedCornerShape(4.dp)
                 ) {
                     Text(
-                        text = "EMERGENCY",
+                        text = stringResource(R.string.emergency_badge),
                         color = OnSeverityCriticalContainer,
                         fontSize = 9.sp,
                         fontWeight = FontWeight.Black,
@@ -346,7 +346,7 @@ fun RedFlagCard(
 
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Associated with: $drugs",
+                text = stringResource(R.string.associated_with, drugs),
                 style = MaterialTheme.typography.labelSmall,
                 color = Slate600,
                 fontSize = 11.sp

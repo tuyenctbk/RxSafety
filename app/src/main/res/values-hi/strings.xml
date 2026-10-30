@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">प्रोफ़ाइल में दवा जोड़ें</string>
     <string name="save_medication">दवा सहेजें</string>
     <string name="notes_instructions_label">डॉक्टर की सलाह / निर्देश (वैकल्पिक)</string>
+    <string name="reminder_notification_title">दवा लेने का समय हो गया है</string>
     <string name="reminder_notification_text">आपकी %s दवा लेने का समय हो गया है।</string>
+    <string name="reminder_notification_multiple">आज आपकी %d निर्धारित दवाएं बाकी हैं</string>
+    <string name="notification_channel_name">दवा अनुस्मारक</string>
+    <string name="notification_channel_desc">निर्धारित दवाएं लेने के लिए दैनिक अनुस्मारक</string>
+    <string name="milestone_generic">🎉 उपलब्धि हासिल हुई! RxSafety पर विश्वास करने के लिए धन्यवाद।</string>
+    <string name="profile_details_format">%1$s • आयु %2$d • %3$s</string>
+    <string name="conditions_prefix">स्वास्थ्य स्थितियां: %s</string>
+    <string name="allergies_prefix">⚠️ ज्ञात एलर्जी: %s</string>
+    <string name="conflicts_count_bullet">• %d दवा परस्पर क्रिया द्वंद्व</string>
+    <string name="dietary_count_bullet">• %d आहार संबंधी चेतावनियां</string>
+    <string name="recalls_count_bullet">• %d दवा वापसी अलर्ट</string>
+    <string name="generic_prefix">जेनेरिक: %s</string>
+    <string name="status_prefix">स्थिति: %s</string>
+    <string name="source_prefix">स्रोत: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">FDA दवा पर्ची और ब्लैक बॉक्स चेतावनी</string>
@@ -236,4 +250,17 @@
     <string name="btn_copy_kofi_url">Ko-fi URL कॉपी करें</string>
     <string name="btn_support_options">विकास समर्थन विकल्प</string>
     <string name="toast_kofi_copied">Ko-fi लिंक क्लिपबोर्ड पर कॉपी हो गया! ✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">दवा बोतल बारकोड और क्यूआर स्कैनर</string>
+    <string name="scanner_subtitle">कैमरे को दवा की बोतल के बारकोड, NDC या क्यूआर पर रखें</string>
+    <string name="scan_bottle_btn">दवा की बोतल स्कैन करें</string>
+    <string name="camera_permission_required">बारकोड स्कैन करने के लिए कैमरे की अनुमति आवश्यक है।</string>
+    <string name="grant_camera_permission">कैमरा अनुमति दें</string>
+    <string name="scanned_code_label">स्कैन किया गया कोड / NDC: %s</string>
+    <string name="scanned_med_title">स्कैन की गई दवा का पता चला</string>
+    <string name="add_scanned_to_daily">दैनिक सूची में सहेजें</string>
+    <string name="add_scanned_to_checker">परस्पर क्रिया जांच के लिए जोड़ें</string>
+    <string name="sample_barcodes_title">दवा बोतल स्कैन का अनुकरण करें:</string>
+    <string name="scan_again">दूसरी बोतल स्कैन करें</string>
+    <string name="torch_toggle">टॉर्च लाइट</string>
 </resources>

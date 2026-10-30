@@ -17,15 +17,37 @@ import com.example.data.model.SeverityLevel
 import com.example.data.remote.NetworkClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import com.example.data.local.MedicationRegimenDao
+import com.example.data.model.MedicationRegimenEntity
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.withContext
 
 class RxSafetyRepository(
     private val dao: RxSafetyDao,
-    private val dailyDao: DailyMedicationDao
+    private val dailyDao: DailyMedicationDao,
+    private val regimenDao: MedicationRegimenDao? = null
 ) {
     private val TAG = "RxSafetyRepository"
     private val rxNavApi = NetworkClient.rxNavApi
     private val openFdaApi = NetworkClient.openFdaApi
+
+    // Medication Regimens Local Storage Flows & Methods
+    val allRegimens: Flow<List<MedicationRegimenEntity>> =
+        regimenDao?.getAllRegimens() ?: flowOf(emptyList())
+    val activeRegimens: Flow<List<MedicationRegimenEntity>> =
+        regimenDao?.getActiveRegimens() ?: flowOf(emptyList())
+
+    suspend fun insertRegimen(regimen: MedicationRegimenEntity): Long = withContext(Dispatchers.IO) {
+        regimenDao?.insertRegimen(regimen) ?: -1L
+    }
+
+    suspend fun updateRegimen(regimen: MedicationRegimenEntity) = withContext(Dispatchers.IO) {
+        regimenDao?.updateRegimen(regimen)
+    }
+
+    suspend fun deleteRegimen(regimen: MedicationRegimenEntity) = withContext(Dispatchers.IO) {
+        regimenDao?.deleteRegimen(regimen)
+    }
 
     // Daily Medications Local Storage Flows & Methods
     val allDailyMedications: Flow<List<DailyMedicationEntity>> = dailyDao.getAllDailyMedications()

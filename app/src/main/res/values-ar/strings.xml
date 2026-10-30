@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">إضافة دواء للملف الشخصي</string>
     <string name="save_medication">حفظ الدواء</string>
     <string name="notes_instructions_label">ملاحظات الطبيب / التعليمات (اختياري)</string>
-    <string name="reminder_notification_text">حان وقت تناول دواء %s.</string>
+    <string name="reminder_notification_title">حان وقت تناول الدواء</string>
+    <string name="reminder_notification_text">حان وقت تناول %s.</string>
+    <string name="reminder_notification_multiple">لديك %d من الأدوية المجدولة المتبقية اليوم</string>
+    <string name="notification_channel_name">تذكيرات الأدوية</string>
+    <string name="notification_channel_desc">تذكيرات يومية لتناول الأدوية المجدولة</string>
+    <string name="milestone_generic">🎉 تم تحقيق الإنجاز! شكرًا لثقتكم في RxSafety.</string>
+    <string name="profile_details_format">%1$s • العمر %2$d • %3$s</string>
+    <string name="conditions_prefix">الحالات الصحية: %s</string>
+    <string name="allergies_prefix">⚠️ الحساسيات معروفة: %s</string>
+    <string name="conflicts_count_bullet">• %d تعارضات بين الأدوية</string>
+    <string name="dietary_count_bullet">• %d تحذيرات غذائية</string>
+    <string name="recalls_count_bullet">• %d تنبيهات سحب</string>
+    <string name="generic_prefix">الاسم الجنيس: %s</string>
+    <string name="status_prefix">الحالة: %s</string>
+    <string name="source_prefix">المصدر: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">مفتش النشرات والتحذيرات الصارمة لـ FDA</string>
@@ -237,4 +251,17 @@
     <string name="btn_copy_kofi_url">نسخ رابط Ko-fi</string>
     <string name="btn_support_options">خيارات دعم التطوير</string>
     <string name="toast_kofi_copied">تم نسخ رابط Ko-fi إلى الحافظة! ✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">ماسح الرمز الشريط وQR للعبوات الدوائية</string>
+    <string name="scanner_subtitle">وجه الكاميرا إلى رمز UPC أو NDC أو QR على عبوة الدواء</string>
+    <string name="scan_bottle_btn">مسح عبوة الدواء</string>
+    <string name="camera_permission_required">يلزم إذن الكاميرا لمسح الرموز الشريطية لعبوات الأدوية.</string>
+    <string name="grant_camera_permission">منح إذن الكاميرا</string>
+    <string name="scanned_code_label">الرمز الممسوح / NDC: %s</string>
+    <string name="scanned_med_title">تم اكتشاف دواء ممسوح</string>
+    <string name="add_scanned_to_daily">حفظ في القائمة اليومية</string>
+    <string name="add_scanned_to_checker">إضافة لفحص التعارضات</string>
+    <string name="sample_barcodes_title">محاكاة مسح عبوة دواء:</string>
+    <string name="scan_again">مسح عبوة أخرى</string>
+    <string name="torch_toggle">المصباح</string>
 </resources>

@@ -93,7 +93,21 @@
     <string name="add_med_profile_dialog_title">Add Medication to Profile</string>
     <string name="save_medication">Save Medication</string>
     <string name="notes_instructions_label">Prescriber Notes / Instructions (Optional)</string>
+    <string name="reminder_notification_title">Time to take your medication</string>
     <string name="reminder_notification_text">It\'s time to take your %s.</string>
+    <string name="reminder_notification_multiple">You have %d scheduled medications pending today</string>
+    <string name="notification_channel_name">Medication Reminders</string>
+    <string name="notification_channel_desc">Daily reminders to take scheduled medications</string>
+    <string name="milestone_generic">🎉 Milestone reached! Thank you for trusting RxSafety.</string>
+    <string name="profile_details_format">%1$s • Age %2$d • %3$s</string>
+    <string name="conditions_prefix">Conditions: %s</string>
+    <string name="allergies_prefix">⚠️ Known Allergies: %s</string>
+    <string name="conflicts_count_bullet">• %d Drug Conflicts</string>
+    <string name="dietary_count_bullet">• %d Dietary Warnings</string>
+    <string name="recalls_count_bullet">• %d Recalls</string>
+    <string name="generic_prefix">Generic: %s</string>
+    <string name="status_prefix">Status: %s</string>
+    <string name="source_prefix">Source: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">FDA Label &amp; Black Box Inspector</string>
@@ -234,4 +248,18 @@
     <string name="btn_copy_kofi_url">Copy Ko-fi URL</string>
     <string name="btn_support_options">Support Development Options</string>
     <string name="toast_kofi_copied">Ko-fi Link copied to clipboard! ✓</string>
+
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">Medicine Bottle Barcode &amp; QR Scanner</string>
+    <string name="scanner_subtitle">Point camera at medicine bottle UPC, NDC, or QR code</string>
+    <string name="scan_bottle_btn">Scan Medicine Bottle</string>
+    <string name="camera_permission_required">Camera permission is required to scan medicine bottle barcodes and QR codes.</string>
+    <string name="grant_camera_permission">Grant Camera Permission</string>
+    <string name="scanned_code_label">Scanned Code / NDC: %s</string>
+    <string name="scanned_med_title">Scanned Medication Detected</string>
+    <string name="add_scanned_to_daily">Save Scanned Med to Daily List</string>
+    <string name="add_scanned_to_checker">Stage Scanned Med for Interaction Check</string>
+    <string name="sample_barcodes_title">Simulate Medicine Bottle Barcode Scan:</string>
+    <string name="scan_again">Scan Another Bottle</string>
+    <string name="torch_toggle">Torch Light</string>
 </resources>

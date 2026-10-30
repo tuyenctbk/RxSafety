@@ -48,6 +48,7 @@ import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Medication
 import androidx.compose.material.icons.filled.OpenInNew
+import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
@@ -244,15 +245,27 @@ fun RxNavSearchScreen(
                                 )
                             },
                             trailingIcon = {
-                                if (searchQuery.isNotEmpty()) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    if (searchQuery.isNotEmpty()) {
+                                        IconButton(
+                                            onClick = { viewModel.onRxSearchQueryChanged("") },
+                                            modifier = Modifier.testTag("clear_rx_search_button")
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Default.Clear,
+                                                contentDescription = stringResource(R.string.clear_all),
+                                                tint = Slate600
+                                            )
+                                        }
+                                    }
                                     IconButton(
-                                        onClick = { viewModel.onRxSearchQueryChanged("") },
-                                        modifier = Modifier.testTag("clear_rx_search_button")
+                                        onClick = { viewModel.openScannerDialog() },
+                                        modifier = Modifier.testTag("camera_scan_rx_search_button")
                                     ) {
                                         Icon(
-                                            imageVector = Icons.Default.Clear,
-                                            contentDescription = stringResource(R.string.clear_all),
-                                            tint = Slate600
+                                            imageVector = Icons.Default.QrCodeScanner,
+                                            contentDescription = stringResource(R.string.scan_bottle_btn),
+                                            tint = TealPrimary
                                         )
                                     }
                                 }

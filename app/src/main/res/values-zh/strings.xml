@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">添加药品至档案</string>
     <string name="save_medication">保存药品</string>
     <string name="notes_instructions_label">医嘱备注 / 说明（选填）</string>
-    <string name="reminder_notification_text">该服用的药品：%s。</string>
+    <string name="reminder_notification_title">服药时间提醒</string>
+    <string name="reminder_notification_text">到了服用 %s 的时间。</string>
+    <string name="reminder_notification_multiple">您今天有 %d 项待服药物计划</string>
+    <string name="notification_channel_name">用药提醒</string>
+    <string name="notification_channel_desc">每日用药计划提醒</string>
+    <string name="milestone_generic">🎉 达成里程碑！感谢您信任 RxSafety。</string>
+    <string name="profile_details_format">%1$s • 年龄 %2$d • %3$s</string>
+    <string name="conditions_prefix">健康状况：%s</string>
+    <string name="allergies_prefix">⚠️ 已知过敏：%s</string>
+    <string name="conflicts_count_bullet">• %d 项药物冲突</string>
+    <string name="dietary_count_bullet">• %d 项饮食警告</string>
+    <string name="recalls_count_bullet">• %d 项召回记录</string>
+    <string name="generic_prefix">通用名：%s</string>
+    <string name="status_prefix">状态：%s</string>
+    <string name="source_prefix">来源：%s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">FDA 药品说明书与黑框警告查询</string>
@@ -236,4 +250,17 @@
     <string name="btn_copy_kofi_url">复制 Ko-fi 链接</string>
     <string name="btn_support_options">支持开发选项</string>
     <string name="toast_kofi_copied">已将 Ko-fi 链接复制到剪贴板！✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">药瓶条形码与二维码扫描</string>
+    <string name="scanner_subtitle">将摄像头对准药瓶上的 UPC、NDC 或二维码</string>
+    <string name="scan_bottle_btn">扫描药瓶</string>
+    <string name="camera_permission_required">扫描药瓶条形码需要相机权限。</string>
+    <string name="grant_camera_permission">授予相机权限</string>
+    <string name="scanned_code_label">已扫描代码 / NDC：%s</string>
+    <string name="scanned_med_title">已识别药品信息</string>
+    <string name="add_scanned_to_daily">保存至每日用药列表</string>
+    <string name="add_scanned_to_checker">添加至相互作用检测</string>
+    <string name="sample_barcodes_title">模拟药瓶条形码扫描：</string>
+    <string name="scan_again">扫描其他药瓶</string>
+    <string name="torch_toggle">闪光灯</string>
 </resources>

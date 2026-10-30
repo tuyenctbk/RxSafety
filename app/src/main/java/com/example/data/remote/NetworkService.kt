@@ -22,6 +22,16 @@ interface RxNavApi {
     suspend fun getDrugsByName(
         @Query("name") name: String
     ): RxNavDrugsResponse
+
+    @GET("REST/interaction/list.json")
+    suspend fun getInteractionList(
+        @Query("rxcuis") rxcuis: String
+    ): RxNavInteractionListResponse
+
+    @GET("REST/interaction/interaction.json")
+    suspend fun getInteractionsForDrug(
+        @Query("rxcui") rxcui: String
+    ): RxNavInteractionListResponse
 }
 
 interface OpenFdaApi {

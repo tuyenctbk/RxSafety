@@ -5,12 +5,15 @@ import com.example.data.clinical.ClinicalInteractionDatabase
 import com.example.data.clinical.ConditionContraindicationsDatabase
 import com.example.data.clinical.FoodInteractionDatabase
 import com.example.data.local.DailyMedicationDao
+import com.example.data.local.MedicationRegimenDao
 import com.example.data.local.RxSafetyDao
 import com.example.data.model.AuditResult
 import com.example.data.model.DailyMedicationEntity
+import com.example.data.model.DrugInteractionItem
 import com.example.data.model.DrugLabelInfo
 import com.example.data.model.DrugRecall
 import com.example.data.model.MedicationEntity
+import com.example.data.model.MedicationRegimenEntity
 import com.example.data.model.PatientProfileEntity
 import com.example.data.model.RxNavCandidate
 import com.example.data.model.RxNavDrugDetail
@@ -20,15 +23,17 @@ import com.example.data.remote.OpenFdaApi
 import com.example.data.remote.RxNavApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.withContext
 
 /**
- * MedicationRepository abstracts access to local Room database entities (DailyMedicationDao, RxSafetyDao)
+ * MedicationRepository abstracts access to local Room database entities (DailyMedicationDao, RxSafetyDao, MedicationRegimenDao)
  * and remote Retrofit REST API services (RxNavApi, OpenFdaApi) to provide a unified data source.
  */
 class MedicationRepository(
     private val dailyMedicationDao: DailyMedicationDao,
     private val rxSafetyDao: RxSafetyDao,
+    private val medicationRegimenDao: MedicationRegimenDao? = null,
     private val rxNavApi: RxNavApi = NetworkClient.rxNavApi,
     private val openFdaApi: OpenFdaApi = NetworkClient.openFdaApi
 ) {
@@ -124,6 +129,48 @@ class MedicationRepository(
 
     suspend fun getAllProfileMedicationsOnce(): List<MedicationEntity> = withContext(Dispatchers.IO) {
         rxSafetyDao.getAllMedicationsOnce()
+    }
+
+    // ------------------------------------------------------------------------
+    // Local Room Database Operations (Medication Regimens)
+    // ------------------------------------------------------------------------
+
+    val allRegimens: Flow<List<MedicationRegimenEntity>> =
+        medicationRegimenDao?.getAllRegimens() ?: flowOf(emptyList())
+
+    val activeRegimens: Flow<List<MedicationRegimenEntity>> =
+        medicationRegimenDao?.getActiveRegimens() ?: flowOf(emptyList())
+
+    suspend fun getActiveRegimensOnce(): List<MedicationRegimenEntity> = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.getActiveRegimensOnce() ?: emptyList()
+    }
+
+    suspend fun getRegimenByIdOnce(id: Long): MedicationRegimenEntity? = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.getRegimenByIdOnce(id)
+    }
+
+    suspend fun insertRegimen(regimen: MedicationRegimenEntity): Long = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.insertRegimen(regimen) ?: -1L
+    }
+
+    suspend fun insertRegimens(regimens: List<MedicationRegimenEntity>): List<Long> = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.insertRegimens(regimens) ?: emptyList()
+    }
+
+    suspend fun updateRegimen(regimen: MedicationRegimenEntity) = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.updateRegimen(regimen)
+    }
+
+    suspend fun deleteRegimen(regimen: MedicationRegimenEntity) = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.deleteRegimen(regimen)
+    }
+
+    suspend fun deleteRegimenById(id: Long) = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.deleteRegimenById(id)
+    }
+
+    suspend fun updateRegimenStatus(id: Long, isActive: Boolean) = withContext(Dispatchers.IO) {
+        medicationRegimenDao?.updateRegimenStatus(id, isActive)
     }
 
     // ------------------------------------------------------------------------
@@ -405,6 +452,57 @@ class MedicationRepository(
                 cleanMed.length > 3 && recall.productDescription.lowercase().contains(cleanMed)
             }
         }
+    }
+
+    /**
+     * Checks real-time drug interactions using the NIH RxNav Interaction API for a list of RxCUIs.
+     */
+    suspend fun checkRxNavInteractions(rxcuis: List<String>): List<DrugInteractionItem> = withContext(Dispatchers.IO) {
+        if (rxcuis.size < 2) return@withContext emptyList()
+        val queryParam = rxcuis.filter { it.isNotBlank() && it != "LOCAL" }.joinToString("+")
+        if (queryParam.isBlank()) return@withContext emptyList()
+        val interactions = mutableListOf<DrugInteractionItem>()
+
+        try {
+            val response = rxNavApi.getInteractionList(queryParam)
+            val groups = response.fullInteractionTypeGroup ?: emptyList()
+            for (group in groups) {
+                val fullTypes = group.fullInteractionType ?: emptyList()
+                for (type in fullTypes) {
+                    val pairs = type.interactionPair ?: emptyList()
+                    for (pair in pairs) {
+                        val concepts = pair.interactionConcept ?: emptyList()
+                        val drugA = concepts.getOrNull(0)?.minConceptItem?.name ?: "Unknown Drug"
+                        val drugB = concepts.getOrNull(1)?.minConceptItem?.name ?: "Unknown Drug"
+                        val desc = pair.description ?: "Potential drug-drug interaction reported."
+                        val severityStr = pair.severity?.lowercase() ?: "high"
+                        val severity = if (severityStr.contains("high") || severityStr.contains("critical")) {
+                            SeverityLevel.CRITICAL
+                        } else {
+                            SeverityLevel.MODERATE
+                        }
+
+                        interactions.add(
+                            DrugInteractionItem(
+                                id = "rxnav-${pair.hashCode()}",
+                                drugA = drugA,
+                                drugB = drugB,
+                                severity = severity,
+                                title = "$drugA + $drugB Interaction",
+                                mechanism = "Pharmacological interaction documented in NIH RxNav / ONC Clinical Knowledge Base.",
+                                clinicalEffect = desc,
+                                recommendation = "Consult prescribing physician or clinical pharmacist to adjust dosage or select alternative therapy.",
+                                source = "NIH RxNav / ONC Clinical Decision Knowledge Base"
+                            )
+                        )
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "RxNav interaction check error: ${e.message}")
+        }
+
+        interactions
     }
 
     /**

@@ -86,12 +86,12 @@ fun InspectorScreen(
             ) {
                 Column(modifier = Modifier.widthIn(max = 640.dp)) {
                     Text(
-                        text = "FDA Label & Black Box Inspector",
+                        text = stringResource(R.string.inspector_title),
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Query official FDA drug monographs, boxed warnings, and indications",
+                        text = stringResource(R.string.inspector_subtitle),
                         style = MaterialTheme.typography.bodySmall,
                         color = Slate600
                     )
@@ -100,7 +100,7 @@ fun InspectorScreen(
 
                     // Quick Chips
                     Text(
-                        text = "Frequently Inspected Drugs:",
+                        text = stringResource(R.string.frequently_inspected),
                         style = MaterialTheme.typography.labelSmall,
                         color = Slate600,
                         fontWeight = FontWeight.SemiBold
@@ -201,7 +201,7 @@ fun InspectorScreen(
                                             fontWeight = FontWeight.Bold
                                         )
                                         Text(
-                                            text = "Generic: ${label.genericName}",
+                                            text = stringResource(R.string.generic_prefix, label.genericName),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = TealPrimary,
                                             fontWeight = FontWeight.SemiBold
@@ -212,7 +212,7 @@ fun InspectorScreen(
                                         shape = RoundedCornerShape(6.dp)
                                     ) {
                                         Text(
-                                            text = "FDA Label",
+                                            text = stringResource(R.string.fda_label),
                                             color = TealPrimary,
                                             fontSize = 11.sp,
                                             fontWeight = FontWeight.Bold,
@@ -244,7 +244,7 @@ fun InspectorScreen(
                                         )
                                         Spacer(modifier = Modifier.width(8.dp))
                                         Text(
-                                            text = "FDA BOXED WARNING (BLACK BOX)",
+                                            text = stringResource(R.string.fda_boxed_warning),
                                             style = MaterialTheme.typography.titleSmall,
                                             fontWeight = FontWeight.Black,
                                             color = Color.Black
@@ -266,7 +266,7 @@ fun InspectorScreen(
                         // Warnings & Precautions
                         if (!label.warnings.isNullOrBlank()) {
                             LabelSectionCard(
-                                title = "Warnings & Precautions",
+                                title = stringResource(R.string.warnings_precautions),
                                 content = label.warnings!!,
                                 icon = Icons.Default.Warning,
                                 iconTint = SeverityCriticalRed
@@ -277,7 +277,7 @@ fun InspectorScreen(
                         // Indications & Usage
                         if (!label.indications.isNullOrBlank()) {
                             LabelSectionCard(
-                                title = "Indications & Clinical Usage",
+                                title = stringResource(R.string.indications_usage),
                                 content = label.indications!!,
                                 icon = Icons.Default.Biotech,
                                 iconTint = TealPrimary
@@ -288,7 +288,7 @@ fun InspectorScreen(
                         // Adverse Reactions
                         if (!label.adverseReactions.isNullOrBlank()) {
                             LabelSectionCard(
-                                title = "Documented Adverse Reactions",
+                                title = stringResource(R.string.adverse_reactions),
                                 content = label.adverseReactions!!,
                                 icon = Icons.Default.Info,
                                 iconTint = Slate700

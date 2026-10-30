@@ -94,7 +94,21 @@
     <string name="add_med_profile_dialog_title">プロファイルに薬剤を追加</string>
     <string name="save_medication">薬剤を保存</string>
     <string name="notes_instructions_label">医師のメモ / 指示（任意）</string>
-    <string name="reminder_notification_text">%s を服用する時間です。</string>
+    <string name="reminder_notification_title">服薬の時間です</string>
+    <string name="reminder_notification_text">%s を服用する時間になりました。</string>
+    <string name="reminder_notification_multiple">本日予定されている服薬が %d 件あります</string>
+    <string name="notification_channel_name">服薬リマインダー</string>
+    <string name="notification_channel_desc">予定されたお薬の毎日の服薬リマインダー</string>
+    <string name="milestone_generic">🎉 マイルストーン達成！RxSafetyをご利用いただきありがとうございます。</string>
+    <string name="profile_details_format">%1$s • 年齢 %2$d歳 • %3$s</string>
+    <string name="conditions_prefix">持病・疾患: %s</string>
+    <string name="allergies_prefix">⚠️ 既知のアレルギー: %s</string>
+    <string name="conflicts_count_bullet">• %d 件の相互作用の衝突</string>
+    <string name="dietary_count_bullet">• %d 件の食事・飲酒の注意</string>
+    <string name="recalls_count_bullet">• %d 件のリコール情報</string>
+    <string name="generic_prefix">一般名: %s</string>
+    <string name="status_prefix">ステータス: %s</string>
+    <string name="source_prefix">情報源: %s</string>
 
     <!-- Inspector Screen -->
     <string name="inspector_title">FDA 添付文書 &amp; 警告インスペクター</string>
@@ -236,4 +250,17 @@
     <string name="btn_copy_kofi_url">Ko-fi URL をコピー</string>
     <string name="btn_support_options">開発支援オプション</string>
     <string name="toast_kofi_copied">Ko-fi リンクをクリップボードにコピーしました！ ✓</string>
+    <!-- Camera Barcode & QR Scanner -->
+    <string name="scanner_title">薬瓶バーコード＆QRスキャナー</string>
+    <string name="scanner_subtitle">カメラを薬瓶のUPC、NDC、またはQRコードに向けてください</string>
+    <string name="scan_bottle_btn">薬瓶をスキャン</string>
+    <string name="camera_permission_required">バーコードをスキャンするにはカメラの許可が必要です。</string>
+    <string name="grant_camera_permission">カメラの権限を許可</string>
+    <string name="scanned_code_label">スキャンコード / NDC: %s</string>
+    <string name="scanned_med_title">スキャンした薬剤を検出</string>
+    <string name="add_scanned_to_daily">毎日の薬リストに保存</string>
+    <string name="add_scanned_to_checker">相互作用チェックに追加</string>
+    <string name="sample_barcodes_title">薬瓶スキャンをシミュレート:</string>
+    <string name="scan_again">別の薬瓶をスキャン</string>
+    <string name="torch_toggle">ライト切り替え</string>
 </resources>

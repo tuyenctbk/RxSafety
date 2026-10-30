@@ -12,6 +12,7 @@ import com.example.data.model.DoseFlowProfileSync
 import com.example.data.model.DrugLabelInfo
 import com.example.data.model.DrugRecall
 import com.example.data.model.MedicationEntity
+import com.example.data.model.MedicationRegimenEntity
 import com.example.data.model.PatientProfileEntity
 import com.example.data.model.RxNavCandidate
 import com.example.data.model.RxNavDrugDetail
@@ -49,6 +50,10 @@ class RxSafetyViewModel(
 
     // Daily Medication List (stored locally on device via Room)
     val dailyMedications: StateFlow<List<DailyMedicationEntity>> = repository.allDailyMedications
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
+    // Medication Regimens (stored locally on device via Room)
+    val medicationRegimens: StateFlow<List<MedicationRegimenEntity>> = repository.allRegimens
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     // Navigation Tab
@@ -491,6 +496,45 @@ class RxSafetyViewModel(
         }
     }
 
+    // Medication Regimens (Multi-drug protocols) Actions
+    fun addMedicationRegimen(
+        title: String,
+        patientName: String = "Myself",
+        medicationNames: List<String>,
+        targetConditions: List<String> = emptyList(),
+        scheduleSummary: String = "Daily",
+        description: String = "",
+        prescriber: String = "",
+        notes: String = ""
+    ) {
+        viewModelScope.launch {
+            repository.insertRegimen(
+                MedicationRegimenEntity(
+                    name = title.trim(),
+                    patientName = patientName.trim(),
+                    medicationNames = medicationNames,
+                    targetConditions = targetConditions,
+                    scheduleSummary = scheduleSummary,
+                    description = description.trim(),
+                    prescriber = prescriber.trim(),
+                    notes = notes.trim()
+                )
+            )
+        }
+    }
+
+    fun deleteMedicationRegimen(regimen: MedicationRegimenEntity) {
+        viewModelScope.launch {
+            repository.deleteRegimen(regimen)
+        }
+    }
+
+    fun toggleMedicationRegimenStatus(id: Long, currentActive: Boolean) {
+        viewModelScope.launch {
+            repository.updateRegimenStatus(id, !currentActive)
+        }
+    }
+
     fun resetDailyTakenStatus() {
         viewModelScope.launch {
             repository.resetAllDailyTakenStatus()
@@ -610,5 +654,47 @@ class RxSafetyViewModel(
         val clean = drugName.substringBefore(" (").trim()
         inspectDrug(clean)
         _currentTab.value = 4
+    }
+
+    // Camera Barcode & QR Scanner Dialog State & Actions
+    private val _showScannerDialog = MutableStateFlow(false)
+    val showScannerDialog: StateFlow<Boolean> = _showScannerDialog.asStateFlow()
+
+    fun openScannerDialog() {
+        _showScannerDialog.value = true
+    }
+
+    fun closeScannerDialog() {
+        _showScannerDialog.value = false
+    }
+
+    fun saveScannedMedicationToDaily(scanned: com.example.ui.components.ScannedMedicationResult) {
+        viewModelScope.launch {
+            val entity = DailyMedicationEntity(
+                name = scanned.medName,
+                dosage = scanned.dosage,
+                frequency = "Once daily",
+                dosageForm = scanned.dosageForm,
+                rxcui = scanned.rxcui,
+                instructions = scanned.instructions,
+                scheduledTime = "08:00 AM",
+                scheduleTimes = listOf("Morning"),
+                isActive = true,
+                isTakenToday = false
+            )
+            repository.insertDailyMedication(entity)
+            donationManager.recordCoreOperation()
+            _bannerAlert.value = UiAlertMessage(
+                title = "Scanned Med Saved to Device!",
+                message = "${scanned.medName} (${scanned.dosage}) saved to local Room database.",
+                severity = SeverityLevel.SAFE
+            )
+        }
+    }
+
+    fun stageScannedMedicationForCheck(scanned: com.example.ui.components.ScannedMedicationResult) {
+        val cleanName = scanned.medName.substringBefore(" (").trim()
+        addMedication(cleanName)
+        _currentTab.value = 0
     }
 }

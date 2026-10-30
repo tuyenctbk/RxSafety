@@ -8,6 +8,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
@@ -26,6 +32,8 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Biotech
@@ -33,6 +41,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.HealthAndSafety
 import androidx.compose.material.icons.filled.Medication
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.WarningAmber
@@ -40,6 +49,7 @@ import androidx.compose.material.icons.outlined.Biotech
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.HealthAndSafety
 import androidx.compose.material.icons.outlined.Medication
+import androidx.compose.material.icons.outlined.QrCodeScanner
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.Security
 import androidx.compose.material.icons.outlined.WarningAmber
@@ -117,6 +127,7 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
 
     val isSupporter by viewModel.isSupporter.collectAsState()
     val showDonationDialog by viewModel.showDonationDialog.collectAsState()
+    val showScannerDialog by viewModel.showScannerDialog.collectAsState()
     val shouldShowAutoPrompt by viewModel.shouldShowAutoPrompt.collectAsState()
     val milestoneEvent by viewModel.milestoneEvent.collectAsState()
 
@@ -141,7 +152,7 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
             val msg = when (milestoneEvent) {
                 "10_CHECKS" -> context.getString(R.string.milestone_toast_10)
                 "25_CHECKS" -> context.getString(R.string.milestone_toast_25)
-                else -> "🎉 Milestone reached! Thank you for using RxSafety."
+                else -> context.getString(R.string.milestone_generic)
             }
             Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
             viewModel.clearMilestoneEvent()
@@ -164,7 +175,31 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
         )
     }
 
+    // Camera Barcode & QR Scanner Dialog
+    if (showScannerDialog) {
+        com.example.ui.components.CameraBarcodeScannerDialog(
+            onDismiss = { viewModel.closeScannerDialog() },
+            onSaveToDailyMeds = { scanned ->
+                viewModel.saveScannedMedicationToDaily(scanned)
+            },
+            onStageForChecker = { scanned ->
+                viewModel.stageScannedMedicationForCheck(scanned)
+            }
+        )
+    }
+
     if (showSplash) {
+        val infiniteTransition = rememberInfiniteTransition(label = "splash_pulse")
+        val scale by infiniteTransition.animateFloat(
+            initialValue = 0.94f,
+            targetValue = 1.06f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(750, easing = FastOutSlowInEasing),
+                repeatMode = RepeatMode.Reverse
+            ),
+            label = "splash_scale"
+        )
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -179,9 +214,11 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                     imageVector = Icons.Filled.HealthAndSafety,
                     contentDescription = null,
                     tint = TealPrimary,
-                    modifier = Modifier.size(72.dp)
+                    modifier = Modifier
+                        .size(80.dp)
+                        .graphicsLayer(scaleX = scale, scaleY = scale)
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(20.dp))
                 Text(
                     text = stringResource(R.string.app_name),
                     style = MaterialTheme.typography.headlineLarge,
@@ -389,6 +426,17 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                                     tint = TealPrimary
                                 )
                             }
+                        }
+
+                        IconButton(
+                            onClick = { viewModel.openScannerDialog() },
+                            modifier = Modifier.testTag("nav_scanner_header_button")
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.QrCodeScanner,
+                                contentDescription = stringResource(R.string.scan_bottle_btn),
+                                tint = TealPrimary
+                            )
                         }
 
                         IconButton(

@@ -609,17 +609,17 @@ fun AuditSummaryHeader(result: com.example.data.model.AuditResult) {
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Text(
-                    text = "• ${result.drugInteractions.size} Drug Conflicts",
+                    text = stringResource(R.string.conflicts_count_bullet, result.drugInteractions.size),
                     style = MaterialTheme.typography.bodySmall,
                     fontWeight = FontWeight.SemiBold
                 )
                 Text(
-                    text = "• ${result.foodInteractions.size} Dietary Warnings",
+                    text = stringResource(R.string.dietary_count_bullet, result.foodInteractions.size),
                     style = MaterialTheme.typography.bodySmall,
                     fontWeight = FontWeight.SemiBold
                 )
                 Text(
-                    text = "• ${result.activeRecalls.size} Recalls",
+                    text = stringResource(R.string.recalls_count_bullet, result.activeRecalls.size),
                     style = MaterialTheme.typography.bodySmall,
                     fontWeight = FontWeight.SemiBold
                 )

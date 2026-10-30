@@ -88,12 +88,12 @@ fun RecallsScreen(
                     ) {
                         Column {
                             Text(
-                                text = "FDA Drug Recalls & Alerts",
+                                text = stringResource(R.string.recalls_title),
                                 style = MaterialTheme.typography.headlineSmall,
                                 fontWeight = FontWeight.Bold
                             )
                             Text(
-                                text = "Live safety enforcement reports directly from OpenFDA",
+                                text = stringResource(R.string.recalls_subtitle),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Slate600
                             )
@@ -102,7 +102,7 @@ fun RecallsScreen(
                             onClick = { viewModel.loadRecalls() },
                             modifier = Modifier.testTag("refresh_recalls_button")
                         ) {
-                            Icon(imageVector = Icons.Default.Refresh, contentDescription = "Refresh", tint = TealPrimary)
+                            Icon(imageVector = Icons.Default.Refresh, contentDescription = stringResource(R.string.recalls_title), tint = TealPrimary)
                         }
                     }
 
@@ -127,14 +127,14 @@ fun RecallsScreen(
                             Spacer(modifier = Modifier.width(8.dp))
                             Column {
                                 Text(
-                                    text = "FDA Recall Classifications:",
+                                    text = stringResource(R.string.fda_classifications_title),
                                     style = MaterialTheme.typography.labelSmall,
                                     fontWeight = FontWeight.Bold,
                                     color = TealPrimary
                                 )
                                 Spacer(modifier = Modifier.height(2.dp))
                                 Text(
-                                    text = "• Class I: Highest risk. Defect could cause severe injury or death.\n• Class II: Temporary or medically reversible adverse effects.\n• Class III: Violation not likely to cause health consequences.",
+                                    text = stringResource(R.string.fda_classifications_body),
                                     style = MaterialTheme.typography.bodySmall,
                                     fontSize = 11.sp,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -194,12 +194,12 @@ fun RecallsScreen(
                                 Spacer(modifier = Modifier.width(10.dp))
                                 Column {
                                     Text(
-                                        text = "Filter by My Saved Meds",
+                                        text = stringResource(R.string.filter_my_meds),
                                         style = MaterialTheme.typography.bodyMedium,
                                         fontWeight = FontWeight.SemiBold
                                     )
                                     Text(
-                                        text = "Show only recalls matching medications in your profiles",
+                                        text = stringResource(R.string.filter_my_meds_subtitle),
                                         style = MaterialTheme.typography.bodySmall,
                                         color = Slate600,
                                         fontSize = 11.sp
@@ -216,7 +216,7 @@ fun RecallsScreen(
 
                     Spacer(modifier = Modifier.height(14.dp))
                     Text(
-                        text = "Recent FDA Enforcement Reports (${recalls.size}):",
+                        text = stringResource(R.string.recent_enforcement_reports, recalls.size),
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.Bold
                     )
