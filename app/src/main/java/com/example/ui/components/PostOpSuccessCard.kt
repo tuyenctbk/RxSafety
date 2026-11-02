@@ -95,10 +95,13 @@ fun PostOpSuccessCard(
                 }
             }
 
+            Spacer(modifier = Modifier.width(8.dp))
+
             Button(
                 onClick = onOpenSupportDialog,
                 colors = ButtonDefaults.buttonColors(containerColor = TealPrimary),
                 shape = RoundedCornerShape(10.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 6.dp),
                 modifier = Modifier.testTag("post_op_support_button")
             ) {
                 Icon(imageVector = Icons.Default.LocalCafe, contentDescription = null, modifier = Modifier.size(14.dp))
@@ -106,7 +109,9 @@ fun PostOpSuccessCard(
                 Text(
                     text = stringResource(R.string.post_op_support_btn),
                     fontSize = 11.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    softWrap = false
                 )
             }
         }

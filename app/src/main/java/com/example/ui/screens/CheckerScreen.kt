@@ -50,6 +50,8 @@ import androidx.compose.material3.InputChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.ScrollableTabRow
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
@@ -131,7 +133,7 @@ fun CheckerScreen(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Column {
+                        Column(modifier = Modifier.weight(1f)) {
                             Text(
                                 text = stringResource(R.string.checker_title),
                                 style = MaterialTheme.typography.headlineSmall,
@@ -145,14 +147,21 @@ fun CheckerScreen(
                             )
                         }
                         if (selectedMeds.isNotEmpty()) {
-                            IconButton(
+                            TextButton(
                                 onClick = { viewModel.clearAllMedications() },
                                 modifier = Modifier.testTag("clear_all_meds_button")
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Clear,
-                                    contentDescription = stringResource(R.string.clear_all),
-                                    tint = Slate600
+                                    contentDescription = null,
+                                    tint = Slate600,
+                                    modifier = Modifier.size(16.dp)
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = stringResource(R.string.clear_all),
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = Slate600
                                 )
                             }
                         }
@@ -413,18 +422,22 @@ fun CheckerScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Column(modifier = Modifier.widthIn(max = 640.dp)) {
-                        ScrollableTabRow(
+                        TabRow(
                             selectedTabIndex = selectedResultTab,
-                            edgePadding = 0.dp,
-                            containerColor = Color.Transparent
+                            containerColor = MaterialTheme.colorScheme.surface,
+                            contentColor = TealPrimary,
+                            modifier = Modifier.clip(RoundedCornerShape(12.dp))
                         ) {
                             Tab(
                                 selected = selectedResultTab == 0,
                                 onClick = { selectedResultTab = 0 },
                                 text = {
                                     Text(
-                                        stringResource(R.string.tab_drug_conflicts, result.drugInteractions.size),
-                                        fontWeight = if (selectedResultTab == 0) FontWeight.Bold else FontWeight.Normal
+                                        stringResource(R.string.tab_drug_conflicts_short, result.drugInteractions.size),
+                                        fontWeight = if (selectedResultTab == 0) FontWeight.Bold else FontWeight.Normal,
+                                        fontSize = 12.sp,
+                                        maxLines = 1,
+                                        softWrap = false
                                     )
                                 }
                             )
@@ -433,8 +446,11 @@ fun CheckerScreen(
                                 onClick = { selectedResultTab = 1 },
                                 text = {
                                     Text(
-                                        stringResource(R.string.tab_dietary, result.foodInteractions.size),
-                                        fontWeight = if (selectedResultTab == 1) FontWeight.Bold else FontWeight.Normal
+                                        stringResource(R.string.tab_dietary_short, result.foodInteractions.size),
+                                        fontWeight = if (selectedResultTab == 1) FontWeight.Bold else FontWeight.Normal,
+                                        fontSize = 12.sp,
+                                        maxLines = 1,
+                                        softWrap = false
                                     )
                                 }
                             )
@@ -443,8 +459,11 @@ fun CheckerScreen(
                                 onClick = { selectedResultTab = 2 },
                                 text = {
                                     Text(
-                                        stringResource(R.string.tab_fda_recalls, result.activeRecalls.size),
-                                        fontWeight = if (selectedResultTab == 2) FontWeight.Bold else FontWeight.Normal
+                                        stringResource(R.string.tab_fda_recalls_short, result.activeRecalls.size),
+                                        fontWeight = if (selectedResultTab == 2) FontWeight.Bold else FontWeight.Normal,
+                                        fontSize = 12.sp,
+                                        maxLines = 1,
+                                        softWrap = false
                                     )
                                 }
                             )

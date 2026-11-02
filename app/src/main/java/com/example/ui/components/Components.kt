@@ -88,7 +88,7 @@ fun SeverityBadge(
         color = bgColor
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
@@ -102,7 +102,9 @@ fun SeverityBadge(
                 text = severity.displayName,
                 color = textColor,
                 fontSize = 11.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                softWrap = false
             )
         }
     }
@@ -202,10 +204,13 @@ fun InteractionCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    modifier = Modifier.weight(1f),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Box(
                         modifier = Modifier
-                            .size(36.dp)
+                            .size(38.dp)
                             .background(
                                 color = if (interaction.severity == SeverityLevel.CRITICAL)
                                     SeverityCriticalContainer else SeverityModerateContainer,
@@ -222,7 +227,7 @@ fun InteractionCard(
                         )
                     }
                     Spacer(modifier = Modifier.width(10.dp))
-                    Column {
+                    Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = "${interaction.drugA} + ${interaction.drugB}",
                             style = MaterialTheme.typography.titleMedium,
@@ -231,10 +236,13 @@ fun InteractionCard(
                         Text(
                             text = interaction.title,
                             style = MaterialTheme.typography.bodySmall,
-                            color = Slate600
+                            color = Slate600,
+                            maxLines = 2,
+                            overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                         )
                     }
                 }
+                Spacer(modifier = Modifier.width(10.dp))
                 SeverityBadge(severity = interaction.severity)
             }
 
@@ -346,10 +354,13 @@ fun FoodInteractionCard(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    modifier = Modifier.weight(1f),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Box(
                         modifier = Modifier
-                            .size(32.dp)
+                            .size(34.dp)
                             .background(SeverityModerateContainer, CircleShape),
                         contentAlignment = Alignment.Center
                     ) {
@@ -360,8 +371,8 @@ fun FoodInteractionCard(
                             modifier = Modifier.size(18.dp)
                         )
                     }
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Column {
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = item.foodName,
                             style = MaterialTheme.typography.titleSmall,
@@ -375,6 +386,7 @@ fun FoodInteractionCard(
                         )
                     }
                 }
+                Spacer(modifier = Modifier.width(10.dp))
                 SeverityBadge(severity = item.severity)
             }
 

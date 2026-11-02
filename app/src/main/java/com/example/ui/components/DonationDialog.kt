@@ -17,11 +17,14 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Close
@@ -101,6 +104,7 @@ fun MultiMethodDonationDialog(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .verticalScroll(rememberScrollState())
                     .padding(20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -321,7 +325,7 @@ private fun GooglePlayTab(onSimulateSupport: (String) -> Unit) {
             onClick = { onSimulateSupport(tiers[selectedTierIndex].first) },
             modifier = Modifier
                 .fillMaxWidth()
-                .height(48.dp)
+                .heightIn(min = 50.dp)
                 .testTag("pay_google_play_button"),
             colors = ButtonDefaults.buttonColors(containerColor = TealPrimary),
             shape = RoundedCornerShape(12.dp)
@@ -330,7 +334,10 @@ private fun GooglePlayTab(onSimulateSupport: (String) -> Unit) {
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text = stringResource(R.string.btn_pay_google_play, tiers[selectedTierIndex].second),
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontSize = 14.sp,
+                maxLines = 1,
+                softWrap = false
             )
         }
 

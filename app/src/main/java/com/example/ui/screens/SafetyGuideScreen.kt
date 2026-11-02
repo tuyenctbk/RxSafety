@@ -102,10 +102,13 @@ fun SafetyGuideScreen(
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                Row(
+                                    modifier = Modifier.weight(1f),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
                                     Box(
                                         modifier = Modifier
-                                            .size(36.dp)
+                                            .size(40.dp)
                                             .background(SeverityCriticalRed, CircleShape),
                                         contentAlignment = Alignment.Center
                                     ) {
@@ -117,7 +120,7 @@ fun SafetyGuideScreen(
                                         )
                                     }
                                     Spacer(modifier = Modifier.width(10.dp))
-                                    Column {
+                                    Column(modifier = Modifier.weight(1f)) {
                                         Text(
                                             text = stringResource(R.string.poison_control_title),
                                             style = MaterialTheme.typography.titleMedium,
@@ -131,7 +134,7 @@ fun SafetyGuideScreen(
                                         )
                                     }
                                 }
-
+                                Spacer(modifier = Modifier.width(10.dp))
                                 Button(
                                     onClick = {
                                         val intent = Intent(Intent.ACTION_DIAL).apply {
@@ -140,10 +143,23 @@ fun SafetyGuideScreen(
                                         context.startActivity(intent)
                                     },
                                     colors = ButtonDefaults.buttonColors(containerColor = SeverityCriticalRed),
-                                    shape = RoundedCornerShape(8.dp),
+                                    shape = RoundedCornerShape(10.dp),
+                                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
                                     modifier = Modifier.testTag("dial_poison_control_button")
                                 ) {
-                                    Text(stringResource(R.string.call_poison_control), fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                                    Icon(
+                                        imageVector = Icons.Default.Phone,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(14.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text(
+                                        text = "1-800-222-1222",
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        maxLines = 1,
+                                        softWrap = false
+                                    )
                                 }
                             }
                         }

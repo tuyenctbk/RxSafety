@@ -1,18 +1,74 @@
-*.iml
-.gradle
-.kotlin
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-.env
+# Built application packages and bundles
+*.apk
+*.ap_
+*.aab
+*.dex
+*.dm
+
+# Build directories and outputs
+build/
+**/build/
+bin/
+out/
+captures/
+.externalNativeBuild/
+.cxx/
+.navigation/
+.history/
+
+# Gradle & Kotlin caches
+.gradle/
+.kotlin/
+
+# Compiled class & archive files
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Signing keys and keystores (PRIVATE - DO NOT COMMIT)
+*.jks
+*.keystore
+*.key
+*.p12
+*.pem
+*.pk8
+common_release_key.jks
 debug.keystore
+
+# Local configuration, environment files, and secrets
+local.properties
+*.local.properties
+secrets.properties
+.env
+.env.*
+!.env.example
+
+# Android Studio & IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio Code
+.vscode/
+
+# Other IDEs & tooling
+.project
+.classpath
+.settings/
+.nb-gradle/
+
+# OS metadata & temporary files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Diagnostics, logs, and memory dumps
+*.log
+*.hprof
+*.trace

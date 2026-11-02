@@ -7,6 +7,7 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -14,8 +15,13 @@ import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -452,11 +458,11 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                     }
                 }
 
-                // Real-time top alert notification banner
+                // Real-time top alert notification banner (shown on Checker tab)
                 AnimatedVisibility(
-                    visible = bannerAlert != null,
-                    enter = fadeIn(),
-                    exit = fadeOut()
+                    visible = bannerAlert != null && currentTab == 0,
+                    enter = fadeIn(tween(250)) + expandVertically(tween(250)),
+                    exit = fadeOut(tween(200)) + shrinkVertically(tween(200))
                 ) {
                     if (bannerAlert != null) {
                         val alert = bannerAlert!!
@@ -469,9 +475,22 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                     }
                 }
 
-                // Screen content
-                Box(modifier = Modifier.fillMaxSize()) {
-                    when (currentTab) {
+                // Screen content with smooth animated tab transitions
+                AnimatedContent(
+                    targetState = currentTab,
+                    transitionSpec = {
+                        if (targetState > initialState) {
+                            (fadeIn(animationSpec = tween(220)) + slideInHorizontally { width -> width / 8 })
+                                .togetherWith(fadeOut(animationSpec = tween(180)) + slideOutHorizontally { width -> -width / 8 })
+                        } else {
+                            (fadeIn(animationSpec = tween(220)) + slideInHorizontally { width -> -width / 8 })
+                                .togetherWith(fadeOut(animationSpec = tween(180)) + slideOutHorizontally { width -> width / 8 })
+                        }
+                    },
+                    label = "tab_transition",
+                    modifier = Modifier.fillMaxSize()
+                ) { targetTab ->
+                    when (targetTab) {
                         0 -> CheckerScreen(viewModel = viewModel)
                         1 -> RxNavSearchScreen(viewModel = viewModel)
                         2 -> RecallsScreen(viewModel = viewModel)

@@ -192,7 +192,7 @@ fun ProfilesScreen(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(
                                     text = stringResource(R.string.daily_meds_title),
                                     style = MaterialTheme.typography.headlineSmall,
@@ -205,16 +205,27 @@ fun ProfilesScreen(
                                 )
                             }
 
-                            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                            Spacer(modifier = Modifier.width(8.dp))
+
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
                                 OutlinedButton(
                                     onClick = { viewModel.openScannerDialog() },
                                     shape = RoundedCornerShape(8.dp),
-                                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
+                                    contentPadding = PaddingValues(horizontal = 8.dp, vertical = 6.dp),
                                     modifier = Modifier.testTag("scan_bottle_daily_meds_button")
                                 ) {
                                     Icon(Icons.Default.QrCodeScanner, contentDescription = null, modifier = Modifier.size(16.dp), tint = TealPrimary)
                                     Spacer(modifier = Modifier.width(4.dp))
-                                    Text(stringResource(R.string.scan_bottle_btn), fontSize = 12.sp, color = TealPrimary)
+                                    Text(
+                                        text = stringResource(R.string.scan_bottle_short),
+                                        fontSize = 12.sp,
+                                        color = TealPrimary,
+                                        maxLines = 1,
+                                        softWrap = false
+                                    )
                                 }
 
                                 Button(
@@ -226,7 +237,12 @@ fun ProfilesScreen(
                                 ) {
                                     Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                                     Spacer(modifier = Modifier.width(4.dp))
-                                    Text(stringResource(R.string.add_med), fontSize = 12.sp)
+                                    Text(
+                                        text = stringResource(R.string.add_med),
+                                        fontSize = 12.sp,
+                                        maxLines = 1,
+                                        softWrap = false
+                                    )
                                 }
                             }
                         }
@@ -377,18 +393,20 @@ fun ProfilesScreen(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(
-                                    text = "Patient Profiles & DoseFlow",
+                                    text = stringResource(R.string.profiles_title),
                                     style = MaterialTheme.typography.headlineSmall,
                                     fontWeight = FontWeight.Bold
                                 )
                                 Text(
-                                    text = "Synchronized medication cabinet and automated conflict scans",
+                                    text = stringResource(R.string.profiles_subtitle),
                                     style = MaterialTheme.typography.bodySmall,
                                     color = Slate600
                                 )
                             }
+
+                            Spacer(modifier = Modifier.width(8.dp))
 
                             Button(
                                 onClick = { showCreateProfileDialog = true },
@@ -399,7 +417,12 @@ fun ProfilesScreen(
                             ) {
                                 Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text(stringResource(R.string.new_profile), fontSize = 12.sp)
+                                Text(
+                                    text = stringResource(R.string.new_profile),
+                                    fontSize = 12.sp,
+                                    maxLines = 1,
+                                    softWrap = false
+                                )
                             }
                         }
 

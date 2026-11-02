@@ -42,7 +42,7 @@ abstract class RxSafetyDatabase : RoomDatabase() {
                     "rxsafety_database"
                 )
                     .addCallback(DatabaseCallback())
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration(dropAllTables = true)
                     .build()
                 INSTANCE = instance
                 instance

@@ -21,6 +21,9 @@
     <string name="tab_drug_conflicts">Drug Conflicts (%d)</string>
     <string name="tab_dietary">Dietary &amp; Alcohol (%d)</string>
     <string name="tab_fda_recalls">FDA Recalls (%d)</string>
+    <string name="tab_drug_conflicts_short">Conflicts (%d)</string>
+    <string name="tab_dietary_short">Dietary (%d)</string>
+    <string name="tab_fda_recalls_short">Recalls (%d)</string>
     <string name="no_severe_conflicts_title">No Known Severe Drug Conflicts Detected</string>
     <string name="no_severe_conflicts_subtitle">No documented high-risk interactions found between the selected medications in the clinical database.</string>
     <string name="no_dietary_title">No Dietary Conflict Flags</string>
@@ -176,11 +179,11 @@
     <string name="rx_search_subtitle">Look up RxNorm identifiers (RxCUI) and prepare medications for interaction checks</string>
     <string name="rx_search_placeholder">Search brand, generic, or formulation (e.g. Lipitor, Warfarin)...</string>
     <string name="rx_search_popular_title">Clinical High-Frequency Lookups:</string>
-    <string name="rx_filter_all">All Concepts</string>
-    <string name="rx_filter_clinical">Clinical Drugs (SCD)</string>
-    <string name="rx_filter_branded">Branded Drugs (SBD)</string>
+    <string name="rx_filter_all">All</string>
+    <string name="rx_filter_clinical">Clinical (SCD)</string>
+    <string name="rx_filter_branded">Branded (SBD)</string>
     <string name="rx_filter_ingredients">Ingredients (IN)</string>
-    <string name="rx_filter_brand_names">Brand Names (BN)</string>
+    <string name="rx_filter_brand_names">Brands (BN)</string>
     <string name="rx_found_count">Found %d RxNorm Concept Identifiers</string>
     <string name="rx_cui_badge">RxCUI: %s</string>
     <string name="rx_synonym_prefix">Synonym: %s</string>
@@ -253,6 +256,7 @@
     <string name="scanner_title">Medicine Bottle Barcode &amp; QR Scanner</string>
     <string name="scanner_subtitle">Point camera at medicine bottle UPC, NDC, or QR code</string>
     <string name="scan_bottle_btn">Scan Medicine Bottle</string>
+    <string name="scan_bottle_short">Scan Bottle</string>
     <string name="camera_permission_required">Camera permission is required to scan medicine bottle barcodes and QR codes.</string>
     <string name="grant_camera_permission">Grant Camera Permission</string>
     <string name="scanned_code_label">Scanned Code / NDC: %s</string>

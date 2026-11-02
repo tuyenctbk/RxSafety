@@ -72,7 +72,7 @@ object DoseFlowBridge {
                         name = medObj.optString("name", "Unknown"),
                         dosage = medObj.optString("dosage", "1 dose"),
                         frequency = medObj.optString("frequency", "Daily"),
-                        rxcui = medObj.optString("rxcui", null).takeIf { !it.isNullOrBlank() },
+                        rxcui = if (medObj.has("rxcui") && !medObj.isNull("rxcui")) medObj.optString("rxcui").takeIf { it.isNotBlank() } else null,
                         notes = medObj.optString("notes", "")
                     )
                 )
