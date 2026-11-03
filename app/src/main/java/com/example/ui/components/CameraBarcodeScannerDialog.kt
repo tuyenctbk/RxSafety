@@ -151,14 +151,6 @@ object BottleBarcodeParser {
             instructions = "Barcode NDC: $code"
         )
     }
-
-    val samplePresets = listOf(
-        ScannedMedicationResult("00003-0147-20", "Lisinopril", "10 mg", "Tablet", "29046", "Take 1 tablet daily for blood pressure"),
-        ScannedMedicationResult("00071-0155-23", "Lipitor (Atorvastatin)", "20 mg", "Tablet", "83367", "Take 1 tablet daily at bedtime"),
-        ScannedMedicationResult("00078-0358-15", "Metformin", "500 mg", "Tablet", "860975", "Take 1 tablet twice daily with meals"),
-        ScannedMedicationResult("00054-4221-25", "Warfarin", "5 mg", "Tablet", "11289", "Take 1 tablet daily as prescribed"),
-        ScannedMedicationResult("00093-0058-01", "Amoxicillin", "500 mg", "Capsule", "308189", "Take 1 capsule every 8 hours")
-    )
 }
 
 @Composable
@@ -241,25 +233,6 @@ fun CameraBarcodeScannerDialog(
                         Text(stringResource(R.string.grant_camera_permission), color = Color.White)
                     }
 
-                    Spacer(modifier = Modifier.height(32.dp))
-                    // Simulator fallback for testing without camera
-                    Text(
-                        text = stringResource(R.string.sample_barcodes_title),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MedicalCyan
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        BottleBarcodeParser.samplePresets.take(3).forEach { sample ->
-                            OutlinedButton(
-                                onClick = { scannedResult = sample },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("${sample.medName} (${sample.rawCode})", color = Color.White)
-                            }
-                        }
-                    }
-
                     Spacer(modifier = Modifier.height(24.dp))
                     TextButton(onClick = onDismiss) {
                         Text(stringResource(R.string.close), color = Slate400)
@@ -325,45 +298,6 @@ fun CameraBarcodeScannerDialog(
                                     contentDescription = stringResource(R.string.close),
                                     tint = Color.White
                                 )
-                            }
-                        }
-                    }
-
-                    // Bottom Simulation Bar (for quick clinical testing)
-                    Box(
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                            .fillMaxWidth()
-                            .background(NavySurfaceDark.copy(alpha = 0.95f))
-                            .padding(16.dp)
-                    ) {
-                        Column {
-                            Text(
-                                text = stringResource(R.string.sample_barcodes_title),
-                                style = MaterialTheme.typography.labelSmall,
-                                color = Slate400,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(6.dp)
-                            ) {
-                                BottleBarcodeParser.samplePresets.forEach { sample ->
-                                    Surface(
-                                        onClick = { scannedResult = sample },
-                                        shape = RoundedCornerShape(16.dp),
-                                        color = TealPrimary.copy(alpha = 0.2f),
-                                        border = androidx.compose.foundation.BorderStroke(1.dp, TealPrimary)
-                                    ) {
-                                        Text(
-                                            text = sample.medName.substringBefore(" "),
-                                            style = MaterialTheme.typography.labelSmall,
-                                            color = Color.White,
-                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
-                                        )
-                                    }
-                                }
                             }
                         }
                     }

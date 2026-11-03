@@ -428,7 +428,7 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                             ) {
                                 Icon(
                                     imageVector = Icons.Outlined.FavoriteBorder,
-                                    contentDescription = "Support Development",
+                                    contentDescription = stringResource(R.string.support_development),
                                     tint = TealPrimary
                                 )
                             }
@@ -466,9 +466,15 @@ fun RxSafetyApp(viewModel: RxSafetyViewModel) {
                 ) {
                     if (bannerAlert != null) {
                         val alert = bannerAlert!!
+                        val title = if (alert.titleRes != null) {
+                            stringResource(alert.titleRes, *alert.titleArgs.toTypedArray())
+                        } else alert.title
+                        val message = if (alert.messageRes != null) {
+                            stringResource(alert.messageRes, *alert.messageArgs.toTypedArray())
+                        } else alert.message
                         TopAlertBanner(
-                            title = alert.title,
-                            message = alert.message,
+                            title = title,
+                            message = message,
                             severity = alert.severity,
                             onDismiss = { viewModel.dismissBanner() }
                         )

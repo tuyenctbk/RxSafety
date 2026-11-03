@@ -203,46 +203,39 @@ fun CheckerScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
 
-                    // Preset Quick-Pick Chips
-                    Text(
-                        text = stringResource(R.string.clinical_presets),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = Slate600,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Spacer(modifier = Modifier.height(6.dp))
-                    FlowRow(
-                        horizontalArrangement = Arrangement.spacedBy(6.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        PresetChip(
-                            label = "Warfarin + Aspirin",
-                            onClick = { viewModel.loadPresetPair("Warfarin", "Aspirin") },
-                            isHighRisk = true
+                    val dailyMeds by viewModel.dailyMedications.collectAsState()
+                    if (dailyMeds.isNotEmpty()) {
+                        Text(
+                            text = stringResource(R.string.quick_add_from_daily),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = Slate600,
+                            fontWeight = FontWeight.SemiBold
                         )
-                        PresetChip(
-                            label = "Lisinopril + Spironolactone",
-                            onClick = { viewModel.loadPresetPair("Lisinopril", "Spironolactone") },
-                            isHighRisk = true
-                        )
-                        PresetChip(
-                            label = "Simvastatin + Clarithromycin",
-                            onClick = { viewModel.loadPresetPair("Simvastatin", "Clarithromycin") },
-                            isHighRisk = true
-                        )
-                        PresetChip(
-                            label = "Sertraline + Tramadol",
-                            onClick = { viewModel.loadPresetPair("Sertraline", "Tramadol") },
-                            isHighRisk = true
-                        )
-                        PresetChip(
-                            label = "Sildenafil + Nitroglycerin",
-                            onClick = { viewModel.loadPresetPair("Sildenafil", "Nitroglycerin") },
-                            isHighRisk = true
-                        )
+                        Spacer(modifier = Modifier.height(6.dp))
+                        FlowRow(
+                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            dailyMeds.map { it.name }.distinct().forEach { medName ->
+                                AssistChip(
+                                    onClick = { viewModel.addMedication(medName) },
+                                    label = { Text(medName, fontSize = 11.sp, fontWeight = FontWeight.Medium) },
+                                    leadingIcon = {
+                                        Icon(
+                                            imageVector = Icons.Default.Medication,
+                                            contentDescription = null,
+                                            tint = TealPrimary,
+                                            modifier = Modifier.size(14.dp)
+                                        )
+                                    },
+                                    colors = AssistChipDefaults.assistChipColors(
+                                        containerColor = MaterialTheme.colorScheme.surface
+                                    )
+                                )
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(16.dp))
                     }
-
-                    Spacer(modifier = Modifier.height(16.dp))
 
                     // Drug Search Input
                     OutlinedTextField(
@@ -550,50 +543,27 @@ fun CheckerScreen(
 }
 
 @Composable
-fun PresetChip(
-    label: String,
-    onClick: () -> Unit,
-    isHighRisk: Boolean
-) {
-    AssistChip(
-        onClick = onClick,
-        label = { Text(label, fontSize = 11.sp, fontWeight = FontWeight.Medium) },
-        leadingIcon = {
-            Icon(
-                imageVector = if (isHighRisk) Icons.Default.Warning else Icons.Default.Medication,
-                contentDescription = null,
-                tint = if (isHighRisk) SeverityCriticalRed else TealPrimary,
-                modifier = Modifier.size(14.dp)
-            )
-        },
-        colors = AssistChipDefaults.assistChipColors(
-            containerColor = if (isHighRisk) SeverityCriticalContainer.copy(alpha = 0.5f) else MaterialTheme.colorScheme.surface
-        )
-    )
-}
-
-@Composable
 fun AuditSummaryHeader(result: com.example.data.model.AuditResult) {
     val (cardBg, iconTint, titleText) = when (result.highestSeverity) {
         SeverityLevel.CRITICAL -> Triple(
             SeverityCriticalContainer,
             SeverityCriticalRed,
-            "⚠️ Severe Risk: Immediate Medical Review Advised"
+            stringResource(R.string.audit_summary_critical)
         )
         SeverityLevel.MODERATE -> Triple(
             SeverityModerateContainer,
             SeverityModerateAmber,
-            "⚡ Moderate Risk: Caution & Monitoring Required"
+            stringResource(R.string.audit_summary_moderate)
         )
         SeverityLevel.LOW -> Triple(
             MaterialTheme.colorScheme.surfaceVariant,
             TealPrimary,
-            "ℹ️ Minor Potential Interactions Noted"
+            stringResource(R.string.audit_summary_low)
         )
         SeverityLevel.SAFE -> Triple(
             SeveritySafeContainer,
             SeveritySafeGreen,
-            "✅ Verified: No Known Severe Conflicts"
+            stringResource(R.string.audit_summary_safe)
         )
     }
 

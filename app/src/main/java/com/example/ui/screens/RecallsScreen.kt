@@ -259,16 +259,16 @@ fun RecallsScreen(
                             )
                             Spacer(modifier = Modifier.height(12.dp))
                             Text(
-                                text = if (filterMyMeds) "No Recalls for Your Saved Medications" else "No Recalls Found",
+                                text = if (filterMyMeds) stringResource(R.string.recalls_none_saved_title) else stringResource(R.string.recalls_none_found_title),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
                                 text = if (filterMyMeds)
-                                    "Great news! None of the drugs in your active patient profiles match currently reported recall batches."
+                                    stringResource(R.string.recalls_none_saved_desc)
                                 else
-                                    "No enforcement reports matched your search criteria.",
+                                    stringResource(R.string.recalls_none_found_desc),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Slate600,
                                 textAlign = androidx.compose.ui.text.style.TextAlign.Center

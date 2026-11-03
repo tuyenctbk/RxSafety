@@ -331,57 +331,6 @@ class RxSafetyRepository(
     }
 
     private fun getSampleRecalls(filter: String?): List<DrugRecall> {
-        val sampleList = listOf(
-            DrugRecall(
-                recallNumber = "D-0342-2024",
-                productDescription = "Atorvastatin Calcium Tablets, 20 mg, 90-count bottles. Distributed Nationwide.",
-                reasonForRecall = "Subpotency: A single batch exhibited dissolution test failures during ongoing stability testing at the 12-month interval.",
-                classification = "Class II",
-                status = "Ongoing",
-                recallingFirm = "Aurobindo Pharma USA, Inc.",
-                reportDate = "20240915",
-                distributionPattern = "Nationwide (USA)",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            ),
-            DrugRecall(
-                recallNumber = "D-0198-2024",
-                productDescription = "Lisinopril and Hydrochlorothiazide Tablets, 20 mg / 12.5 mg. Lot #LH2401.",
-                reasonForRecall = "Cross-contamination: Trace particulate matter identified during standard cleanroom surveillance inspection.",
-                classification = "Class II",
-                status = "Terminated",
-                recallingFirm = "Lupin Pharmaceuticals, Inc.",
-                reportDate = "20240722",
-                distributionPattern = "Nationwide wholesale distributors",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            ),
-            DrugRecall(
-                recallNumber = "D-0045-2024",
-                productDescription = "Aspirin Regimen Bayer 81 mg Enteric Coated Caplets. Lot #B81-992.",
-                reasonForRecall = "Packaging Defect: Faulty tamper-evident bottle seals detected on a single pallet shipment.",
-                classification = "Class III",
-                status = "Completed",
-                recallingFirm = "Bayer Healthcare LLC",
-                reportDate = "20240510",
-                distributionPattern = "Select Retail Outlets in 12 US States",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            ),
-            DrugRecall(
-                recallNumber = "D-0811-2023",
-                productDescription = "Heparin Sodium Injection USP, 1,000 USP units/mL, 10 mL multi-dose vials.",
-                reasonForRecall = "Lack of Sterility Assurance: Observation of particulate matter inside unopened glass vials prior to hospital distribution.",
-                classification = "Class I",
-                status = "Ongoing",
-                recallingFirm = "Baxter Healthcare Corporation",
-                reportDate = "20231102",
-                distributionPattern = "Nationwide hospitals and clinical centers",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            )
-        )
-
-        return if (!filter.isNullOrBlank()) {
-            sampleList.filter { it.productDescription.contains(filter, ignoreCase = true) || it.reasonForRecall.contains(filter, ignoreCase = true) }
-        } else {
-            sampleList
-        }
+        return emptyList()
     }
 }

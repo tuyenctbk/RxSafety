@@ -3,6 +3,7 @@ package com.example.ui.viewmodel
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.R
 import com.example.data.clinical.DoseFlowBridge
 import com.example.data.donation.DonationManager
 import com.example.data.local.RxSafetyDatabase
@@ -16,6 +17,7 @@ import com.example.data.model.MedicationRegimenEntity
 import com.example.data.model.PatientProfileEntity
 import com.example.data.model.RxNavCandidate
 import com.example.data.model.RxNavDrugDetail
+import com.example.ui.components.ScannedMedicationResult
 import com.example.data.model.SeverityLevel
 import com.example.data.repository.MedicationRepository
 import kotlinx.coroutines.Job
@@ -28,8 +30,12 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 data class UiAlertMessage(
-    val title: String,
-    val message: String,
+    val title: String = "",
+    val message: String = "",
+    val titleRes: Int? = null,
+    val messageRes: Int? = null,
+    val titleArgs: List<Any> = emptyList(),
+    val messageArgs: List<Any> = emptyList(),
     val severity: SeverityLevel
 )
 
@@ -65,7 +71,7 @@ class RxSafetyViewModel(
     val bannerAlert: StateFlow<UiAlertMessage?> = _bannerAlert.asStateFlow()
 
     // Checker Screen State
-    private val _selectedMedications = MutableStateFlow<List<String>>(listOf("Warfarin", "Aspirin"))
+    private val _selectedMedications = MutableStateFlow<List<String>>(emptyList())
     val selectedMedications: StateFlow<List<String>> = _selectedMedications.asStateFlow()
 
     private val _searchQuery = MutableStateFlow("")
@@ -117,7 +123,7 @@ class RxSafetyViewModel(
     val doseFlowDialogText: StateFlow<String?> = _doseFlowDialogText.asStateFlow()
 
     // Drug Inspector
-    private val _inspectorQuery = MutableStateFlow("Warfarin")
+    private val _inspectorQuery = MutableStateFlow("")
     val inspectorQuery: StateFlow<String> = _inspectorQuery.asStateFlow()
 
     private val _inspectorResult = MutableStateFlow<DrugLabelInfo?>(null)
@@ -146,10 +152,7 @@ class RxSafetyViewModel(
     private var rxSearchJob: Job? = null
 
     init {
-        // Run initial check on default pair
-        analyzeCurrentMedications()
         loadRecalls()
-        inspectDrug("Warfarin")
 
         // Observe profiles to select default
         viewModelScope.launch {
@@ -260,8 +263,8 @@ class RxSafetyViewModel(
 
             if (result.highestSeverity == SeverityLevel.CRITICAL) {
                 _bannerAlert.value = UiAlertMessage(
-                    title = "Severe Drug Interaction Detected!",
-                    message = "Active combination has high clinical risk. Review mechanism and warnings.",
+                    titleRes = R.string.alert_severe_interaction_title,
+                    messageRes = R.string.alert_severe_interaction_desc,
                     severity = SeverityLevel.CRITICAL
                 )
             }
@@ -326,8 +329,10 @@ class RxSafetyViewModel(
 
             if (audit.highestSeverity == SeverityLevel.CRITICAL) {
                 _bannerAlert.value = UiAlertMessage(
-                    title = "Regimen Conflict in ${profile.name}",
-                    message = "Found ${audit.drugInteractions.size} drug interactions and ${audit.conditionContraindications.size} condition warnings.",
+                    titleRes = R.string.regimen_conflict_title,
+                    titleArgs = listOf(profile.name),
+                    messageRes = R.string.regimen_conflict_desc,
+                    messageArgs = listOf(audit.drugInteractions.size, audit.conditionContraindications.size),
                     severity = SeverityLevel.CRITICAL
                 )
             }
@@ -422,9 +427,10 @@ class RxSafetyViewModel(
             repository.insertMedications(medEntities)
 
             _bannerAlert.value = UiAlertMessage(
-                title = "DoseFlow Regimen Synced!",
-                message = "Imported ${preset.patientName} with ${preset.medications.size} medications. Running instant conflict scan...",
-                severity = SeverityLevel.MODERATE
+                titleRes = R.string.doseflow_regimen_synced_title,
+                messageRes = R.string.doseflow_regimen_synced_desc,
+                messageArgs = listOf(preset.patientName, preset.medications.size),
+                severity = SeverityLevel.SAFE
             )
 
             val createdProfile = PatientProfileEntity(
@@ -438,6 +444,16 @@ class RxSafetyViewModel(
             )
             selectProfile(createdProfile)
             auditProfileRegimen()
+        }
+    }
+
+    fun importDoseFlowJson(jsonStr: String): Boolean {
+        return try {
+            val profile = DoseFlowBridge.importFromJson(jsonStr)
+            syncDoseFlowPreset(profile)
+            true
+        } catch (e: Exception) {
+            false
         }
     }
 
@@ -499,7 +515,7 @@ class RxSafetyViewModel(
     // Medication Regimens (Multi-drug protocols) Actions
     fun addMedicationRegimen(
         title: String,
-        patientName: String = "Myself",
+        patientName: String = "",
         medicationNames: List<String>,
         targetConditions: List<String> = emptyList(),
         scheduleSummary: String = "Daily",
@@ -634,8 +650,9 @@ class RxSafetyViewModel(
             )
             repository.insertDailyMedication(entity)
             _bannerAlert.value = UiAlertMessage(
-                title = "Added to Daily Meds",
-                message = "${drug.name} (RxCUI: ${drug.rxcui}) saved to your local regimen.",
+                titleRes = R.string.added_to_daily_meds_title,
+                messageRes = R.string.added_to_daily_meds_desc,
+                messageArgs = listOf(drug.name, drug.rxcui),
                 severity = SeverityLevel.SAFE
             )
         }
@@ -685,8 +702,9 @@ class RxSafetyViewModel(
             repository.insertDailyMedication(entity)
             donationManager.recordCoreOperation()
             _bannerAlert.value = UiAlertMessage(
-                title = "Scanned Med Saved to Device!",
-                message = "${scanned.medName} (${scanned.dosage}) saved to local Room database.",
+                titleRes = R.string.scanned_med_saved_title,
+                messageRes = R.string.scanned_med_saved_desc,
+                messageArgs = listOf(scanned.medName, scanned.dosage),
                 severity = SeverityLevel.SAFE
             )
         }

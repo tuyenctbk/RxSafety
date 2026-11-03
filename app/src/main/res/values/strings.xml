@@ -266,4 +266,53 @@
     <string name="sample_barcodes_title">Simulate Medicine Bottle Barcode Scan:</string>
     <string name="scan_again">Scan Another Bottle</string>
     <string name="torch_toggle">Torch Light</string>
+
+    <!-- Dynamic Audit Summary -->
+    <string name="audit_summary_critical">⚠️ Severe Risk: Immediate Medical Review Advised</string>
+    <string name="audit_summary_moderate">⚡ Moderate Risk: Caution &amp; Monitoring Required</string>
+    <string name="audit_summary_low">ℹ️ Minor Potential Interactions Noted</string>
+    <string name="audit_summary_safe">✅ Verified: No Known Severe Conflicts</string>
+
+    <!-- Recalls Empty States -->
+    <string name="recalls_none_saved_title">No Recalls for Your Saved Medications</string>
+    <string name="recalls_none_found_title">No Recalls Found</string>
+    <string name="recalls_none_saved_desc">Great news! None of the drugs in your active patient profiles match currently reported recall batches.</string>
+    <string name="recalls_none_found_desc">No enforcement reports matched your search criteria.</string>
+
+    <!-- Empty States -->
+    <string name="no_daily_meds_desc">No daily medications recorded yet. Tap \'Add Med\' above to create your schedule.</string>
+    <string name="no_profiles_yet">No patient profiles created yet. Tap \'New Profile\' above to start tracking medication regimens.</string>
+    <string name="inspector_no_selection">Search for any FDA monograph or prescription drug above to inspect boxed warnings, adverse reactions, and indications.</string>
+
+    <!-- DoseFlow Import / Sync -->
+    <string name="doseflow_json_title_import">Import DoseFlow JSON</string>
+    <string name="paste_doseflow_json_hint">Paste JSON exported from DoseFlow to import patient profiles and medications:</string>
+    <string name="btn_import">Import</string>
+    <string name="import_error_invalid_json">Invalid DoseFlow JSON format. Please check the content and try again.</string>
+    <string name="doseflow_json_tab">DoseFlow JSON</string>
+    <string name="doseflow_regimen_synced_title">DoseFlow Regimen Synced!</string>
+    <string name="doseflow_regimen_synced_desc">Imported %1$s with %2$d medications.</string>
+
+    <!-- UI Actions & Accessibility Descriptions -->
+    <string name="support_development">Support Development</string>
+    <string name="dismiss_alert">Dismiss Alert</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="copy_rxcui">Copy RxCUI</string>
+    <string name="copy_rxcui_success">RxCUI %s copied to clipboard!</string>
+    <string name="search_cd">Search</string>
+    <string name="remove_cd">Remove</string>
+    <string name="delete_cd">Delete</string>
+    <string name="paypal_link_btn">PayPal Link</string>
+    <string name="kofi_link_btn">Ko-fi Link</string>
+    <string name="paypal_live_qr_cd">PayPal Live QR Code</string>
+    <string name="added_to_daily_meds_title">Added to Daily Meds</string>
+    <string name="added_to_daily_meds_desc">%1$s (RxCUI: %2$s) saved to your local regimen.</string>
+    <string name="scanned_med_saved_title">Scanned Med Saved to Device!</string>
+    <string name="scanned_med_saved_desc">%1$s (%2$s) saved to local Room database.</string>
+    <string name="quick_add_from_daily">Quick Add from Saved Meds</string>
+    <string name="import_doseflow_sync">Import DoseFlow</string>
+    <string name="alert_severe_interaction_title">Severe Drug Interaction Detected!</string>
+    <string name="alert_severe_interaction_desc">Active combination has high clinical risk. Review mechanism and warnings.</string>
+    <string name="regimen_conflict_title">Regimen Conflict in %1$s</string>
+    <string name="regimen_conflict_desc">Found %1$d drug interactions and %2$d condition warnings.</string>
 </resources>

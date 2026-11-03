@@ -169,7 +169,7 @@ fun TopAlertBanner(
             ) {
                 Icon(
                     imageVector = Icons.Default.Close,
-                    contentDescription = "Dismiss Alert",
+                    contentDescription = stringResource(R.string.dismiss_alert),
                     tint = accentColor,
                     modifier = Modifier.size(18.dp)
                 )

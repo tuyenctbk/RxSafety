@@ -115,19 +115,6 @@ fun RxNavSearchScreen(
 
     var showExplanationDialog by remember { mutableStateOf(false) }
 
-    val popularSearches = listOf(
-        "Warfarin",
-        "Lisinopril",
-        "Metformin",
-        "Eliquis",
-        "Tramadol",
-        "Fluoxetine",
-        "Atorvastatin",
-        "Aspirin",
-        "Clopidogrel",
-        "Omeprazole"
-    )
-
     Box(modifier = modifier.fillMaxSize()) {
         LazyColumn(
             modifier = Modifier
@@ -241,7 +228,7 @@ fun RxNavSearchScreen(
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Search,
-                                    contentDescription = "Search",
+                                    contentDescription = stringResource(R.string.search_cd),
                                     tint = TealPrimary
                                 )
                             },
@@ -353,33 +340,34 @@ fun RxNavSearchScreen(
                             )
                         }
 
-                        Spacer(modifier = Modifier.height(10.dp))
-
-                        // Popular Lookups Row
-                        Text(
-                            text = stringResource(R.string.rx_search_popular_title),
-                            style = MaterialTheme.typography.labelSmall,
-                            fontWeight = FontWeight.Bold,
-                            color = Slate600
-                        )
-                        Spacer(modifier = Modifier.height(6.dp))
-                        FlowRow(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(6.dp),
-                            verticalArrangement = Arrangement.spacedBy(6.dp)
-                        ) {
-                            popularSearches.forEach { presetDrug ->
-                                AssistChip(
-                                    onClick = {
-                                        viewModel.onRxSearchQueryChanged(presetDrug)
-                                        viewModel.executeRxSearch(presetDrug)
-                                    },
-                                    label = { Text(presetDrug, fontSize = 11.sp, fontWeight = FontWeight.Medium) },
-                                    colors = AssistChipDefaults.assistChipColors(
-                                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
-                                    ),
-                                    modifier = Modifier.testTag("popular_chip_$presetDrug")
-                                )
+                        val dailyMeds by viewModel.dailyMedications.collectAsState()
+                        if (dailyMeds.isNotEmpty()) {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Text(
+                                text = stringResource(R.string.quick_add_from_daily),
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = Slate600
+                            )
+                            Spacer(modifier = Modifier.height(6.dp))
+                            FlowRow(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                verticalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                dailyMeds.map { it.name }.distinct().forEach { presetDrug ->
+                                    AssistChip(
+                                        onClick = {
+                                            viewModel.onRxSearchQueryChanged(presetDrug)
+                                            viewModel.executeRxSearch(presetDrug)
+                                        },
+                                        label = { Text(presetDrug, fontSize = 11.sp, fontWeight = FontWeight.Medium) },
+                                        colors = AssistChipDefaults.assistChipColors(
+                                            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
+                                        ),
+                                        modifier = Modifier.testTag("popular_chip_$presetDrug")
+                                    )
+                                }
                             }
                         }
 
@@ -616,7 +604,7 @@ fun RxNavSearchScreen(
                                     trailingIcon = {
                                         Icon(
                                             imageVector = Icons.Default.Close,
-                                            contentDescription = "Remove",
+                                            contentDescription = stringResource(R.string.remove_cd),
                                             modifier = Modifier.size(14.dp)
                                         )
                                     },
@@ -748,7 +736,7 @@ fun RxNavDrugResultCard(
                         Spacer(modifier = Modifier.width(4.dp))
                         Icon(
                             imageVector = Icons.Default.ContentCopy,
-                            contentDescription = "Copy RxCUI",
+                            contentDescription = stringResource(R.string.copy_rxcui),
                             modifier = Modifier.size(12.dp),
                             tint = MaterialTheme.colorScheme.onSecondaryContainer
                         )

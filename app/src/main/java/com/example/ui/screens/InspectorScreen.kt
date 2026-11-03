@@ -50,6 +50,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ui.theme.SeverityCriticalContainer
@@ -98,38 +99,39 @@ fun InspectorScreen(
 
                     Spacer(modifier = Modifier.height(14.dp))
 
-                    // Quick Chips
-                    Text(
-                        text = stringResource(R.string.frequently_inspected),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = Slate600,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Spacer(modifier = Modifier.height(6.dp))
-                    FlowRow(
-                        horizontalArrangement = Arrangement.spacedBy(6.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        listOf("Warfarin", "Lisinopril", "Atorvastatin", "Metformin", "Sertraline", "Alprazolam").forEach { drug ->
-                            AssistChip(
-                                onClick = {
-                                    viewModel.onInspectorQueryChanged(drug)
-                                    viewModel.inspectDrug(drug)
-                                },
-                                label = { Text(drug, fontSize = 11.sp) },
-                                leadingIcon = {
-                                    Icon(
-                                        imageVector = Icons.Default.Medication,
-                                        contentDescription = null,
-                                        tint = TealPrimary,
-                                        modifier = Modifier.size(14.dp)
-                                    )
-                                }
-                            )
+                    val dailyMeds by viewModel.dailyMedications.collectAsState()
+                    if (dailyMeds.isNotEmpty()) {
+                        Text(
+                            text = stringResource(R.string.quick_add_from_daily),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = Slate600,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Spacer(modifier = Modifier.height(6.dp))
+                        FlowRow(
+                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            dailyMeds.map { it.name }.distinct().forEach { drug ->
+                                AssistChip(
+                                    onClick = {
+                                        viewModel.onInspectorQueryChanged(drug)
+                                        viewModel.inspectDrug(drug)
+                                    },
+                                    label = { Text(drug, fontSize = 11.sp) },
+                                    leadingIcon = {
+                                        Icon(
+                                            imageVector = Icons.Default.Medication,
+                                            contentDescription = null,
+                                            tint = TealPrimary,
+                                            modifier = Modifier.size(14.dp)
+                                        )
+                                    }
+                                )
+                            }
                         }
+                        Spacer(modifier = Modifier.height(14.dp))
                     }
-
-                    Spacer(modifier = Modifier.height(14.dp))
 
                     // Search input
                     Row(
@@ -293,6 +295,26 @@ fun InspectorScreen(
                                 icon = Icons.Default.Info,
                                 iconTint = Slate700
                             )
+                        }
+                    } else {
+                        Card(
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)),
+                            shape = RoundedCornerShape(14.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(24.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = stringResource(R.string.inspector_no_selection),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Slate600,
+                                    textAlign = TextAlign.Center
+                                )
+                            }
                         }
                     }
                 }

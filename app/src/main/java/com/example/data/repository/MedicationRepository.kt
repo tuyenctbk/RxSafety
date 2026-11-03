@@ -564,35 +564,7 @@ class MedicationRepository(
     }
 
     private fun getFallbackRecalls(filter: String?): List<DrugRecall> {
-        val sampleList = listOf(
-            DrugRecall(
-                recallNumber = "D-0342-2024",
-                productDescription = "Atorvastatin Calcium Tablets, 20 mg, 90-count bottles.",
-                reasonForRecall = "Subpotency: A single batch exhibited dissolution test failures.",
-                classification = "Class II",
-                status = "Ongoing",
-                recallingFirm = "Aurobindo Pharma USA, Inc.",
-                reportDate = "20240915",
-                distributionPattern = "Nationwide (USA)",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            ),
-            DrugRecall(
-                recallNumber = "D-0198-2024",
-                productDescription = "Lisinopril and Hydrochlorothiazide Tablets, 20 mg / 12.5 mg.",
-                reasonForRecall = "Cross-contamination: Trace particulate matter identified.",
-                classification = "Class II",
-                status = "Terminated",
-                recallingFirm = "Lupin Pharmaceuticals, Inc.",
-                reportDate = "20240722",
-                distributionPattern = "Nationwide wholesale distributors",
-                voluntaryMandated = "Voluntary: Firm initiated"
-            )
-        )
-        return if (!filter.isNullOrBlank()) {
-            sampleList.filter { it.productDescription.contains(filter, ignoreCase = true) }
-        } else {
-            sampleList
-        }
+        return emptyList()
     }
 
     private fun getFallbackLabel(drugName: String): DrugLabelInfo {

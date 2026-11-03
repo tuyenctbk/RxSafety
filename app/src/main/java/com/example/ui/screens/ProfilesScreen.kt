@@ -123,7 +123,7 @@ fun ProfilesScreen(
     var showAddDailyMedDialog by remember { mutableStateOf(false) }
     var showAddMedDialog by remember { mutableStateOf(false) }
     var showCreateProfileDialog by remember { mutableStateOf(false) }
-    var showDoseFlowPresetsDialog by remember { mutableStateOf(false) }
+    var showDoseFlowImportDialog by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
 
@@ -352,7 +352,7 @@ fun ProfilesScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "No daily medications recorded yet. Tap 'Add Med' above to create your schedule.",
+                            text = stringResource(R.string.no_daily_meds_desc),
                             style = MaterialTheme.typography.bodySmall,
                             color = Slate600
                         )
@@ -530,16 +530,16 @@ fun ProfilesScreen(
                                     }
 
                                     Button(
-                                        onClick = { showDoseFlowPresetsDialog = true },
+                                        onClick = { showDoseFlowImportDialog = true },
                                         modifier = Modifier
                                             .weight(1f)
                                             .testTag("demo_sync_presets_button"),
                                         shape = RoundedCornerShape(8.dp),
                                         colors = ButtonDefaults.buttonColors(containerColor = MedicalCyan)
                                     ) {
-                                        Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(16.dp))
+                                        Icon(Icons.Default.Sync, contentDescription = null, modifier = Modifier.size(16.dp))
                                         Spacer(modifier = Modifier.width(4.dp))
-                                        Text(stringResource(R.string.demo_doseflow_sync), fontSize = 12.sp)
+                                        Text(stringResource(R.string.import_doseflow_sync), fontSize = 12.sp)
                                     }
                                 }
                             }
@@ -660,7 +660,36 @@ fun ProfilesScreen(
                 }
             }
 
-            if (medications.isEmpty()) {
+            if (profiles.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(24.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Card(
+                            modifier = Modifier.widthIn(max = 500.dp),
+                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(24.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = stringResource(R.string.no_profiles_yet),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Slate600,
+                                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                                )
+                            }
+                        }
+                    }
+                }
+            } else if (medications.isEmpty()) {
                 item {
                     Box(
                         modifier = Modifier
@@ -669,7 +698,7 @@ fun ProfilesScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "No medications in this profile yet. Tap 'Add Medication' or sync via DoseFlow.",
+                            text = stringResource(R.string.empty_profile_meds),
                             style = MaterialTheme.typography.bodySmall,
                             color = Slate600
                         )
@@ -942,48 +971,57 @@ fun ProfilesScreen(
         )
     }
 
-    // Demo Sync Presets Dialog
-    if (showDoseFlowPresetsDialog) {
+    // Import DoseFlow JSON Dialog
+    if (showDoseFlowImportDialog) {
+        var importJsonText by remember { mutableStateOf("") }
+        var isError by remember { mutableStateOf(false) }
+
         AlertDialog(
-            onDismissRequest = { showDoseFlowPresetsDialog = false },
-            title = { Text(stringResource(R.string.demo_sync_dialog_title)) },
+            onDismissRequest = { showDoseFlowImportDialog = false },
+            title = { Text(stringResource(R.string.doseflow_json_title_import)) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(
-                        text = stringResource(R.string.demo_sync_dialog_desc),
+                        text = stringResource(R.string.paste_doseflow_json_hint),
                         style = MaterialTheme.typography.bodySmall,
                         color = Slate600
                     )
-                    DoseFlowBridge.sampleDoseFlowPresets.forEach { preset ->
-                        Card(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    viewModel.syncDoseFlowPreset(preset)
-                                    showDoseFlowPresetsDialog = false
-                                },
-                            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
-                        ) {
-                            Column(modifier = Modifier.padding(10.dp)) {
-                                Text(
-                                    text = preset.patientName,
-                                    style = MaterialTheme.typography.titleSmall,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Text(
-                                    text = "${preset.medications.size} Meds: ${preset.medications.joinToString(", ") { it.name }}",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    fontSize = 11.sp,
-                                    color = Slate600
-                                )
-                            }
-                        }
-                    }
+                    OutlinedTextField(
+                        value = importJsonText,
+                        onValueChange = {
+                            importJsonText = it
+                            isError = false
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(140.dp)
+                            .testTag("doseflow_import_json_input"),
+                        placeholder = { Text("{\n  \"patientName\": \"...\",\n  \"medications\": [...]\n}") },
+                        isError = isError,
+                        supportingText = if (isError) {
+                            { Text(stringResource(R.string.import_error_invalid_json), color = SeverityCriticalRed) }
+                        } else null
+                    )
                 }
             },
             confirmButton = {
-                TextButton(onClick = { showDoseFlowPresetsDialog = false }) {
-                    Text(stringResource(R.string.close))
+                Button(
+                    onClick = {
+                        val success = viewModel.importDoseFlowJson(importJsonText)
+                        if (success) {
+                            showDoseFlowImportDialog = false
+                        } else {
+                            isError = true
+                        }
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = TealPrimary)
+                ) {
+                    Text(stringResource(R.string.btn_import))
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDoseFlowImportDialog = false }) {
+                    Text(stringResource(R.string.cancel))
                 }
             }
         )
@@ -1023,7 +1061,7 @@ fun ProfilesScreen(
                 Button(
                     onClick = {
                         val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                        val clip = ClipData.newPlainText("DoseFlow JSON", json)
+                        val clip = ClipData.newPlainText(context.getString(R.string.doseflow_json_tab), json)
                         clipboard.setPrimaryClip(clip)
                         Toast.makeText(context, context.getString(R.string.toast_payload_copied), Toast.LENGTH_SHORT).show()
                         viewModel.closeDoseFlowDialog()
@@ -1159,7 +1197,7 @@ fun DailyMedicationCard(
             ) {
                 Icon(
                     imageVector = Icons.Default.Delete,
-                    contentDescription = "Delete",
+                    contentDescription = stringResource(R.string.delete_cd),
                     tint = Slate600,
                     modifier = Modifier.size(20.dp)
                 )
@@ -1246,7 +1284,7 @@ fun MedicationCard(
             ) {
                 Icon(
                     imageVector = Icons.Default.Delete,
-                    contentDescription = "Delete",
+                    contentDescription = stringResource(R.string.delete_cd),
                     tint = Slate600,
                     modifier = Modifier.size(20.dp)
                 )

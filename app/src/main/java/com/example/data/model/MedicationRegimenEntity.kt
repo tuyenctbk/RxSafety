@@ -12,7 +12,7 @@ data class MedicationRegimenEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String,                                      // Regimen title (e.g. "Cardiovascular Protocol", "Daily Vitality")
-    val patientName: String = "Myself",                    // Associated patient or profile name
+    val patientName: String = "",                          // Associated patient or profile name
     val description: String = "",                          // Clinical notes or physician instructions
     val medicationNames: List<String> = emptyList(),       // List of medication names in this regimen
     val targetConditions: List<String> = emptyList(),      // Diagnostic indications (e.g. "Hypertension", "Dyslipidemia")

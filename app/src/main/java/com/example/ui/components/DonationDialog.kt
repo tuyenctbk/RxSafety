@@ -148,7 +148,7 @@ fun MultiMethodDonationDialog(
                         onClick = onDismiss,
                         modifier = Modifier.testTag("close_donation_dialog")
                     ) {
-                        Icon(imageVector = Icons.Default.Close, contentDescription = "Close", tint = Slate600)
+                        Icon(imageVector = Icons.Default.Close, contentDescription = stringResource(R.string.close), tint = Slate600)
                     }
                 }
 
@@ -432,7 +432,7 @@ private fun PayPalTab(context: Context) {
         ) {
             Image(
                 bitmap = qrBitmap.asImageBitmap(),
-                contentDescription = "PayPal Live QR Code",
+                contentDescription = stringResource(R.string.paypal_live_qr_cd),
                 modifier = Modifier
                     .size(140.dp)
                     .padding(8.dp)
@@ -461,7 +461,7 @@ private fun PayPalTab(context: Context) {
             OutlinedButton(
                 onClick = {
                     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                    val clip = ClipData.newPlainText("PayPal Link", paypalUrl)
+                    val clip = ClipData.newPlainText(context.getString(R.string.paypal_link_btn), paypalUrl)
                     clipboard.setPrimaryClip(clip)
                     Toast.makeText(context, context.getString(R.string.btn_copy_paypal_url) + " ✓", Toast.LENGTH_SHORT).show()
                 },
@@ -546,7 +546,7 @@ private fun KofiTab(context: Context) {
         OutlinedButton(
             onClick = {
                 val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clip = ClipData.newPlainText("Ko-fi Link", kofiUrl)
+                val clip = ClipData.newPlainText(context.getString(R.string.kofi_link_btn), kofiUrl)
                 clipboard.setPrimaryClip(clip)
                 Toast.makeText(context, context.getString(R.string.toast_kofi_copied), Toast.LENGTH_SHORT).show()
             },
